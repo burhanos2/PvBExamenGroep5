@@ -10,8 +10,8 @@ public class CameraSwitch : MonoBehaviour
 
     private void SwitchCameraDepths() // this temp method merely illustrates how to swap cams
     {
-        var cam1Temp = cam1.depth;
-        cam1.depth = cam2.depth;
-        cam2.depth = cam1Temp;
+        cam1.enabled = !cam1.enabled;
+        //add effect here
+        cam2.enabled = !cam1.enabled;
     }
 }
