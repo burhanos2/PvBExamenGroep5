@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Captain : CharacterState
+﻿public class Captain : CharacterState
 {
     public override void Enter()
     {

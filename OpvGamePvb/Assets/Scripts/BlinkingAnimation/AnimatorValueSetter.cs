@@ -7,13 +7,13 @@ namespace BlinkingAnimation
     public class AnimatorValueSetter : MonoBehaviour
     {
         public Action OnBlind;
-        private Animator m_Animator;
+        private Animator animator;
         private static readonly int IsBlind = Animator.StringToHash("isBlind");
         private static readonly int PlayBlink = Animator.StringToHash("PlayBlink");
 
         private void Start()
         {
-            m_Animator = GameObject.Find("Camera_Eyelids").GetComponent<Animator>();
+            animator = GameObject.Find("Camera_Eyelids").GetComponent<Animator>();
         }
 
         private void SetBlind(int value)
@@ -21,9 +21,9 @@ namespace BlinkingAnimation
             switch (value)
             {
                 case 0:
-                    m_Animator.SetBool(IsBlind, false);
+                    animator.SetBool(IsBlind, false);
                     break;
-                case 1: m_Animator.SetBool(IsBlind, true);
+                case 1: animator.SetBool(IsBlind, true);
                     OnBlind?.Invoke();
                     break;
             }
@@ -31,7 +31,7 @@ namespace BlinkingAnimation
 
         private void ResetTrigger()
         {
-            m_Animator.ResetTrigger(PlayBlink);
+            animator.ResetTrigger(PlayBlink);
         }
     }
 }

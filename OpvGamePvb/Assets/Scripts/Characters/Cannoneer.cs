@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Cannoneer : CharacterState
+﻿public class Cannoneer : CharacterState
 {
     public override void Enter()
     {

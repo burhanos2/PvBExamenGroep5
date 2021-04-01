@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 
 public abstract class CharacterState : MonoBehaviour { 
 	public virtual void Enter()
