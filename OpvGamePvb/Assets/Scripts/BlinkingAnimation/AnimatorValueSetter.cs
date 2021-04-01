@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System;
 
 //this class sets the isBlind bool on the blink animator and resets the play trigger
 namespace BlinkingAnimation
 {
     public class AnimatorValueSetter : MonoBehaviour
     {
+        public Action OnBlind;
         private Animator m_Animator;
         private static readonly int IsBlind = Animator.StringToHash("isBlind");
         private static readonly int PlayBlink = Animator.StringToHash("PlayBlink");
@@ -22,6 +24,7 @@ namespace BlinkingAnimation
                     m_Animator.SetBool(IsBlind, false);
                     break;
                 case 1: m_Animator.SetBool(IsBlind, true);
+                    OnBlind?.Invoke();
                     break;
             }
         }

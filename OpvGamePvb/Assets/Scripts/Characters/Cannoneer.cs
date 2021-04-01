@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Cannoneer : CharacterState
 {
-    protected override void UpdateControls ()
+    public override void Enter()
     {
         // update controls here and start processes
     }
 
-    protected override void DisableControls()
+    public override void Leave()
     {
         //halt controls here and halt processes
     }
