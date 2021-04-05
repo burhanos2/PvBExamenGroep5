@@ -6,37 +6,30 @@ using UnityEngine.Animations;
 public class Shooting : MonoBehaviour
 {
     [SerializeField]
-    private GunMovement GM;
+    private GunMovement gunMovement;
 
     [SerializeField]
-    private GameObject Bullet;
+    private GameObject bulletObject;
 
     [SerializeField] 
-    private GameObject BulletSpawn;
+    private GameObject barrelEnd;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        GM.Shoot += Blast;
+        gunMovement.Shoot += Blast;
     }
 
-    public void Blast()
+    private void Blast()
     {
         StartCoroutine(Shoot());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Shoot()
     {
-
-    }
-
-    IEnumerator Shoot()
-    {
-        Instantiate(Bullet, new Vector3(BulletSpawn.transform.position.x, BulletSpawn.transform.position.y, BulletSpawn.transform.position.z),
-            Quaternion.Euler(GM.Barrel.transform.rotation.x, GM.Gun.transform.rotation.y, 0));
-        Debug.Log("nice");
-        return null;
+        Instantiate(bulletObject, new Vector3(barrelEnd.transform.position.x, barrelEnd.transform.position.y, barrelEnd.transform.position.z),
+            Quaternion.Euler(gunMovement.barrelObject.transform.rotation.x, gunMovement.gunObject.transform.rotation.y, 0));
+        yield return null;
     }
 }
 

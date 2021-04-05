@@ -10,8 +10,6 @@
 /[Oo]pvGamePvb/[Ll]ogs/
 /[Oo]pvGamePvb/[Mm]emoryCaptures/
 
-/[Aa]ssets/[Bb]randon/*
-
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Oo]pvGamePvb/[Aa]ssets/**/*.meta
 

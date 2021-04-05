@@ -8,6 +8,7 @@ TagManager:
   - BarrelBegin
   - EnemyShip
   - PlayArea
+  - Bottom
   layers:
   - Default
   - TransparentFX

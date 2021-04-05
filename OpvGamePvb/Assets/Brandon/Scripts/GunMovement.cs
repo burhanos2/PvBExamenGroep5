@@ -5,45 +5,55 @@ using UnityEngine;
 
 public class GunMovement : MonoBehaviour
 {
+    [SerializeField] [Range(1, 20)]
+    private int gunRotateSpeed = 4;
     [SerializeField]
-    private int GunRotateSpeed = 4;
+    public GameObject gunObject;
     [SerializeField]
-    public GameObject Gun;
-    [SerializeField]
-    public GameObject Barrel;
+    public GameObject barrelObject; // anchorpoint!!!
 
     public Action Shoot;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Gun.transform.Rotate(0 ,yAngle: + GunRotateSpeed*Time.deltaTime ,0);
-        } 
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Gun.transform.Rotate(0 ,yAngle: - GunRotateSpeed*Time.deltaTime ,0);
-        }
+        TurnHorizontal();
         
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Barrel.transform.Rotate(+ GunRotateSpeed*Time.deltaTime ,yAngle:0  ,0);
-        } 
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Barrel.transform.Rotate( - GunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
-        }
+        TurnVertical();
         
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Mouse2))
         {
             Shoot?.Invoke();
+        }
+    }
+
+    private void TurnHorizontal()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse1))
+        {
+            gunObject.transform.Rotate(0 ,yAngle: + gunRotateSpeed*Time.deltaTime ,0);
+        } 
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Mouse0))
+        {
+            gunObject.transform.Rotate(0 ,yAngle: - gunRotateSpeed*Time.deltaTime ,0);
+        }
+    }
+
+    private void TurnVertical()
+    {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            barrelObject.transform.Rotate(+ gunRotateSpeed*Time.deltaTime ,yAngle:0  ,0);
+        } 
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            barrelObject.transform.Rotate( - gunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
         }
     }
 }

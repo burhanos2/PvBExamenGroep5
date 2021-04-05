@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6665758262114807308}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: barrelEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6665758262978586944}
   m_Layer: 0
-  m_Name: AnchorPoint
+  m_Name: BarrelObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a34641d8439cba4a922d2b4f31a3688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GunRotateSpeed: 10
-  Gun: {fileID: 6665758263214322002}
-  Barrel: {fileID: 6665758262978586947}
+  gunRotateSpeed: 4
+  gunObject: {fileID: 6665758263214322002}
+  barrelObject: {fileID: 6665758262978586947}
 --- !u!1 &6665758263754740824
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af71f02cc47f3c041a4525eecce16e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 6665758263214322015}
-  Bullet: {fileID: 7927206600677261923, guid: da53fe4dcd1066d448df2aa557fd1e76, type: 3}
-  parent: {fileID: 6665758263214322014}
+  gunMovement: {fileID: 6665758263214322015}
+  bulletObject: {fileID: 7927206600677261923, guid: da53fe4dcd1066d448df2aa557fd1e76,
+    type: 3}
+  barrelEnd: {fileID: 6665758262114807311}
