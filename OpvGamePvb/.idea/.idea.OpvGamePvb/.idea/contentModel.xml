@@ -6,8 +6,36 @@
     <e p="D:\MA\bewijzenmap\periode4.3\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BulletBehaviour.cs" t="Include" />
+        <e p="EnemyDeath.cs" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="Radar.cs" t="Include" />
+          <e p="BlinkingAnimation" t="Include">
+            <e p="AnimatorValueSetter.cs" t="Include" />
+          </e>
+          <e p="Characters" t="Include">
+            <e p="Cannoneer.cs" t="Include" />
+            <e p="Captain.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
+            <e p="EnemyCombatScript.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
+          </e>
+          <e p="GunneAndGun" t="Include">
+            <e p="GunMovement.cs" t="Include" />
+            <e p="PlayerBullet.cs" t="Include" />
+            <e p="Shooting.cs" t="Include" />
+          </e>
+          <e p="Radar" t="Include">
+            <e p="Radar.cs" t="Include" />
+          </e>
+          <e p="StateMachine" t="Include">
+            <e p="CharacterState.cs" t="Include" />
+            <e p="Control.cs" t="Include" />
+            <e p="PlayerStateMachine.cs" t="Include" />
+          </e>
+          <e p="TestScripts" t="Include">
+            <e p="SimpleAnimationTrigger.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
