@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:OpvGamePvb/Assets/Animations.meta
 guid: 6126f3aca3b8cbb4eb64105864c3204c
+=======
+guid: 297198b087ac37249b4db8155221a468
+>>>>>>> origin/feature/cannon:OpvGamePvb/Assets/Brandon/Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
