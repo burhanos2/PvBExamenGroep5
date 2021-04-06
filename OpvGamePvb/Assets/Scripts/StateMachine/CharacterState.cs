@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public abstract class CharacterState : MonoBehaviour { 
+public abstract class CharacterState : MonoBehaviour
+{
 	public virtual void Enter()
 	{
 		// update controls here and start processes

@@ -9,6 +9,7 @@ TagManager:
   - EnemyShip
   - PlayArea
   - Bottom
+  - Wataa
   layers:
   - Default
   - TransparentFX

@@ -23,9 +23,12 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyShip"))
+        switch (other.tag)
         {
-            DeleteBullet();
+            case "EnemyShip": DeleteBullet();
+                break;
+            case "Wataa": DeleteBullet();
+                break;
         }
     }
 
@@ -39,7 +42,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void DeleteBullet()
     {
-        _landingPlace.transform.position = gameObject.transform.position;
+        _landingPlace.transform.position = transform.position;
         Destroy(this.gameObject);
     }
 }

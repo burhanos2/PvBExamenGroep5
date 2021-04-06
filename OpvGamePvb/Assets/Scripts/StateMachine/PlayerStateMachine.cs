@@ -13,7 +13,7 @@ namespace StateMachine
 	}
 
 	public class PlayerStateMachine : MonoBehaviour {
-		private CharacterState currentState;
+		private CharacterState _currentState;
 		private int stateIndex = 1;
 		private Dictionary<CharactersEnum, CharacterState> statesDict = new Dictionary<CharactersEnum, CharacterState> ();
 		private Camera mainCamera;
@@ -51,31 +51,32 @@ namespace StateMachine
 		}
 	
 		private void AddStates() {
-			statesDict.Add( CharactersEnum.Captain, GetComponentInChildren<Captain>());
-			statesDict.Add( CharactersEnum.Cannoneer, GetComponentInChildren<Cannoneer>());
+			statesDict.Add( CharactersEnum.Captain,  FindObjectOfType<Captain>());
+			statesDict.Add( CharactersEnum.Cannoneer, FindObjectOfType<Cannoneer>());
 		}
 	
 		private void SetState(CharactersEnum stateId) {
 			var selectedState = statesDict[stateId];
-			if (!statesDict.ContainsKey(stateId) && selectedState == currentState) //if key doesnt exist or selected state is already current, return
+			if (!statesDict.ContainsKey(stateId) && selectedState == _currentState) //if key doesnt exist or selected state is already current, return
 			{
 				return;
 			}
 			camSpot = selectedState.transform.Find("CameraPos").transform; //making this reference before the quick return is a bad idea
 
-			if (currentState)
+			if (_currentState)
 			{
-				currentState.Leave();
+				_currentState.Leave();
 				blinkAnimator.SetTrigger(PlayBlink);
 			}
 		
-			currentState = selectedState;
-			currentState.Enter();
+			_currentState = selectedState;
+			_currentState.Enter();
 		}
 
 		private void ActionOnBlind()
 		{
 			mainCamera.transform.SetPositionAndRotation(camSpot.position, camSpot.rotation);
+			mainCamera.transform.SetParent(camSpot);
 		}
 	}
 }

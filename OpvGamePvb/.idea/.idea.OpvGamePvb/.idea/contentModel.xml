@@ -6,8 +6,6 @@
     <e p="D:\MA\bewijzenmap\periode4.3\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="BulletBehaviour.cs" t="Include" />
-        <e p="EnemyDeath.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BlinkingAnimation" t="Include">
             <e p="AnimatorValueSetter.cs" t="Include" />
@@ -17,13 +15,18 @@
             <e p="Captain.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
+            <e p="BulletBehaviour.cs" t="Include" />
             <e p="EnemyCombatScript.cs" t="Include" />
+            <e p="EnemyDeath.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
           </e>
           <e p="GunneAndGun" t="Include">
             <e p="GunMovement.cs" t="Include" />
             <e p="PlayerBullet.cs" t="Include" />
             <e p="Shooting.cs" t="Include" />
+          </e>
+          <e p="LifeHacks" t="Include">
+            <e p="DestroyAfterSeconds.cs" t="Include" />
           </e>
           <e p="Radar" t="Include">
             <e p="Radar.cs" t="Include" />
