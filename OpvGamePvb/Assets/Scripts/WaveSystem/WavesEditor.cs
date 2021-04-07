@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace WaveSystem
@@ -7,15 +6,14 @@ namespace WaveSystem
     [ExecuteInEditMode]
     public class WavesEditor : MonoBehaviour
     {
-        [SerializeField, Range(1, 20)] 
-        private int _waveAmount = 1;
+        [Range(1, 50)] 
+        public int _waveAmount = 1;
+        
         [SerializeField, Tooltip("Amount of Enemies that should spawn in specified wave.")] 
         private List<int> _enemiesPerWave = new List<int>();
         
-        public int GetEnemyAmountThisWave => _enemiesPerWave[_currentWave - 1]; // getter for current wave
+        public int GetEnemiesForWave(int waveNumber) => _enemiesPerWave[(waveNumber - 1)]; // get enemy amount for specified wave
         public List<Transform> _enemySpawners = new List<Transform>();
-        public int _currentWave = 1;
-        public Action<int> OnNextWave; // int returns next wave number
         
         #if (UNITY_EDITOR)
             private void Update()

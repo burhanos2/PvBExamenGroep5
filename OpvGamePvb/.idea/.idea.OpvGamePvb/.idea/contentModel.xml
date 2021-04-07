@@ -40,7 +40,9 @@
             <e p="SimpleAnimationTrigger.cs" t="Include" />
           </e>
           <e p="WaveSystem" t="Include">
+            <e p="EnemySpawner.cs" t="Include" />
             <e p="WavesEditor.cs" t="Include" />
+            <e p="WavesManager.cs" t="Include" />
           </e>
         </e>
       </e>
