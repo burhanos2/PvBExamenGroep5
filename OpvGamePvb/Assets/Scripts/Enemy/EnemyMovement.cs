@@ -23,7 +23,9 @@ public class EnemyMovement : MonoBehaviour
     private GameObject Player;
 
     private bool ismoving = false;
-    private float waitingTime = 0;
+    private float waitingTimer = 0;
+    [SerializeField]
+    private float WaitingTime = 0;
 
     
     // Start is called before the first frame update
@@ -45,14 +47,17 @@ public class EnemyMovement : MonoBehaviour
             
         }
         else
-        {
-            waitingTime += Time.deltaTime;
+        {   
+            
+            waitingTimer += Time.deltaTime;
+            
             ismoving = false;
         }
 
-        if (waitingTime == 60f)
+        if (waitingTimer >= WaitingTime)
         {
-            waitingTime = 0;
+            
+            waitingTimer = 0;
             CalculateNewPosition();
         }
         
