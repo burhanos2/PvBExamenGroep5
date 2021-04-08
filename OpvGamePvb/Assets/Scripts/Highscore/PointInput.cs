@@ -11,11 +11,15 @@ public class PointInput : MonoBehaviour
     private ScoreKeeping scoreKeeper;
     [SerializeField]
     private WavesManager WavesManager;
+
+    [SerializeField] 
+    private PlayerBullet playerBullet;
     // Start is called before the first frame update
     private void Start()
     {
         WavesManager.OnEnemyDeath += ObtainPoints;
-        
+        playerBullet.OnShotHit += AddMultiplier;
+        playerBullet.OnShotMiss += ResetMultiplier;
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class PointInput : MonoBehaviour
       scoreKeeper.UpdateScore(pointsToAdd *=_PointMultiplier);  
     }
 
-    public void AddMultuplier(int newMultiplier)
+    public void AddMultiplier(int newMultiplier)
     {
         if (_PointMultiplier > 20)
         {

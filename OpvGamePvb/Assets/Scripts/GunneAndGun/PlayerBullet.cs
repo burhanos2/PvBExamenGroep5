@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class PlayerBullet : MonoBehaviour
 {
@@ -6,10 +7,15 @@ public class PlayerBullet : MonoBehaviour
     private Rigidbody _bulletRb;
     [SerializeField, Range(2, 50)]
     private float _bulletSpeed = 2;
+    [SerializeField]
+    private int HitBonus;
+
     
     private GameObject _aim;
     private Transform _target;
     private GameObject _landingPlace;
+    public Action OnShotMiss;
+    public Action<int>OnShotHit;
     
     
     private void Start()
@@ -27,8 +33,10 @@ public class PlayerBullet : MonoBehaviour
         {
             case "EnemyShip": DeleteBullet();
                 Destroy(other.gameObject);
+                OnShotHit(HitBonus);
                 break;
             case "Wataa": DeleteBullet();
+                OnShotMiss();
                 break;
         }
     }
