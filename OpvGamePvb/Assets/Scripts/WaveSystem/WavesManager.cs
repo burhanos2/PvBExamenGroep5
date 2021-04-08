@@ -58,8 +58,34 @@ namespace WaveSystem
         {
             //spawn at a (maybe randomly) selected spawn area on a random position within it
             var spawnBounds = _spawnAreaObjects[_currentSpawnAreaIndex].GetComponent<Renderer>().bounds;
+            
+            var tenPercentOfXBound = (spawnBounds.size.x * 0.1);
+            var tenPercentOfZBound = (spawnBounds.size.z * 0.1);
 
-            var pos = new Vector3(Random.Range(spawnBounds.min.x, spawnBounds.max.x),0,Random.Range(spawnBounds.min.z, spawnBounds.max.z)); //random position within spawn area on y = 0
+            var coinFlip = (5 > Random.Range(0, 10));
+            float rollXPos;
+            float rollZPos;
+            
+            if (coinFlip)
+            {
+                rollXPos = Mathf.Clamp(
+                    Random.Range(spawnBounds.min.x, spawnBounds.max.x),
+                    (spawnBounds.max.x - (float)tenPercentOfXBound),
+                    (spawnBounds.min.x + (float)tenPercentOfXBound));
+
+                rollZPos = Random.Range(spawnBounds.min.z,spawnBounds.max.z);
+            }
+            else
+            {
+                rollZPos = Mathf.Clamp(
+                    Random.Range(spawnBounds.min.z, spawnBounds.max.z),
+                    (spawnBounds.max.z - (float)tenPercentOfZBound),
+                    (spawnBounds.min.z + (float)tenPercentOfZBound));
+                
+                rollXPos = Random.Range(spawnBounds.min.x,spawnBounds.max.x);
+            }
+
+            var pos = new Vector3(rollXPos,0,rollZPos); //random position within spawn area on y = 0
             var rot = Quaternion.LookRotation((pos - Vector3.zero), Vector3.up); //default rotation
             
             _currentLiveEnemies.Add(Instantiate(_enemyObjectToSpawn, pos, rot ));

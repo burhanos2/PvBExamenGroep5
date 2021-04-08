@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waveAmount: 5
-  _enemiesPerWave: 0500000001000000010000000100000001000000
+  _enemiesPerWave: 6400000001000000010000000100000001000000
   _enemySpawners: []
 --- !u!114 &437259682
 MonoBehaviour:
