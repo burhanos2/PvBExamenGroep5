@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
 
 using Random = UnityEngine.Random;
-using Object = UnityEngine.Object;
 using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
@@ -50,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
             ismoving = false;
         }
 
-        if (waitingTime == 60f)
+        if (waitingTime == 1f)
         {
             waitingTime = 0;
             CalculateNewPosition();
