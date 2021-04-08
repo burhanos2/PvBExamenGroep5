@@ -26,6 +26,7 @@ public class PlayerBullet : MonoBehaviour
         switch (other.tag)
         {
             case "EnemyShip": DeleteBullet();
+                Destroy(other.gameObject);
                 break;
             case "Wataa": DeleteBullet();
                 break;

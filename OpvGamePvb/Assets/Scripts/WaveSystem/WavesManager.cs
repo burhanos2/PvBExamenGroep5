@@ -65,6 +65,9 @@ namespace WaveSystem
             _currentLiveEnemies.Add(Instantiate(_enemyObjectToSpawn, pos, rot ));
             _enemiesDeployedThisWave++;
             
+            //TODO tf is this UwU
+            Radar.Instance.AddEnemy(_currentLiveEnemies[_currentLiveEnemies.Count-1].transform);
+            
             //end routine
             if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
             {
@@ -111,6 +114,8 @@ namespace WaveSystem
         private void DoOnEnemyDeath(int pointValue, GameObject enemy)
         {
             _currentLiveEnemies.Remove(enemy);
+            //TODO WTF UwU
+            Radar.Instance.DeleteEnemy(enemy.transform);
             Destroy(enemy); //maybe not remove here? line may need to be removed later
         }
     }
