@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
+    <list default="true" id="d531906b-bbb9-4ebe-bcdb-1881638cc156" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameOver.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/ScoreBoard.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/ScoreBoard.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BlinkingAnimation/SolidBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BlinkingAnimation/SolidBlack.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Green 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Green 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/blu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/blu.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,18 +30,14 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/EnemyCombatScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyCombatScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/BulletBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/EnemyDeath.cs" />
-      <option value="$PROJECT_DIR$/Assets/ScoreKeeping.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/ScoreBoard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/SaveScore.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" />
     </changedPaths>
   </component>
-  <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
+  <component name="ProjectId" id="1qnm7q3H1oTEoQ6zkItYXWY0nHz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.build.unityPlugin" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -78,19 +74,18 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="" />
-      <created>1617013878244</created>
+      <changelist id="d531906b-bbb9-4ebe-bcdb-1881638cc156" name="Default Changelist" comment="" />
+      <created>1617723590490</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617013878244</updated>
-      <workItem from="1617013885471" duration="3532000" />
-      <workItem from="1617090318688" duration="14307000" />
-      <workItem from="1617261746620" duration="13051000" />
-      <workItem from="1617363353883" duration="2658000" />
-      <workItem from="1617614677331" duration="526000" />
-      <workItem from="1617698512112" duration="1751000" />
-      <workItem from="1617707750987" duration="3228000" />
-      <workItem from="1617713071122" duration="1471000" />
+      <updated>1617723590490</updated>
+      <workItem from="1617723607085" duration="7487000" />
+      <workItem from="1617822065978" duration="508000" />
+      <workItem from="1617822614103" duration="191000" />
+      <workItem from="1617823024703" duration="66000" />
+      <workItem from="1617823933394" duration="1319000" />
+      <workItem from="1617885569144" duration="4828000" />
+      <workItem from="1617890950455" duration="7230000" />
     </task>
     <servers />
   </component>
