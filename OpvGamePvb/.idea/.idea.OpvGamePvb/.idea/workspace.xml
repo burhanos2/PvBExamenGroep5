@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BulletBehaviour.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BulletBehaviour.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyDeath.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyDeath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BlinkingAnimation/SolidBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BlinkingAnimation/SolidBlack.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Green 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Green 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/blu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/blu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,7 @@
       <option value="$PROJECT_DIR$/Assets/EnemyDeath.cs" />
       <option value="$PROJECT_DIR$/Assets/ScoreKeeping.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
