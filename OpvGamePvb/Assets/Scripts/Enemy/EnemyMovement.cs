@@ -10,9 +10,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergent = 0;
+    private int minimalDivergentZ = 0;
     [SerializeField]
-    private int maximumDivergent = 0;
+    private int maximumDivergentZ = 0;
+    [SerializeField]
+    private int minimalDivergentX = 0;
+    [SerializeField]
+    private int maximumDivergentX = 0;
     [SerializeField]
     private GameObject Player;
 
@@ -21,12 +25,16 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float WaitingTime = 0;
 
+    private Vector3 playerBounds;
+
     
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        Player = GameObject.Find("BoatModol");
         position = transform.position;
         CalculateNewPosition();
+        playerBounds = Player.GetComponent<MeshRenderer>().bounds.center;
     }
 
     // Update is called once per frame
@@ -37,8 +45,9 @@ public class EnemyMovement : MonoBehaviour
         {   
 
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
             
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
+  
         }
         else
         {   
@@ -46,6 +55,7 @@ public class EnemyMovement : MonoBehaviour
             waitingTimer += Time.deltaTime;
             
             ismoving = false;
+   
         }
 
         if (waitingTimer >= WaitingTime)
@@ -61,12 +71,15 @@ public class EnemyMovement : MonoBehaviour
     public void CalculateNewPosition()
     {   
         position = transform.position;
-        newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
+        newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
         
         
-        if((newPosition.x <= Player.GetComponent<MeshRenderer>().bounds.size.x /2f )&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f) && ((newPosition.z <= Player.GetComponent<MeshRenderer>().bounds.size.z / 2f)&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f)))
-        {
+        /*if((newPosition.x <= playerBounds.x/2  )&&(newPosition.x >= playerBounds.x /2 * -1) && ((newPosition.z <= playerBounds.z )&&(newPosition.z/2 >= playerBounds.z/2 * -1 )))*/
+        if(Vector3.Distance(newPosition,playerBounds) < 20)
+        {   
+            Debug.Log(1 + "hit");
             CalculateNewPosition();
+            
         }
         else
         {   
