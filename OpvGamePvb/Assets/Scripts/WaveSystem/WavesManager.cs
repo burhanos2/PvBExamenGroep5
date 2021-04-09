@@ -8,14 +8,20 @@ namespace WaveSystem
     public class WavesManager : MonoBehaviour
     {
         private WavesEditor _wavesEditor;
-        public int _currentWave = 1;
+        private int _currentWave = 1;
+        public int CurrentWave
+        {
+            get => _currentWave;
+            set => GoToWave(value);
+        }
         public Action<int> OnNextWave; // int returns next wave number
         public Action<int, GameObject> OnEnemyDeath; // int returns enemy point value
         
-        public int _enemiesDeployedThisWave;
+        private int _enemiesDeployedThisWave;
+        public int GetEnemiesDeployedThisWave => _enemiesDeployedThisWave;
 
         private List<GameObject> _currentLiveEnemies = new List<GameObject>();
-        public GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
+        private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
         private int _currentSpawnAreaIndex;
         
         private int _currentEnemyLimit;
@@ -42,7 +48,7 @@ namespace WaveSystem
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?
                 {
-                    GoToNextWave();
+                    GoToWave((_currentWave + 1));
                 }
             }
             else if(_allowSpawning)
@@ -106,20 +112,24 @@ namespace WaveSystem
             _currentEnemyLimit = _wavesEditor.GetEnemiesForWave(wave);
         }
         
-        private void GoToNextWave()
+        private void GoToWave(int input)
         {
-            if (_currentWave <= 0 || _currentWave > _wavesEditor._waveAmount)
+            if (input <= 0)
             {
                 Debug.LogError("Current wave does not exist.");
             }
-            else if (_currentWave == _wavesEditor._waveAmount)
+            else if (input > _wavesEditor._waveAmount)
             {
+                Debug.Log("Entering a wave above amount, calling game over");
                 CallGameOver();
             }
             else
             {
-                _currentWave++;
-                OnNextWave?.Invoke(_currentWave);
+                if (_currentLiveEnemies.Count != 0)
+                {
+                    ClearEnemies();
+                }
+                OnNextWave?.Invoke(input);
             }
         }
 
@@ -127,6 +137,7 @@ namespace WaveSystem
         {
             _enemiesDeployedThisWave = 0;
             GetEnemyLimit(newWave);
+            _currentWave = newWave;
         }
         
         private void CallGameOver()
@@ -138,6 +149,15 @@ namespace WaveSystem
         {
             _currentLiveEnemies.Remove(enemy);
             Destroy(enemy); //maybe not remove here? line may need to be removed later
+        }
+
+        private void ClearEnemies()
+        {
+            foreach (var enemy in _currentLiveEnemies)
+            {
+                Destroy(enemy);
+            }
+            _currentLiveEnemies.Clear();
         }
     }
 }

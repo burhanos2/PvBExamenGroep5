@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9dc65547994cdd49ae98c581a13a697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveAmount: 5
-  _enemiesPerWave: 6400000001000000010000000100000001000000
+  _waveAmount: 8
+  _enemiesPerWave: 0100000001000000010000000100000005000000010000000100000001000000
   _enemySpawners: []
 --- !u!114 &437259682
 MonoBehaviour:
@@ -363,9 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56422499887f7534dac3a21a4665c92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWave: 1
   _enemiesDeployedThisWave: 0
-  _spawnAreaObjects: []
   _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 32ab8f12bbc5eb24ea553289c9219caf,
     type: 3}
 --- !u!1 &514101951
