@@ -1,6 +1,4 @@
-﻿    using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
     public class ScoreKeeping : MonoBehaviour
@@ -21,7 +19,7 @@ using UnityEngine.UI;
         {
             _HighScore = PlayerPrefs.GetInt("Highscore");
         }
-        UpdateScore(5);
+        UpdateScore(0);
     }
 
     // Update is called once per frame

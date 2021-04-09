@@ -23,6 +23,13 @@ namespace WaveSystem
         private bool _allowSpawning;
         public GameObject _enemyObjectToSpawn;
 
+        public static WavesManager Instance;
+
+        void Awake()
+        {
+            Instance = this;
+        }
+
         private void Start()
         {
             _wavesEditor = GetComponent<WavesEditor>();

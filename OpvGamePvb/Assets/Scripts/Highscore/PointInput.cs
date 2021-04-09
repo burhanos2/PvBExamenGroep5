@@ -1,46 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using UnityEngine;
+﻿using UnityEngine;
 using WaveSystem;
 
 public class PointInput : MonoBehaviour
 {
-    private int _PointMultiplier;
+    
+    private int _pointMultiplier = 1;
     [SerializeField]
-    private ScoreKeeping scoreKeeper;
+    private ScoreKeeping _scoreKeeper;
     [SerializeField]
-    private WavesManager WavesManager;
+    private WavesManager _wavesManager;
 
-    [SerializeField] 
-    private PlayerBullet playerBullet;
-    // Start is called before the first frame update
+    public static PointInput Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+    
     private void Start()
     {
-        WavesManager.OnEnemyDeath += ObtainPoints;
-        playerBullet.OnShotHit += AddMultiplier;
-        playerBullet.OnShotMiss += ResetMultiplier;
+        _wavesManager.OnEnemyDeath += ObtainPoints;
+        // playerBullet.OnShotHit += AddMultiplier;
+        // playerBullet.OnShotMiss += ResetMultiplier;
     }
-
-    // Update is called once per frame
-
-
+    
     public void ObtainPoints(int pointsToAdd, GameObject gameObject)
     {
-      scoreKeeper.UpdateScore(pointsToAdd *=_PointMultiplier);  
+        _scoreKeeper.UpdateScore(pointsToAdd *=_pointMultiplier);  
     }
 
     public void AddMultiplier(int newMultiplier)
     {
-        if (_PointMultiplier > 20)
-        {
-            _PointMultiplier += newMultiplier;
-        }
-       
+        if (_pointMultiplier > 20)
+            _pointMultiplier += newMultiplier;
     }
 
     public void ResetMultiplier()
     {
-        _PointMultiplier = 0;
+        if (_pointMultiplier != 1)
+            _pointMultiplier--;
     }
 }

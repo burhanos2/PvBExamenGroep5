@@ -1,21 +1,17 @@
 ﻿using UnityEngine;
 using System;
+using WaveSystem;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody _bulletRb;
-    [SerializeField, Range(2, 50)]
-    private float _bulletSpeed = 2;
-    [SerializeField]
-    private int HitBonus;
+    [SerializeField, Range(2, 50)] private float _bulletSpeed = 2;
+    [SerializeField] private Rigidbody _bulletRb;
+    [SerializeField] private int _hitBonus;
 
     
     private GameObject _aim;
     private Transform _target;
     private GameObject _landingPlace;
-    public Action OnShotMiss;
-    public Action<int>OnShotHit;
     
     
     private void Start()
@@ -33,10 +29,11 @@ public class PlayerBullet : MonoBehaviour
         {
             case "EnemyShip": DeleteBullet();
                 Destroy(other.gameObject);
-                OnShotHit(HitBonus);
+                PointInput.Instance.AddMultiplier(1);
+                WavesManager.Instance.OnEnemyDeath.Invoke(1,other.gameObject);
                 break;
             case "Wataa": DeleteBullet();
-                OnShotMiss();
+                PointInput.Instance.ResetMultiplier();
                 break;
         }
     }
