@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Water.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
       <workItem from="1617713071122" duration="1471000" />
       <workItem from="1617961132631" duration="37000" />
       <workItem from="1617961243259" duration="2380000" />
-      <workItem from="1618213018691" duration="1899000" />
+      <workItem from="1618213018691" duration="3087000" />
     </task>
     <servers />
   </component>
