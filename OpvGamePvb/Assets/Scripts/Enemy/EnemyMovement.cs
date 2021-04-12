@@ -10,9 +10,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergent = 0;
+    private int minimalDivergentX = 0;
     [SerializeField]
-    private int maximumDivergent = 0;
+    private int maximumDivergentX = 0;
+    [SerializeField]
+    private int minimalDivergentZ;
+    [SerializeField]
+    private int maximumDivergentZ;
     [SerializeField]
     private GameObject Player;
 
@@ -25,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("BoatModol");
         position = transform.position;
         CalculateNewPosition();
     }
@@ -61,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
     public void CalculateNewPosition()
     {   
         position = transform.position;
-        newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
+        newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
         
         
         if((newPosition.x <= Player.GetComponent<MeshRenderer>().bounds.size.x /2f )&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f) && ((newPosition.z <= Player.GetComponent<MeshRenderer>().bounds.size.z / 2f)&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f)))
