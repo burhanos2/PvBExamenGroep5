@@ -3,8 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_AO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_AO.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_Albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_Albedo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_Mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pirate_Ship_Mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HighscoreScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HighscoreScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,16 +39,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/90/57fde61a/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,7 +72,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -69,7 +92,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -90,13 +113,11 @@
       <workItem from="1617713071122" duration="1471000" />
       <workItem from="1617961132631" duration="37000" />
       <workItem from="1617961243259" duration="2380000" />
-      <workItem from="1617972135908" duration="3438000" />
-      <workItem from="1617975631780" duration="341000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -105,12 +126,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

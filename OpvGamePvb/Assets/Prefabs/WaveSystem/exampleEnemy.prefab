@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3139633040857393873}
   - component: {fileID: 3139633040857393874}
   - component: {fileID: 3139633040857393875}
-  - component: {fileID: 1494450373862291964}
   m_Layer: 0
   m_Name: exampleEnemy
   m_TagString: EnemyShip
@@ -95,25 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1494450373862291964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3139633040857393876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a65872d9fdf07d42bb6fb34e0d0ffb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  minimalDivergentZ: 15
-  maximumDivergentZ: 25
-  minimalDivergentX: 10
-  maximumDivergentX: 5
-  Player: {fileID: 0}
-  WaitingTime: 60
 --- !u!64 &4590802372066021735
 MeshCollider:
   m_ObjectHideFlags: 0
