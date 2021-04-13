@@ -13,7 +13,8 @@ public class EnemyCombatScript : MonoBehaviour
     private float timeBetweenFire;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        player = GameObject.Find("BoatModol");
         movement = gameObject.GetComponent<EnemyMovement>();
         bullet.GetComponent<BulletBehaviour>().SetObjectToMoveTo(player.transform.position);
     }
