@@ -11,6 +11,7 @@ TagManager:
   - Bottom
   - Wataa
   - SpawnArea
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Water.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
-    </list>
+    <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,16 +19,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDeath.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -96,6 +91,7 @@
       <workItem from="1617961132631" duration="37000" />
       <workItem from="1617961243259" duration="2380000" />
       <workItem from="1618213018691" duration="3087000" />
+      <workItem from="1618315407181" duration="3821000" />
     </task>
     <servers />
   </component>

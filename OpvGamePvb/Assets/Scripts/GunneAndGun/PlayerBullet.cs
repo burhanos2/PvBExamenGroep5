@@ -28,7 +28,7 @@ public class PlayerBullet : MonoBehaviour
         switch (other.tag)
         {
             case "EnemyShip": DeleteBullet();
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
                 PointInput.Instance.AddMultiplier(1);
                 WavesManager.Instance.OnEnemyDeath.Invoke(1,other.gameObject);
                 break;

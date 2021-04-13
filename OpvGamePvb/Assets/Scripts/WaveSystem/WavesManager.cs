@@ -123,7 +123,7 @@ namespace WaveSystem
             _currentLiveEnemies.Remove(enemy);
             //TODO WTF UwU
             Radar.Instance.DeleteEnemy(enemy.transform);
-            Destroy(enemy); //maybe not remove here? line may need to be removed later
+            //Destroy(enemy); //maybe not remove here? line may need to be removed later
         }
     }
 }
