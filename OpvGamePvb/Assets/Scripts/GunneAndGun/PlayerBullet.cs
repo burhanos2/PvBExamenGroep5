@@ -9,17 +9,17 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField] private int _hitBonus;
 
     
-    private GameObject _aim;
-    private Transform _target;
+    private GameObject _barrelEnd;
+    private GameObject _barrelBegin;
     private GameObject _landingPlace;
     
     
     private void Start()
     {
         _landingPlace = GameObject.Find("LandingPlace");
-        _aim = GameObject.FindWithTag("BarrelEnd");
-        _target = GameObject.FindWithTag("BarrelBegin").transform;
-        Vector3 direction = (_aim.transform.position - _target.transform.position).normalized;
+        _barrelEnd = GameObject.FindWithTag("BarrelEnd");
+        _barrelBegin = GameObject.FindWithTag("BarrelBegin");
+        Vector3 direction = (_barrelEnd.transform.position - _barrelBegin.transform.position).normalized;
         _bulletRb.velocity = (direction * _bulletSpeed);
     }
 
