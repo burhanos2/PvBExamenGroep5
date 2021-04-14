@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 450666894}
   - component: {fileID: 450666896}
   - component: {fileID: 450666895}
+  - component: {fileID: 450666897}
   m_Layer: 0
   m_Name: WaveController
   m_TagString: Untagged
@@ -569,10 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56422499887f7534dac3a21a4665c92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWave: 1
-  _enemiesDeployedThisWave: 0
-  _spawnAreaObjects:
-  - {fileID: 633514003}
   _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 32ab8f12bbc5eb24ea553289c9219caf,
     type: 3}
 --- !u!114 &450666896
@@ -590,6 +587,23 @@ MonoBehaviour:
   _waveAmount: 5
   _enemiesPerWave: 0500000001000000010000000100000001000000
   _enemySpawners: []
+--- !u!114 &450666897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450666893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944636af4a5bcc949bcb279fcc032ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inflatablePropArray:
+  - {fileID: 6683177619314536455, guid: 3b90598b6911e3849ad7dc5b30b91b9d, type: 3}
+  - {fileID: 8784879427190366016, guid: 81e61a46eed2a3c42a8292fdbcb59d53, type: 3}
+  _particleSystemPrefab: {fileID: 9061233313294294266, guid: 49d30b5a61e638243983bb7bf1aa4f71,
+    type: 3}
 --- !u!1 &514101951
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,12 +720,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b256b4363dd07ea44b8da35bc00f7861, type: 3}
---- !u!1 &633514003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 402927991480916033, guid: 1e5844346b951f944b29ef870977f2a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 96315985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697892064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentScoreText: {fileID: 60370555}
   _HighScoreText: {fileID: 973296230}
+  _currentScore: 0
+  _HighscoreBreached: 0
 --- !u!114 &1780563842
 MonoBehaviour:
   m_ObjectHideFlags: 0

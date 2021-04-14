@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 3139633040857393875}
   - component: {fileID: 5196834328210774168}
   - component: {fileID: -3439216482228350874}
-  - component: {fileID: -221520132003893200}
   m_Layer: 0
   m_Name: exampleEnemy
   m_TagString: EnemyShip
@@ -237,22 +236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bullet: {fileID: 1564083870876993927}
---- !u!114 &-221520132003893200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3139633040857393876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5212102857f5be04e911f24487a61f41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyObjectTag: Bullet
-  inflatables:
-  - {fileID: 8784879427190366016, guid: 81e61a46eed2a3c42a8292fdbcb59d53, type: 3}
-  - {fileID: 6683177619314536455, guid: 3b90598b6911e3849ad7dc5b30b91b9d, type: 3}
 --- !u!64 &4590802372066021735
 MeshCollider:
   m_ObjectHideFlags: 0

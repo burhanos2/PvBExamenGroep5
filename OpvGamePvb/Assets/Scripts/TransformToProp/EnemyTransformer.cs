@@ -22,7 +22,8 @@ namespace TransformToProp
         }
         private GameObject RandomProp()
         {
-            return _inflatablePropArray[Random.Range(0, (_inflatablePropArray.Length - 1))];
+            var pick = Mathf.RoundToInt(Random.Range(0f, (_inflatablePropArray.Length - 1)));
+            return _inflatablePropArray[pick];
         }
     
         private void TransFormOnDeath(GameObject prefabToBecome, GameObject whatToTransform)
