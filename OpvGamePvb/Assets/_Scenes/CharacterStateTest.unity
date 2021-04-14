@@ -160,8 +160,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 578349314}
-  - component: {fileID: 578349313}
   - component: {fileID: 578349312}
+  - component: {fileID: 578349313}
   m_Layer: 0
   m_Name: PlayerControlledCharacters
   m_TagString: Untagged
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchingKey: 32
+  _SwitchKeyDelayInSeconds: 0.55
 --- !u!4 &578349314
 Transform:
   m_ObjectHideFlags: 0
