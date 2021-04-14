@@ -12,14 +12,14 @@ public class GunMovement : MonoBehaviour
     [SerializeField]
     private GameObject powerObject;
 
-    private float powerMax = 113;
-    private float powerMin = -113;
+    private float powerMax = -53;
+    private float powerMin = 26;
 
     private float _maxHorizontal = 0.712f;
     private float _minHorizontal = -0.712f;
     
-    private float _maxVertical = 0.6f;
-    private float _minVertical = 0.1f;
+    private float _maxVertical = 0.1f;
+    private float _minVertical = -0.6f;
     
 
     public Action Shoot;
@@ -60,6 +60,6 @@ public class GunMovement : MonoBehaviour
             barrelObject.transform.Rotate( - _gunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
         }
         
-        powerObject.transform.localPosition = new Vector3(-175.2f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
+        powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
     }
 }
