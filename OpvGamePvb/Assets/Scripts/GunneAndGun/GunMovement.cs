@@ -19,7 +19,7 @@ public class GunMovement : MonoBehaviour
     private float _minHorizontal = -0.712f;
     
     private float _maxVertical = 0.1f;
-    private float _minVertical = -0.6f;
+    private float _minVertical = -0.195f;
     
 
     public Action Shoot;

@@ -7,6 +7,7 @@ namespace WaveSystem
 {
     public class WavesManager : MonoBehaviour
     {
+        [SerializeField]private GameOverManager _gameOverManager;
         private WavesEditor _wavesEditor;
         private int _currentWave = 1;
         public int CurrentWave
@@ -31,9 +32,12 @@ namespace WaveSystem
 
         public static WavesManager Instance;
 
+        private bool _gameoverCalled;
+
         void Awake()
         {
             Instance = this;
+            _gameoverCalled = false;
         }
 
         private void Start()
@@ -128,10 +132,13 @@ namespace WaveSystem
             {
                 Debug.LogError("Current wave does not exist.");
             }
-            else if (input > _wavesEditor._waveAmount)
+            if (_gameoverCalled) return;
+            
+            if (input > _wavesEditor._waveAmount)
             {
                 Debug.Log("Entering a wave above amount, calling game over");
                 CallGameOver();
+                _gameoverCalled = true;
             }
             else
             {
@@ -139,6 +146,7 @@ namespace WaveSystem
                 {
                     ClearEnemies();
                 }
+
                 OnNextWave?.Invoke(input);
             }
         }
@@ -153,6 +161,7 @@ namespace WaveSystem
         private void CallGameOver()
         {
             // the game has ended because the waves are done, handle this
+            _gameOverManager.OnGameOver?.Invoke(_gameOverManager._scoreKeeping._currentScore);
         }
 
         private void DoOnEnemyDeath(int pointValue, GameObject enemy)

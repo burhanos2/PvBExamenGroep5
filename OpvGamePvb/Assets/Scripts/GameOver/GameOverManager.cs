@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField]
-    private ScoreKeeping _scoreKeeping;
+    public ScoreKeeping _scoreKeeping;
     [SerializeField]
     private InputField _playernameInputField;
     private bool _highscoreBreached = false;
@@ -24,19 +23,10 @@ public class GameOverManager : MonoBehaviour
     
     private void Start()
     {
-        _highscoreBreached = _scoreKeeping._HighscoreBreached;
         _nameInputUI.SetActive(false);
         _scoreBoardUI.SetActive(false);
         OnGameOver += GameOverAction;
         UpdateScoreBoardText();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnGameOver?.Invoke(_scoreKeeping._currentScore);
-        }
     }
 
     private void GameOverAction(int score)
@@ -63,6 +53,7 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator Finish()
     {
+        _highscoreBreached = _scoreKeeping._HighscoreBreached;
         Time.timeScale = 0;
         if (_highscoreBreached)
         {

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gun/HeightMeter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gun/HeightMeter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameOverUI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameOverUI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gun/Ammo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gun/Ammo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/TestBrandon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/TestBrandon.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/InflatablePropBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -109,6 +111,9 @@
       <workItem from="1618396291067" duration="516000" />
       <workItem from="1618396994450" duration="21000" />
       <workItem from="1618397811265" duration="1318000" />
+      <workItem from="1618399859238" duration="240000" />
+      <workItem from="1618400252395" duration="1772000" />
+      <workItem from="1618402378157" duration="1916000" />
     </task>
     <servers />
   </component>
