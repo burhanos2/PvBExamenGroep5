@@ -4,7 +4,7 @@ using WaveSystem;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField, Range(2, 50)] private float _bulletSpeed = 2;
+    [SerializeField, Range(2, 100)] private float _bulletSpeed = 2;
     [SerializeField] private Rigidbody _bulletRb;
     [SerializeField] private int _hitBonus;
 

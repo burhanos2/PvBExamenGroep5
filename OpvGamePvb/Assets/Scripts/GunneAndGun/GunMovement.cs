@@ -15,11 +15,12 @@ public class GunMovement : MonoBehaviour
     private float powerMax = -53;
     private float powerMin = 26;
 
-    private float _maxHorizontal = 0.712f;
-    private float _minHorizontal = -0.712f;
+    //0.712 is ong 90 graden
+    private float _maxHorizontal = 0.9f;
+    private float _minHorizontal = -0.9f;
     
-    private float _maxVertical = 0.1f;
-    private float _minVertical = -0.195f;
+    private float _maxVertical = 0.05f;
+    private float _minVertical = -0.193f;
     
 
     public Action Shoot;
