@@ -217,13 +217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  minimalDivergentX: -20
-  maximumDivergentX: 20
-  minimalDivergentZ: 10
-  maximumDivergentZ: 20
+  minimalDivergent: -5
+  maximumDivergent: 5
   Player: {fileID: 0}
   _DistanceHeldToPlayer: 30
   WaitingTime: 20
+  _angle: 20
 --- !u!114 &-3439216482228350874
 MonoBehaviour:
   m_ObjectHideFlags: 0

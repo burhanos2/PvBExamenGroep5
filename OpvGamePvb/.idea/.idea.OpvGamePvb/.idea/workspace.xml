@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +25,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/InflatablePropBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -58,7 +57,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -78,13 +77,13 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="" />
+      <changelist id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="" />
       <created>1617013878244</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -112,11 +111,12 @@
       <workItem from="1618402378157" duration="1916000" />
       <workItem from="1618474235202" duration="10000" />
       <workItem from="1618474443114" duration="487000" />
+      <workItem from="1619003570095" duration="507000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -125,12 +125,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

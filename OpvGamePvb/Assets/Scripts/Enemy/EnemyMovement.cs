@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
 
 using Random = UnityEngine.Random;
-using Object = UnityEngine.Object;
 using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
@@ -31,14 +25,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float WaitingTime = 0;
 
+    [SerializeField] private float _angle = 20;
+    private Transform _posHelper;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        
         Player = GameObject.Find("BoatModol");
        playerMesh =  Player.GetComponent<MeshRenderer>();
         
+       _posHelper = new GameObject().transform;
+       
         position = transform.position;
         CalculateNewPosition();
     }
@@ -74,16 +72,18 @@ public class EnemyMovement : MonoBehaviour
 
     public void CalculateNewPosition()
     {   
-        position = transform.position;
         newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
+        float distance = Vector3.Distance(newPosition,playerMesh.bounds.center);
+        position = transform.position;
         
-        
-        if(Vector3.Distance(newPosition,playerMesh.bounds.center) <= _DistanceHeldToPlayer)
+        if(distance <= _DistanceHeldToPlayer)
         {
-            CalculateNewPosition();
+            _posHelper.position = transform.position;
+            _posHelper.RotateAround(Player.transform.position, Vector3.up, _angle);
+            newPosition = _posHelper.position;
         }
         else
-        {   
+        {
             
             ismoving = true;
         }
