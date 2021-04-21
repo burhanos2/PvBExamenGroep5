@@ -27,11 +27,13 @@ public class BulletBehaviour : MonoBehaviour
         if (transform.position == objectToMoveTo)
         {
             isActive = false;
+            this.gameObject.SetActive(false);
         }
     }
 
     public void SetActive(bool active)
-    {
+    {   
+        
         isActive = active;
     }
 
