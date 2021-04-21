@@ -10,9 +10,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergent = 0;
+    private int minimalDivergentX = 0;
     [SerializeField]
-    private int maximumDivergent = 0;
+    private int minimalDivergentZ;
+    [SerializeField]
+    private int maximumDivergentX = 0;
+    [SerializeField]
+    private int maximumDivergentZ;
     [SerializeField]
     private GameObject Player;
 
@@ -72,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void CalculateNewPosition()
     {   
-        newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
+        newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
         float distance = Vector3.Distance(newPosition,playerMesh.bounds.center);
         position = transform.position;
         

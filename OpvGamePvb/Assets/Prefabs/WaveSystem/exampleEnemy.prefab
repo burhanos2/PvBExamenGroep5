@@ -216,9 +216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a65872d9fdf07d42bb6fb34e0d0ffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  minimalDivergent: -5
-  maximumDivergent: 5
+  speed: 1
+  minimalDivergentX: 50
+  minimalDivergentZ: 20
+  maximumDivergentX: -50
+  maximumDivergentZ: 20
   Player: {fileID: 0}
   _DistanceHeldToPlayer: 30
   WaitingTime: 20
@@ -237,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bullet: {fileID: 1564083870876993927}
-  FireRate: 10
+  FireRate: 5
 --- !u!64 &4590802372066021735
 MeshCollider:
   m_ObjectHideFlags: 0
