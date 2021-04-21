@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
 
 using Random = UnityEngine.Random;
-using Object = UnityEngine.Object;
 using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
@@ -16,9 +10,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergent = 0;
+    private int minimalDivergentX = 0;
     [SerializeField]
-    private int maximumDivergent = 0;
+    private int minimalDivergentZ;
+    [SerializeField]
+    private int maximumDivergentX = 0;
+    [SerializeField]
+    private int maximumDivergentZ;
     [SerializeField]
     private GameObject Player;
 
@@ -31,14 +29,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float WaitingTime = 0;
 
+    [SerializeField] private float _angle = 20;
+    private Transform _posHelper;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        
         Player = GameObject.Find("BoatModol");
        playerMesh =  Player.GetComponent<MeshRenderer>();
         
+       _posHelper = new GameObject().transform;
+       
         position = transform.position;
         CalculateNewPosition();
     }
@@ -74,16 +76,18 @@ public class EnemyMovement : MonoBehaviour
 
     public void CalculateNewPosition()
     {   
+        newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
+        float distance = Vector3.Distance(newPosition,playerMesh.bounds.center);
         position = transform.position;
-        newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
         
-        
-        if(Vector3.Distance(newPosition,playerMesh.bounds.center) <= _DistanceHeldToPlayer)
+        if(distance <= _DistanceHeldToPlayer)
         {
-            CalculateNewPosition();
+            _posHelper.position = transform.position;
+            _posHelper.RotateAround(Player.transform.position, Vector3.up, _angle);
+            newPosition = _posHelper.position;
         }
         else
-        {   
+        {
             
             ismoving = true;
         }
