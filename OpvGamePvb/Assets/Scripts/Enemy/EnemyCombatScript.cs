@@ -11,9 +11,13 @@ public class EnemyCombatScript : MonoBehaviour
     [SerializeField] private GameObject bullet;
 
     private float timeBetweenFire;
+    
+    [SerializeField]
+    private float FireRate;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        player = GameObject.Find("BoatModol");
         movement = gameObject.GetComponent<EnemyMovement>();
         bullet.GetComponent<BulletBehaviour>().SetObjectToMoveTo(player.transform.position);
     }
@@ -24,8 +28,9 @@ public class EnemyCombatScript : MonoBehaviour
         if (movement == false)
         {
             timeBetweenFire += Time.deltaTime;
-            if (timeBetweenFire >= 10)
-            {
+            
+            if (timeBetweenFire >= FireRate)
+            {   bullet.SetActive(true);
                 bullet.GetComponent<BulletBehaviour>().SetActive(true);
                 
                 bullet.transform.position = transform.position;

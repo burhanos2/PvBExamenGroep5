@@ -22,6 +22,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 
+    private MeshRenderer playerMesh;
+    [SerializeField]
+    private float _DistanceHeldToPlayer = 0;
+
     private bool ismoving = false;
     private float waitingTimer = 0;
     [SerializeField]
@@ -31,6 +35,10 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        Player = GameObject.Find("BoatModol");
+       playerMesh =  Player.GetComponent<MeshRenderer>();
+        
         position = transform.position;
         CalculateNewPosition();
     }
@@ -70,7 +78,7 @@ public class EnemyMovement : MonoBehaviour
         newPosition = new Vector3(Random.Range(minimalDivergent, maximumDivergent),0,Random.Range(minimalDivergent, maximumDivergent));
         
         
-        if((newPosition.x <= Player.GetComponent<MeshRenderer>().bounds.size.x /2f )&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f) && ((newPosition.z <= Player.GetComponent<MeshRenderer>().bounds.size.z / 2f)&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f)))
+        if(Vector3.Distance(newPosition,playerMesh.bounds.center) <= _DistanceHeldToPlayer)
         {
             CalculateNewPosition();
         }

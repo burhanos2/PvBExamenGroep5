@@ -9,6 +9,19 @@ public class GunMovement : MonoBehaviour
     public GameObject gunObject;
     [SerializeField]
     public GameObject barrelObject; // anchorpoint!!!
+    [SerializeField]
+    private GameObject powerObject;
+
+    private float powerMax = -53;
+    private float powerMin = 26;
+
+    //0.712 is ong 90 graden
+    private float _maxHorizontal = 0.9f;
+    private float _minHorizontal = -0.9f;
+    
+    private float _maxVertical = 0.05f;
+    private float _minVertical = -0.193f;
+    
 
     public Action Shoot;
     
@@ -26,11 +39,11 @@ public class GunMovement : MonoBehaviour
 
     private void TurnHorizontal()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.RightArrow) && gunObject.transform.rotation.y <= _maxHorizontal || Input.GetKey(KeyCode.Mouse1))
         {
             gunObject.transform.Rotate(0 ,yAngle: + _gunRotateSpeed*Time.deltaTime ,0);
         } 
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetKey(KeyCode.LeftArrow) && gunObject.transform.rotation.y >= _minHorizontal || Input.GetKey(KeyCode.Mouse0))
         {
             gunObject.transform.Rotate(0 ,yAngle: - _gunRotateSpeed*Time.deltaTime ,0);
         }
@@ -38,13 +51,16 @@ public class GunMovement : MonoBehaviour
 
     private void TurnVertical()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Mouse ScrollWheel") > 0f)
+        var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
+        if (Input.GetKey(KeyCode.UpArrow) && barrelObject.transform.rotation.x <= _maxVertical || Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            barrelObject.transform.Rotate(+ _gunRotateSpeed*Time.deltaTime ,yAngle:0  ,0);
+            barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
         } 
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Mouse ScrollWheel") < 0f)
+        else if (Input.GetKey(KeyCode.DownArrow) && barrelObject.transform.rotation.x >= _minVertical || Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             barrelObject.transform.Rotate( - _gunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
         }
+        
+        powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
     }
 }
