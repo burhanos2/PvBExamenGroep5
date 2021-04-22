@@ -2066,6 +2066,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _switchingKey: 32
+  _attackKey: 9
+  _moveLeftKey: 276
+  _moveRightKey: 275
+  _moveUpKey: 273
+  _moveDownKey: 274
+  _attackKeyAlt: 325
+  _moveLeftKeyAlt: 323
+  _moveRightKeyAlt: 324
+  _scrollOffsetDown: 0
+  _scrollOffsetUp: 0
   _switchKeyDelayInSeconds: 0.55
 --- !u!1 &1716306701
 GameObject:
