@@ -9,6 +9,7 @@ namespace TransformToProp
         [SerializeField] private GameObject[] _inflatablePropArray;
         private WavesManager _wavesManager;
         [SerializeField] private GameObject _particleSystemPrefab;
+        [SerializeField] private float _spawnOffset;
         private void Start()
         {
             _wavesManager = GetComponent<WavesManager>();
@@ -30,7 +31,8 @@ namespace TransformToProp
         {
             var transform1 = whatToTransform.transform;
             var position = transform1.position;
-            Instantiate(prefabToBecome, position, transform1.rotation);
+            transform1.rotation = new Quaternion(transform.rotation.x, transform1.rotation.y + 180f, transform.rotation.z,transform1.rotation.w);
+            Instantiate(prefabToBecome, new Vector3(position.x,position.y + _spawnOffset, position.z), transform1.rotation);
             DoTransformationEffect(position);
             Destroy(whatToTransform);
         }
