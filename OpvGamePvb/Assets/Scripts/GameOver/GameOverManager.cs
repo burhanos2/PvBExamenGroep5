@@ -41,6 +41,7 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOverAction(int score)
     {
+        _scoreKeeping.UpdateScore(+0);
         StartCoroutine(Finish());
     }
 
@@ -63,6 +64,8 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator Finish()
     {
+        _highscoreBreached = _scoreKeeping._HighscoreBreached;
+        UpdateScoreBoardText();
         Time.timeScale = 0;
         if (_highscoreBreached)
         {

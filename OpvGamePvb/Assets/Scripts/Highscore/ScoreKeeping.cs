@@ -34,7 +34,7 @@ using UnityEngine.UI;
     {
         
         _currentScore += scoreAddition;
-        if (_HighScore < _currentScore)
+        if (_HighScore <= _currentScore)
         {
             
             PlayerPrefs.SetInt("Highscore" , _currentScore);
