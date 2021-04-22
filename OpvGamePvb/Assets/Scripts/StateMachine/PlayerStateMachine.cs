@@ -34,7 +34,18 @@ namespace StateMachine
 			Control.OnSwitchKey += SelectState;
 			
 			AddStates();
+			
+			LeaveAllStates(); //executing leave on every state first
+			
 			SetState((CharactersEnum)stateIndex); //sets default state
+		}
+
+		private void LeaveAllStates()
+		{
+			for (int i = 1; i <= statesDict.Count; i++)
+			{
+				statesDict[(CharactersEnum)i].Leave();
+			}
 		}
 
 		private void SelectState()

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,15 +26,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -109,6 +115,8 @@
       <workItem from="1619003570095" duration="507000" />
       <workItem from="1619004616274" duration="10000" />
       <workItem from="1619004821538" duration="677000" />
+      <workItem from="1619082613797" duration="649000" />
+      <workItem from="1619083325046" duration="43000" />
     </task>
     <servers />
   </component>

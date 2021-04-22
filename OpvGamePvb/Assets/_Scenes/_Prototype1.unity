@@ -411,6 +411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2577e139e52cbf4faeb0c667f762faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectsToEnable: []
+  _objectsToDisable: []
+  _gunMovement: {fileID: 208857765}
 --- !u!114 &208857765
 MonoBehaviour:
   m_ObjectHideFlags: 0
