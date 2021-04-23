@@ -39,29 +39,37 @@ public class GunMovement : MonoBehaviour
 
     private void TurnHorizontal(bool isRight)
     {
-        if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
-        {
-            gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+        if(this.enabled == true){
+            if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
+            {
+                gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
+            {
+                gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            
         }
-        else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
-        {
-            gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
-        }
+        
     }
 
     private void TurnVertical(bool isUp)
     {
-        var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
+        if (this.enabled == true)
+        {
+            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
 
-        if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
-        {
-            barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
-        }
-        else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
-        {
-            barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
+            {
+                barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+            else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
+            {
+                barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+        
+            powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
         }
         
-        powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
     }
 }
