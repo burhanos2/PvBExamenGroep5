@@ -42,6 +42,7 @@ public class GameOverManager : MonoBehaviour
         _displayScore = PlayerPrefs.GetInt("Highscore");
         _displayString = "Naam: " + _displayName + "\n" + "Score: " + _displayScore;
         _scoreboardHighscoreName.text = _displayString;
+        _highscoreBreached = _scoreKeeping._HighscoreBreached;
     }
     
     public void SavePlayerName()
@@ -53,7 +54,7 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator Finish()
     {
-        _highscoreBreached = _scoreKeeping._HighscoreBreached;
+        UpdateScoreBoardText();
         Time.timeScale = 0;
         if (_highscoreBreached)
         {
