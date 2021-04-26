@@ -8,9 +8,11 @@ public class BulletBehaviour : MonoBehaviour
     private Vector3 objectToMoveTo;
     [SerializeField]private float speed;
     
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         gameObject.SetActive(false);
         
     }
@@ -25,8 +27,9 @@ public class BulletBehaviour : MonoBehaviour
         }
 
         if (transform.position == objectToMoveTo)
-        {
+        {   PointInput.Instance.ResetMultiplier();
             isActive = false;
+            
             this.gameObject.SetActive(false);
         }
     }
