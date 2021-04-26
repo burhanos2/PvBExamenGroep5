@@ -14,6 +14,7 @@ public class PlayerBullet : MonoBehaviour
     private GameObject _landingPlace;
     
     
+    
     private void Start()
     {
         _landingPlace = GameObject.Find("LandingPlace");
