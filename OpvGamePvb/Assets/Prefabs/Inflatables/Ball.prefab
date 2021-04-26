@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8260157966114735610}
   - component: {fileID: 4975952514146814559}
   - component: {fileID: 7127743810770976405}
+  - component: {fileID: 6638020190559572804}
+  - component: {fileID: 6563235987586063574}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: InflatableProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6638020190559572804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784879427190366016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bda7c36d8ae60489a283f7434f8c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _secondsToDestruction: 3
+  _target: {fileID: 8784879427190366016}
+--- !u!114 &6563235987586063574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784879427190366016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4495ffbee067fb429e8093611721679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,8 +7,8 @@ using UnityEngine.UI;
     private Text _currentScoreText;
     [SerializeField]
     private Text _HighScoreText;
-    private int _currentScore = 0;
-    private bool _HighscoreBreached = false;
+    public int _currentScore = 0;
+    public bool _HighscoreBreached = false;
 
     private int _HighScore = 0;
     // Start is called before the first frame update

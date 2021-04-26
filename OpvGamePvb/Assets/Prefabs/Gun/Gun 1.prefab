@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6665758262978586944}
   m_Layer: 0
   m_Name: BarrelObject
-  m_TagString: BarrelBegin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   _gunRotateSpeed: 4
   gunObject: {fileID: 6665758263214322002}
   barrelObject: {fileID: 6665758262978586947}
+  powerObject: {fileID: 0}
 --- !u!1 &6665758263754740824
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ GameObject:
   - component: {fileID: 6665758263754740802}
   m_Layer: 0
   m_Name: GunBarrel
-  m_TagString: Untagged
+  m_TagString: BarrelBegin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

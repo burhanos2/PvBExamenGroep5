@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="">
+    <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShipRelated/Pirate_Ship_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Marlin_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Water.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Water.shadergraph" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,16 +25,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -52,6 +57,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -80,7 +88,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcb51e74-12f7-4019-89cb-e9d04ebb51d1" name="Default Changelist" comment="" />
+      <changelist id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="" />
       <created>1617013878244</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -96,6 +104,24 @@
       <workItem from="1617961132631" duration="37000" />
       <workItem from="1617961243259" duration="2380000" />
       <workItem from="1618213018691" duration="3087000" />
+      <workItem from="1618323009947" duration="876000" />
+      <workItem from="1618347188220" duration="1080000" />
+      <workItem from="1618348354765" duration="2971000" />
+      <workItem from="1618396042861" duration="5000" />
+      <workItem from="1618396291067" duration="516000" />
+      <workItem from="1618396994450" duration="21000" />
+      <workItem from="1618397811265" duration="1318000" />
+      <workItem from="1618399859238" duration="240000" />
+      <workItem from="1618400252395" duration="1772000" />
+      <workItem from="1618402378157" duration="1916000" />
+      <workItem from="1618474235202" duration="10000" />
+      <workItem from="1618474443114" duration="487000" />
+      <workItem from="1619003570095" duration="507000" />
+      <workItem from="1619004616274" duration="10000" />
+      <workItem from="1619004821538" duration="677000" />
+      <workItem from="1619082613797" duration="649000" />
+      <workItem from="1619083325046" duration="43000" />
+      <workItem from="1619168390323" duration="3525000" />
     </task>
     <servers />
   </component>

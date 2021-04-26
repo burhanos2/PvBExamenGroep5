@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6337895146396658365}
   - component: {fileID: 6943250569384043800}
   - component: {fileID: 5170016730037801426}
+  - component: {fileID: -4054254019969838461}
+  - component: {fileID: -8129366509895770276}
   m_Layer: 0
   m_Name: Flamingo
-  m_TagString: Untagged
+  m_TagString: InflatableProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-4054254019969838461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6683177619314536455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bda7c36d8ae60489a283f7434f8c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _secondsToDestruction: 3
+  _target: {fileID: 6683177619314536455}
+--- !u!114 &-8129366509895770276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6683177619314536455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4495ffbee067fb429e8093611721679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

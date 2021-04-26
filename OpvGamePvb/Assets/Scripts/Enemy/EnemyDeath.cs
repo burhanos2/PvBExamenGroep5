@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyDeath : MonoBehaviour
-{
+{   
+    [SerializeField]
     private string enemyObjectTag;
-    private string MeshPath;
+    [SerializeField]
+    private List<GameObject> inflatables;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +22,15 @@ public class EnemyDeath : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hit");
         if (other.transform.tag == enemyObjectTag)
         {
-            gameObject.GetComponent<MeshFilter>().mesh = Resources.Load(MeshPath) as Mesh;
+            int randomNumber = Random.Range(0, inflatables.Count);
+            Instantiate(inflatables[randomNumber],transform.position,transform.rotation);
+            Debug.Log("hit");
+            Destroy(this.gameObject);
         }
     }
 }
