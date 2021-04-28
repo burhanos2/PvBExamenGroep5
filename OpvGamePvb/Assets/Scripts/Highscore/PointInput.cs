@@ -31,13 +31,20 @@ public class PointInput : MonoBehaviour
 
     public void AddMultiplier(int newMultiplier)
     {
-        if (_pointMultiplier > 20)
+        if (_pointMultiplier < 20)
+        {
             _pointMultiplier += newMultiplier;
+        
+        }
+            
+        
+        
     }
 
     public void ResetMultiplier()
     {
         if (_pointMultiplier != 1)
             _pointMultiplier--;
+        
     }
 }

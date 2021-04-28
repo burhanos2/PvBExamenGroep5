@@ -34,7 +34,7 @@ public class EnemyCombatScript : MonoBehaviour
     {
         if (movement.getMovementStatus() == false && Vector3.Distance(transform.position,_renderer.bounds.center) < _minimalDistanceToEnemy)
         {
-            Debug.Log("hit");
+           
             timeBetweenFire += Time.deltaTime;
             
             if (timeBetweenFire >= FireRate)
