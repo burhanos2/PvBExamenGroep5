@@ -98,14 +98,6 @@ namespace WaveSystem
             _enemiesDeployedThisWave++;
             
             //end routine
-            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
-            {
-                _currentSpawnAreaIndex = 0;
-            }
-            else
-            {
-                _currentSpawnAreaIndex++;
-            }
         }
         private void GetEnemyLimit(int wave)
         {
@@ -138,6 +130,14 @@ namespace WaveSystem
             _enemiesDeployedThisWave = 0;
             GetEnemyLimit(newWave);
             _currentWave = newWave;
+            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
+            {
+                _currentSpawnAreaIndex = 0;
+            }
+            else
+            {
+                _currentSpawnAreaIndex++;
+            }
         }
         
         private void CallGameOver()
