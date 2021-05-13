@@ -29,6 +29,8 @@ namespace WaveSystem
         private bool _allowSpawning;
         public GameObject _enemyObjectToSpawn;
 
+        [SerializeField] private float _defaultWaitTimeInSeconds = 1f;
+
         private void Start()
         {
             _wavesEditor = GetComponent<WavesEditor>();
@@ -54,9 +56,7 @@ namespace WaveSystem
             else if(_allowSpawning)
             {
                 _allowSpawning = false;
-                SpawnEnemy();
-                //add a wait here?
-                _allowSpawning = true;
+                Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
             }
         }
 
@@ -98,6 +98,7 @@ namespace WaveSystem
             _enemiesDeployedThisWave++;
             
             //end routine
+            _allowSpawning = true;
         }
         private void GetEnemyLimit(int wave)
         {
