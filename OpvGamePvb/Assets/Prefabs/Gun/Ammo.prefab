@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -835806668858898568}
   m_Layer: 0
   m_Name: Ammo
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4985c5464ac448447b85f6c5af180ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletSpeed: 35
   _bulletRb: {fileID: -835806668858898568}
-  _bulletSpeed: 10
+  _hitBonus: 0
 --- !u!54 &-835806668858898568
 Rigidbody:
   m_ObjectHideFlags: 0
