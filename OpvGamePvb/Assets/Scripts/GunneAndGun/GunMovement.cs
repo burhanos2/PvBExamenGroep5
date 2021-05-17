@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GunMovement : MonoBehaviour
@@ -21,6 +23,10 @@ public class GunMovement : MonoBehaviour
     private float _maxVertical = 0.6f;
     private float _minVertical = 0.1f;
     
+    [SerializeField]
+    private float _waitingtime = 2;
+    private bool _shootable = true;
+    
 
     public Action Shoot;
     
@@ -30,9 +36,11 @@ public class GunMovement : MonoBehaviour
         
         TurnVertical();
         
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Tab) && _shootable || Input.GetKeyDown(KeyCode.Mouse2))
         {
             Shoot?.Invoke();
+            StartCoroutine(inputDelay());
+
         }
     }
 
@@ -61,5 +69,16 @@ public class GunMovement : MonoBehaviour
         }
         
         powerObject.transform.localPosition = new Vector3(-175.2f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
+    }
+
+    private IEnumerator inputDelay()
+    {
+        _shootable = false;
+
+        yield return new WaitForSeconds(_waitingtime);
+
+        _shootable = true;
+        
+        yield return null;
     }
 }

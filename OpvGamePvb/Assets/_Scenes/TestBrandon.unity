@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 1033857897}
   - component: {fileID: 1033857896}
   - component: {fileID: 1033857895}
+  - component: {fileID: 1033857898}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -559,6 +560,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033857898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033857894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43521507380ce9641a1d79e9a4a30c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1162553905
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,5 +972,10 @@ PrefabInstance:
       propertyPath: powerObject
       value: 
       objectReference: {fileID: 262899020}
+    - target: {fileID: 6665758263754740802, guid: d14f95b51105ed04fb8d88acb9af5c51,
+        type: 3}
+      propertyPath: _cameraShake
+      value: 
+      objectReference: {fileID: 1033857898}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d14f95b51105ed04fb8d88acb9af5c51, type: 3}

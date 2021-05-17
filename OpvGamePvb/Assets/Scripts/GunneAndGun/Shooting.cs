@@ -4,6 +4,9 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField]
+    private CameraShake _cameraShake; // throw camera here in the editor (after you've added camerashake to camera)
+    
+    [SerializeField]
     private GunMovement _gunMovement;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class Shooting : MonoBehaviour
     private void Blast()
     {
         StartCoroutine(Shoot());
+        StartCoroutine(_cameraShake.CamShake(0.15f, 0.2f));
     }
 
     private IEnumerator Shoot()
