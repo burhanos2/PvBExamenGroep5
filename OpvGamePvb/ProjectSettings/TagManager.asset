@@ -13,6 +13,7 @@ TagManager:
   - SpawnArea
   - Bullet
   - InflatableProp
+  - EnemyPlayArea
   layers:
   - Default
   - TransparentFX

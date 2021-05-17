@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\User\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\User\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.1902848328.00" t="ExcludeRecursive" />
-    <e p="C:\Users\User\OneDrive\Documenten\ma\PVB\PvBExamenGroep5\Game\OpvGamePvb" t="IncludeRecursive">
+    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.406434441.00" t="ExcludeRecursive" />
+    <e p="D:\ma\bewijzenmap\periode 4.3\exam\examenmapje\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -19,6 +19,9 @@
             <e p="EnemyCombatScript.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
+            <e p="PlayArea" t="Include">
+              <e p="EnemyPlayAreaManager.cs" t="Include" />
+            </e>
           </e>
           <e p="GameOver" t="Include">
             <e p="GameOverManager.cs" t="Include" />
