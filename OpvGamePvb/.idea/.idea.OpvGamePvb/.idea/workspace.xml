@@ -29,19 +29,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/OnParticleEnd.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" />

@@ -29,7 +29,7 @@ namespace StateMachine
 			mainCamera = Camera.main;
 			eyelidObject = GameObject.Find("Camera_Eyelids");
 			blinkAnimator = eyelidObject.GetComponent<Animator>();
-			
+ 
 			eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
 			Control.OnSwitchKey += SelectState;
 			

@@ -30,6 +30,7 @@ namespace WaveSystem
         private bool _allowSpawning;
         public GameObject _enemyObjectToSpawn;
 
+        [SerializeField] private float _defaultWaitTimeInSeconds = 1f;
         public static WavesManager Instance;
 
         private bool _gameoverCalled;
@@ -65,9 +66,7 @@ namespace WaveSystem
             else if(_allowSpawning)
             {
                 _allowSpawning = false;
-                SpawnEnemy();
-                //add a wait here?
-                _allowSpawning = true;
+                Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
             }
         }
 
@@ -112,14 +111,7 @@ namespace WaveSystem
             Radar.Instance.AddEnemy(_currentLiveEnemies[_currentLiveEnemies.Count-1].transform);
             
             //end routine
-            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
-            {
-                _currentSpawnAreaIndex = 0;
-            }
-            else
-            {
-                _currentSpawnAreaIndex++;
-            }
+            _allowSpawning = true;
         }
         private void GetEnemyLimit(int wave)
         {
@@ -156,6 +148,14 @@ namespace WaveSystem
             _enemiesDeployedThisWave = 0;
             GetEnemyLimit(newWave);
             _currentWave = newWave;
+            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
+            {
+                _currentSpawnAreaIndex = 0;
+            }
+            else
+            {
+                _currentSpawnAreaIndex++;
+            }
         }
         
         private void CallGameOver()
