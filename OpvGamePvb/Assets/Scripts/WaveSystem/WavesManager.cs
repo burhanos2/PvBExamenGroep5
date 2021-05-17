@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using WaveSystem.Waves;
 using Random = UnityEngine.Random;
 
 namespace WaveSystem
@@ -35,6 +36,11 @@ namespace WaveSystem
 
         private bool _gameoverCalled;
 
+        private EnemyPlayAreaManager _enemyPlayAreaManager;
+        private CustomWave[] _customWaves;
+        private int _currentEnemyPlayAreaIndex;
+        public Vector4 GetCurrentPlayArea => _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
+
         void Awake()
         {
             Instance = this;
@@ -47,7 +53,10 @@ namespace WaveSystem
             _spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
             _currentSpawnAreaIndex = 0;
             _allowSpawning = true;
-
+            _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
+            _customWaves = _wavesEditor._customWaves;
+            _currentEnemyPlayAreaIndex = _customWaves[_currentWave]._playAreaToSpawnIndex;
+            
             OnNextWave += DoOnNextWave;
             OnEnemyDeath += DoOnEnemyDeath;
 
@@ -156,6 +165,7 @@ namespace WaveSystem
             {
                 _currentSpawnAreaIndex++;
             }
+            _currentEnemyPlayAreaIndex = _customWaves[newWave]._playAreaToSpawnIndex;
         }
         
         private void CallGameOver()
