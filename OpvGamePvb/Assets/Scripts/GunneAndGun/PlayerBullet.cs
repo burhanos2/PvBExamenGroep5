@@ -12,6 +12,9 @@ public class PlayerBullet : MonoBehaviour
     private GameObject _barrelEnd;
     private GameObject _barrelBegin;
     private GameObject _landingPlace;
+    [SerializeField]
+    private GameObject _particle;
+    
     
     
     
@@ -20,6 +23,7 @@ public class PlayerBullet : MonoBehaviour
         _landingPlace = GameObject.Find("LandingPlace");
         _barrelEnd = GameObject.FindWithTag("BarrelEnd");
         _barrelBegin = GameObject.FindWithTag("BarrelBegin");
+        Instantiate(_particle,_barrelEnd.transform.position,Quaternion.identity);
         Vector3 direction = (_barrelEnd.transform.position - _barrelBegin.transform.position).normalized;
         _bulletRb.velocity = (direction * _bulletSpeed);
     }

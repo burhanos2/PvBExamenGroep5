@@ -110,6 +110,8 @@ MonoBehaviour:
   _bulletSpeed: 35
   _bulletRb: {fileID: -835806668858898568}
   _hitBonus: 0
+  _particle: {fileID: 5856626703862819464, guid: f0cfbf3fe27dcd84a8ca88a0d6b4a50d,
+    type: 3}
 --- !u!54 &-835806668858898568
 Rigidbody:
   m_ObjectHideFlags: 0
