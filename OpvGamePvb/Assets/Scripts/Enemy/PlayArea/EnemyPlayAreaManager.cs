@@ -55,4 +55,22 @@ public class EnemyPlayAreaManager : MonoBehaviour
         var fin = new Vector4(closestBounds.min.x, closestBounds.max.x, closestBounds.min.z, closestBounds.max.z);
         return fin;
     }
+
+    /// <summary>
+    /// returns a vector 4 of bounds (x MIN, x MAX, z MIN, z MAX) IF the object is tagged as a play area
+    /// </summary>
+    /// <param name="playAreaObj">get the area closest to point</param>
+    /// <returns>returns a vector 4 of bounds (x MIN, x MAX, z MIN, z MAX)</returns>
+    public Vector4 GetBoundsIfPlayArea(GameObject playAreaObj)
+    {
+        if (playAreaObj.CompareTag("EnemyPlayArea"))
+        {
+            var bounds = playAreaObj.GetComponent<Renderer>().bounds;
+            var fin = new Vector4(bounds.min.x, bounds.max.x, bounds.min.z, bounds.max.z);
+            return fin;
+        }
+
+        Debug.LogError("Object is not tagged as play area");
+        return Vector4.zero;
+    }
 }
