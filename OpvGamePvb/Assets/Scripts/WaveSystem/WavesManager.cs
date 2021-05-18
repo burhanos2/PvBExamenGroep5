@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using WaveSystem.Waves;
 using Random = UnityEngine.Random;
 
@@ -43,7 +43,10 @@ namespace WaveSystem
         public Vector4 GetCurrentPlayArea {
             get
             {
-                if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea != null)
+                if (_customWaves.Length != 0 &&
+                    _customWaves.Length >= _currentWave &&
+                    _customWaves[_currentWave - 1]?._playArea != null
+                    )
                 {
                     return _enemyPlayAreaManager.GetBoundsIfPlayArea(_customWaves[_currentWave - 1]?._playArea);
                 }
@@ -86,20 +89,28 @@ namespace WaveSystem
             else if(_allowSpawning)
             {
                 _allowSpawning = false;
-                Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+                
+                if (EnemyHasCustomTimer())
+                {
+                    var enemyWaitInSeconds = _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].y;
+                    Invoke("SpawnEnemy", enemyWaitInSeconds);
+                }
+                else
+                {
+                    Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+                }
             }
+        }
+
+        private bool EnemyHasCustomTimer()
+        {
+            return _customWaves.Length >= _currentWave 
+                   && _customWaves[_currentWave - 1]._enemyAndSpawnTimer.Length >= _enemiesDeployedThisWave + 1;
         }
 
         private void CheckCustomWave(int waveToCheck)
         {
-            if (_customWaves.Length >= waveToCheck + 1)
-            {
-                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaToSpawnIndex;
-            }
-            else
-            {
-                _currentSpawnAreaIndex = Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
-            }
+            _currentEnemyPlayAreaIndex = _customWaves.Length >= waveToCheck ? _customWaves[waveToCheck - 1]._playAreaToSpawnIndex : Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
         }
 
         private void SpawnEnemy()
