@@ -39,7 +39,14 @@ namespace WaveSystem
         private EnemyPlayAreaManager _enemyPlayAreaManager;
         private CustomWave[] _customWaves;
         private int _currentEnemyPlayAreaIndex;
-        public Vector4 GetCurrentPlayArea => _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
+        public Vector4 GetCurrentPlayArea
+        {
+            get
+            {
+                var obj = _customWaves[_currentWave]._playArea;
+                return obj != null ? _enemyPlayAreaManager.GetBoundsIfPlayArea(obj) : _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
+            }
+        }
 
         void Awake()
         {

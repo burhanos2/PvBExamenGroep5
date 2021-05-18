@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/CustomWave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/CustomWave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/PlayAreaTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/PlayAreaTest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +37,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/CustomWave.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/CustomWave.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -62,6 +60,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -131,6 +130,7 @@
       <workItem from="1621282702930" duration="16000" />
       <workItem from="1621282829324" duration="252000" />
       <workItem from="1621283172967" duration="2386000" />
+      <workItem from="1621336611771" duration="839000" />
     </task>
     <servers />
   </component>
