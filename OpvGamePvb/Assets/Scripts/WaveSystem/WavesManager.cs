@@ -39,15 +39,18 @@ namespace WaveSystem
         private EnemyPlayAreaManager _enemyPlayAreaManager;
         private CustomWave[] _customWaves;
         private int _currentEnemyPlayAreaIndex;
-        public Vector4 GetCurrentPlayArea
-        {
+
+        public Vector4 GetCurrentPlayArea {
             get
             {
-                var obj = _customWaves[_currentWave]._playArea;
-                return obj != null ? _enemyPlayAreaManager.GetBoundsIfPlayArea(obj) : _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
+                if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea == null)
+                {
+                    return _enemyPlayAreaManager.GetBoundsIfPlayArea(_customWaves[_currentWave - 1]?._playArea);
+                }
+                return _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
             }
         }
-
+        //bool GameRunning = false;
         void Awake()
         {
             Instance = this;
@@ -62,7 +65,7 @@ namespace WaveSystem
             _allowSpawning = true;
             _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
             _customWaves = _wavesEditor._customWaves;
-            _currentEnemyPlayAreaIndex = _customWaves[_currentWave]._playAreaToSpawnIndex;
+            CheckCustomWave(_currentWave);
             
             OnNextWave += DoOnNextWave;
             OnEnemyDeath += DoOnEnemyDeath;
@@ -71,7 +74,8 @@ namespace WaveSystem
         }
 
         private void Update()
-        {
+        {   
+            //if(GameRunning)
             if (_enemiesDeployedThisWave >= _currentEnemyLimit) // have all enemies been deployed?
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?
@@ -83,6 +87,18 @@ namespace WaveSystem
             {
                 _allowSpawning = false;
                 Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+            }
+        }
+
+        private void CheckCustomWave(int waveToCheck)
+        {
+            if (_customWaves.Length >= waveToCheck +1f)
+            {
+                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck]._playAreaToSpawnIndex;
+            }
+            else
+            {
+                _currentSpawnAreaIndex = Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
             }
         }
 
@@ -172,7 +188,7 @@ namespace WaveSystem
             {
                 _currentSpawnAreaIndex++;
             }
-            _currentEnemyPlayAreaIndex = _customWaves[newWave]._playAreaToSpawnIndex;
+            CheckCustomWave(newWave);
         }
         
         private void CallGameOver()
