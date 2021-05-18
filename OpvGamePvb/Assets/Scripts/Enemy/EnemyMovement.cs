@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using WaveSystem;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -32,10 +32,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _angle = 20;
     private Transform _posHelper;
 
+    private Vector4 myPlayBounds;
     
     // Start is called before the first frame update
     void Start()
     {
+        myPlayBounds = WavesManager.Instance.GetCurrentPlayArea;
         Player = GameObject.Find("BoatModol");
        playerMesh =  Player.GetComponent<MeshRenderer>();
         

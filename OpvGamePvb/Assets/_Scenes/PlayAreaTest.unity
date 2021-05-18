@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -135,6 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectsToEnable: []
   _objectsToDisable: []
+  camera: {fileID: 0}
+  valSetter: {fileID: 0}
 --- !u!1 &60370553
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +434,8 @@ MonoBehaviour:
   - {fileID: 973966017}
   - {fileID: 530165179}
   _gunMovement: {fileID: 208857765}
+  camera: {fileID: 0}
+  valSetter: {fileID: 0}
 --- !u!114 &208857765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +661,7 @@ MonoBehaviour:
   _gameOverManager: {fileID: 1084396066}
   _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 32ab8f12bbc5eb24ea553289c9219caf,
     type: 3}
+  _defaultWaitTimeInSeconds: 1
 --- !u!114 &450666896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +677,7 @@ MonoBehaviour:
   _waveAmount: 8
   _enemiesPerWave: 0500000006000000070000000700000008000000080000000800000009000000
   _enemySpawners: []
+  _customWaves: []
 --- !u!114 &450666897
 MonoBehaviour:
   m_ObjectHideFlags: 0
