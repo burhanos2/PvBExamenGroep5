@@ -43,7 +43,7 @@ namespace WaveSystem
         public Vector4 GetCurrentPlayArea {
             get
             {
-                if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea == null)
+                if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea != null)
                 {
                     return _enemyPlayAreaManager.GetBoundsIfPlayArea(_customWaves[_currentWave - 1]?._playArea);
                 }
@@ -92,9 +92,9 @@ namespace WaveSystem
 
         private void CheckCustomWave(int waveToCheck)
         {
-            if (_customWaves.Length >= waveToCheck +1f)
+            if (_customWaves.Length >= waveToCheck + 1)
             {
-                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck]._playAreaToSpawnIndex;
+                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaToSpawnIndex;
             }
             else
             {
