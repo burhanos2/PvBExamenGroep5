@@ -29,11 +29,23 @@ namespace StateMachine
 			mainCamera = Camera.main;
 			eyelidObject = GameObject.Find("Camera_Eyelids");
 			blinkAnimator = eyelidObject.GetComponent<Animator>();
-			Action OnBlind = eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
+ 
+			eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
 			Control.OnSwitchKey += SelectState;
 			
 			AddStates();
+			
+			LeaveAllStates(); //executing leave on every state first
+			
 			SetState((CharactersEnum)stateIndex); //sets default state
+		}
+
+		private void LeaveAllStates()
+		{
+			for (int i = 1; i <= statesDict.Count; i++)
+			{
+				statesDict[(CharactersEnum)i].Leave();
+			}
 		}
 
 		private void SelectState()

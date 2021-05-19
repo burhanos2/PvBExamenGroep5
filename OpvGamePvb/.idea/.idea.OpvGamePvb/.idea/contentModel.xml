@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\brand\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\brand\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.642306705.00" t="ExcludeRecursive" />
-    <e p="E:\Examen\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
+    <e p="C:\Users\piete\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\piete\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.2008478842.00" t="ExcludeRecursive" />
+    <e p="D:\documents\ma\bewijsmap\periode4.4\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -19,6 +19,12 @@
             <e p="EnemyCombatScript.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
+            <e p="PlayArea" t="Include">
+              <e p="EnemyPlayAreaManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GameOver" t="Include">
+            <e p="GameOverManager.cs" t="Include" />
           </e>
           <e p="GunneAndGun" t="Include">
             <e p="CameraShake.cs" t="Include" />
@@ -26,9 +32,15 @@
             <e p="PlayerBullet.cs" t="Include" />
             <e p="Shooting.cs" t="Include" />
           </e>
+          <e p="Highscore" t="Include">
+            <e p="PointInput.cs" t="Include" />
+            <e p="ScoreKeeping.cs" t="Include" />
+          </e>
+          <e p="KeepScale.cs" t="Include" />
           <e p="LifeHacks" t="Include">
             <e p="DestroyAfterSeconds.cs" t="Include" />
           </e>
+          <e p="OnParticleEnd.cs" t="Include" />
           <e p="Radar" t="Include">
             <e p="Radar.cs" t="Include" />
           </e>
@@ -39,6 +51,26 @@
           </e>
           <e p="TestScripts" t="Include">
             <e p="SimpleAnimationTrigger.cs" t="Include" />
+          </e>
+          <e p="TransformToProp" t="Include">
+            <e p="EnemyTransformer.cs" t="Include" />
+            <e p="InflatablePropBehaviour.cs" t="Include" />
+          </e>
+          <e p="WaveSystem" t="Include">
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="Waves" t="Include">
+              <e p="CustomWave.cs" t="Include" />
+              <e p="Wave1.cs" t="Include" />
+              <e p="Wave2.cs" t="Include" />
+              <e p="Wave3.cs" t="Include" />
+              <e p="Wave4.cs" t="Include" />
+              <e p="Wave5.cs" t="Include" />
+              <e p="Wave6.cs" t="Include" />
+              <e p="Wave7.cs" t="Include" />
+              <e p="Wave8.cs" t="Include" />
+            </e>
+            <e p="WavesEditor.cs" t="Include" />
+            <e p="WavesManager.cs" t="Include" />
           </e>
         </e>
       </e>

@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
+using System;
+using WaveSystem;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody _bulletRb;
-    [SerializeField, Range(2, 50)]
-    private float _bulletSpeed = 2;
+    [SerializeField, Range(2, 100)] private float _bulletSpeed = 2;
+    [SerializeField] private Rigidbody _bulletRb;
+    [SerializeField] private int _hitBonus;
+
     
     private GameObject _barrelEnd;
     private GameObject _barrelBegin;
     private GameObject _landingPlace;
+    [SerializeField]
+    private GameObject _particle;
+    
+    
     
     
     private void Start()
@@ -17,6 +23,7 @@ public class PlayerBullet : MonoBehaviour
         _landingPlace = GameObject.Find("LandingPlace");
         _barrelEnd = GameObject.FindWithTag("BarrelEnd");
         _barrelBegin = GameObject.FindWithTag("BarrelBegin");
+        Instantiate(_particle,_barrelEnd.transform.position,Quaternion.identity);
         Vector3 direction = (_barrelEnd.transform.position - _barrelBegin.transform.position).normalized;
         _bulletRb.velocity = (direction * _bulletSpeed);
     }
@@ -26,8 +33,12 @@ public class PlayerBullet : MonoBehaviour
         switch (other.tag)
         {
             case "EnemyShip": DeleteBullet();
+                //Destroy(other.gameObject);
+                PointInput.Instance.AddMultiplier(1);
+                WavesManager.Instance.OnEnemyDeath.Invoke(1,other.gameObject);
                 break;
             case "Wataa": DeleteBullet();
+                PointInput.Instance.ResetMultiplier();
                 break;
         }
     }

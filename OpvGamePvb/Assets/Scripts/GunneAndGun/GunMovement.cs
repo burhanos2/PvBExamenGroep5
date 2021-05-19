@@ -14,14 +14,15 @@ public class GunMovement : MonoBehaviour
     [SerializeField]
     private GameObject powerObject;
 
-    private float powerMax = 113;
-    private float powerMin = -113;
+    private float powerMax = -53;
+    private float powerMin = 26;
 
-    private float _maxHorizontal = 0.712f;
-    private float _minHorizontal = -0.712f;
+    //0.712 is ong 90 graden
+    private float _maxHorizontal = 0.9f;
+    private float _minHorizontal = -0.9f;
     
-    private float _maxVertical = 0.6f;
-    private float _minVertical = 0.1f;
+    private float _maxVertical = 0.05f;
+    private float _minVertical = -0.193f;
     
     [SerializeField]
     private float _waitingtime = 2;
@@ -30,45 +31,52 @@ public class GunMovement : MonoBehaviour
 
     public Action Shoot;
     
-    private void Update()
+    private void Start()
     {
-        TurnHorizontal();
-        
-        TurnVertical();
-        
-        if (Input.GetKeyDown(KeyCode.Tab) && _shootable || Input.GetKeyDown(KeyCode.Mouse2) && _shootable)
-        {
-            Shoot?.Invoke();
-            StartCoroutine(inputDelay());
-
-        }
+        Control.OnAttackKeys += InvokeShoot;
+        Control.OnHorizontalMoveKeys += TurnHorizontal;
+        Control.OnVerticalMoveKeys += TurnVertical;
     }
 
-    private void TurnHorizontal()
+    private void InvokeShoot()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && gunObject.transform.rotation.y <= _maxHorizontal || Input.GetKey(KeyCode.Mouse1) && gunObject.transform.rotation.y <= _maxHorizontal)
-        {
-            gunObject.transform.Rotate(0 ,yAngle: + _gunRotateSpeed*Time.deltaTime ,0);
-        } 
-        else if (Input.GetKey(KeyCode.LeftArrow) && gunObject.transform.rotation.y >= _minHorizontal || Input.GetKey(KeyCode.Mouse0) && gunObject.transform.rotation.y >= _minHorizontal)
-        {
-            gunObject.transform.Rotate(0 ,yAngle: - _gunRotateSpeed*Time.deltaTime ,0);
-        }
+        Shoot?.Invoke();
     }
 
-    private void TurnVertical()
+    private void TurnHorizontal(bool isRight)
     {
-        var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
-        if (Input.GetKey(KeyCode.UpArrow) && barrelObject.transform.rotation.x <= _maxVertical || Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
-            barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
-        } 
-        else if (Input.GetKey(KeyCode.DownArrow) && barrelObject.transform.rotation.x >= _minVertical || Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            barrelObject.transform.Rotate( - _gunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
+        if(this.enabled == true){
+            if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
+            {
+                gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
+            {
+                gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            
         }
         
-        powerObject.transform.localPosition = new Vector3(-175.2f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
+    }
+
+    private void TurnVertical(bool isUp)
+    {
+        if (this.enabled == true)
+        {
+            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
+
+            if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
+            {
+                barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+            else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
+            {
+                barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+        
+            powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
+        }
+        
     }
 
     private IEnumerator inputDelay()
