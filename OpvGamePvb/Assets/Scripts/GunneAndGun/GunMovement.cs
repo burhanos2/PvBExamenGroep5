@@ -36,7 +36,7 @@ public class GunMovement : MonoBehaviour
         
         TurnVertical();
         
-        if (Input.GetKeyDown(KeyCode.Tab) && _shootable || Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Tab) && _shootable || Input.GetKeyDown(KeyCode.Mouse2) && _shootable)
         {
             Shoot?.Invoke();
             StartCoroutine(inputDelay());
