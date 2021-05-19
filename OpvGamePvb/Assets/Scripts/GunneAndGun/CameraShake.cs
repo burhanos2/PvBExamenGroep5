@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    [SerializeField]
+    private float RandomMin = -1;
+    [SerializeField]
+    private float RandomMax = 1;
+    
     public IEnumerator CamShake (float duration, float magnitude)
     {
         Vector3 originalPos = transform.localPosition;
@@ -14,8 +19,8 @@ public class CameraShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float shakex = Random.Range(-1f, 1f) * magnitude;
-            float shakey = Random.Range(-1f, 1f) * magnitude;
+            float shakex = Random.Range(RandomMin, RandomMax) * magnitude;
+            float shakey = Random.Range(RandomMin, RandomMax) * magnitude;
 
             transform.localPosition = new Vector3(shakex, shakey, originalPos.z);
 

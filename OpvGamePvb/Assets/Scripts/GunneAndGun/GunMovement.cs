@@ -40,7 +40,7 @@ public class GunMovement : MonoBehaviour
 
     private void InvokeShoot()
     {
-        Shoot?.Invoke();
+            Shoot?.Invoke();
     }
 
     private void TurnHorizontal(bool isRight)
@@ -79,14 +79,4 @@ public class GunMovement : MonoBehaviour
         
     }
 
-    private IEnumerator inputDelay()
-    {
-        _shootable = false;
-
-        yield return new WaitForSeconds(_waitingtime);
-
-        _shootable = true;
-        
-        yield return null;
-    }
 }

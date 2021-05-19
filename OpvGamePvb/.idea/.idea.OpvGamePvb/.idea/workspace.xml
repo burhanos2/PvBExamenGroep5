@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartCanvas.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave3.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave3.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave4.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave4.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave5.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave5.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave6.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave6.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave7.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave7.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave8.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave8.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Start.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Start.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/left.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/right.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartCanvas.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Gun.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Radar.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/WaveSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +26,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -58,7 +36,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" />
@@ -75,6 +52,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave7.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave8.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -166,6 +146,7 @@
       <workItem from="1621336611771" duration="839000" />
       <workItem from="1621356911825" duration="1769000" />
       <workItem from="1621359895069" duration="1662000" />
+      <workItem from="1621410395037" duration="1578000" />
     </task>
     <servers />
   </component>
