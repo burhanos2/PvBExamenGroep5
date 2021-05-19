@@ -43,14 +43,18 @@ namespace WaveSystem
         public Vector4 GetCurrentPlayArea {
             get
             {
+
                 if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea != null)
+
+                if (_customWaves.Length != null && _customWaves[_currentWave - 1]._playArea == null)
+
                 {
                     return _enemyPlayAreaManager.GetBoundsIfPlayArea(_customWaves[_currentWave - 1]?._playArea);
                 }
                 return _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
             }
         }
-        //bool GameRunning = false;
+        bool GameRunning = false;
         void Awake()
         {
             Instance = this;
@@ -72,10 +76,11 @@ namespace WaveSystem
 
             GetEnemyLimit(_currentWave);
         }
-
+        
+        public void GameStarter(bool doStart) => GameRunning = doStart;
         private void Update()
         {   
-            //if(GameRunning)
+            if (!GameRunning) return;
             if (_enemiesDeployedThisWave >= _currentEnemyLimit) // have all enemies been deployed?
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?

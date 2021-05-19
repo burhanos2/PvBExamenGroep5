@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.406434441.00" t="ExcludeRecursive" />
-    <e p="D:\ma\bewijzenmap\periode 4.3\exam\examenmapje\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
+    <e p="C:\Users\piete\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\piete\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.2008478842.00" t="ExcludeRecursive" />
+    <e p="D:\documents\ma\bewijsmap\periode4.4\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -60,6 +60,13 @@
             <e p="Waves" t="Include">
               <e p="CustomWave.cs" t="Include" />
               <e p="Wave1.cs" t="Include" />
+              <e p="Wave2.cs" t="Include" />
+              <e p="Wave3.cs" t="Include" />
+              <e p="Wave4.cs" t="Include" />
+              <e p="Wave5.cs" t="Include" />
+              <e p="Wave6.cs" t="Include" />
+              <e p="Wave7.cs" t="Include" />
+              <e p="Wave8.cs" t="Include" />
             </e>
             <e p="WavesEditor.cs" t="Include" />
             <e p="WavesManager.cs" t="Include" />

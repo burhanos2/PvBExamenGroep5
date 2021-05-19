@@ -10,13 +10,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergentX = 0;
+    private float minimalDivergentX = 0;
     [SerializeField]
-    private int minimalDivergentZ;
+    private float minimalDivergentZ;
     [SerializeField]
-    private int maximumDivergentX = 0;
+    private float maximumDivergentX = 0;
     [SerializeField]
-    private int maximumDivergentZ;
+    private float maximumDivergentZ;
     [SerializeField]
     private GameObject Player;
 
@@ -35,9 +35,16 @@ public class EnemyMovement : MonoBehaviour
     private Vector4 myPlayBounds;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        
         myPlayBounds = WavesManager.Instance.GetCurrentPlayArea;
+
+        minimalDivergentX = myPlayBounds.x;
+        maximumDivergentX = myPlayBounds.y;
+        minimalDivergentX = myPlayBounds.z;
+        maximumDivergentZ = myPlayBounds.w;
+        //minimalDivergentX = 
         Player = GameObject.Find("BoatModol");
        playerMesh =  Player.GetComponent<MeshRenderer>();
         
@@ -50,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (transform.position != newPosition &&  ismoving == true)
         {   
 

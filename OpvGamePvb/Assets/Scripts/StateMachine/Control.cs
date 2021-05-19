@@ -35,6 +35,7 @@ public class Control : MonoBehaviour
     [SerializeField, Range(0.51f, 2f)] private float _switchKeyDelayInSeconds = 0.55f;
     #endregion Key_Delay_Variables
 
+    public void GameStarter(bool doStart) => _playerHasControl = doStart;
     private void Update()
     {
         if (!_playerHasControl) return;
