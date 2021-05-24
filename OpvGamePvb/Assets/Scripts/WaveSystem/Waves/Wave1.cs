@@ -6,7 +6,7 @@ public class Wave1 : CustomWave
    //example of making customclass file
    private void Awake()
    {
-      _playAreaToSpawnIndex = 0;
+      _playAreaIndex = 0;
       _enemyAndSpawnTimer = new[]
       {
          new Vector2(1,5f),

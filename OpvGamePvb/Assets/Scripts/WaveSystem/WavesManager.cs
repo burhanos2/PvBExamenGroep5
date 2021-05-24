@@ -10,7 +10,7 @@ namespace WaveSystem
     {
         [SerializeField]private GameOverManager _gameOverManager;
         private WavesEditor _wavesEditor;
-        private int _currentWave = 1;
+        private int _currentWave = 1; //waves start at 1 and not 0!!
         public int CurrentWave
         {
             get => _currentWave;
@@ -24,7 +24,7 @@ namespace WaveSystem
 
         private List<GameObject> _currentLiveEnemies = new List<GameObject>();
         private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
-        private int _currentSpawnAreaIndex;
+        private int _spawnAreaCycleIndex;
         
         private int _currentEnemyLimit;
 
@@ -39,6 +39,7 @@ namespace WaveSystem
         private EnemyPlayAreaManager _enemyPlayAreaManager;
         private CustomWave[] _customWaves;
         private int _currentEnemyPlayAreaIndex;
+        private Renderer _currentSpawnAreaRend;
 
         public Vector4 GetCurrentPlayArea {
             get
@@ -64,7 +65,7 @@ namespace WaveSystem
         {
             _wavesEditor = GetComponent<WavesEditor>();
             _spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
-            _currentSpawnAreaIndex = 0;
+            _spawnAreaCycleIndex = 0;
             _allowSpawning = true;
             _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
             _customWaves = _wavesEditor._customWaves;
@@ -110,13 +111,22 @@ namespace WaveSystem
 
         private void CheckCustomWave(int waveToCheck)
         {
-            _currentEnemyPlayAreaIndex = _customWaves.Length >= waveToCheck ? _customWaves[waveToCheck - 1]._playAreaToSpawnIndex : Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
+            if (_customWaves.Length >= waveToCheck) // is there a custom wave set?
+            {
+                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaIndex;
+                _currentSpawnAreaRend = _customWaves[waveToCheck - 1]._spawnArea.GetComponent<Renderer>();
+            }
+            else // if not, randomize
+            {
+                _currentEnemyPlayAreaIndex = Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
+                _currentSpawnAreaRend = _spawnAreaObjects[_spawnAreaCycleIndex].GetComponent<Renderer>();
+            }
         }
 
         private void SpawnEnemy()
         {
             //spawn at a (maybe randomly) selected spawn area on a random position within it
-            var spawnBounds = _spawnAreaObjects[_currentSpawnAreaIndex].GetComponent<Renderer>().bounds;
+            var spawnBounds = _currentSpawnAreaRend.bounds;
             
             var tenPercentOfXBound = (spawnBounds.size.x * 0.1);
             var tenPercentOfZBound = (spawnBounds.size.z * 0.1);
@@ -191,13 +201,13 @@ namespace WaveSystem
             _enemiesDeployedThisWave = 0;
             GetEnemyLimit(newWave);
             _currentWave = newWave;
-            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
+            if (_spawnAreaCycleIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
             {
-                _currentSpawnAreaIndex = 0;
+                _spawnAreaCycleIndex = 0;
             }
             else
             {
-                _currentSpawnAreaIndex++;
+                _spawnAreaCycleIndex++;
             }
             CheckCustomWave(newWave);
         }
