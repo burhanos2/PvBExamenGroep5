@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using WaveSystem.Waves;
 using Random = UnityEngine.Random;
 
@@ -10,7 +10,7 @@ namespace WaveSystem
     {
         [SerializeField]private GameOverManager _gameOverManager;
         private WavesEditor _wavesEditor;
-        private int _currentWave = 1;
+        private int _currentWave = 1; //waves start at 1 and not 0!!
         public int CurrentWave
         {
             get => _currentWave;
@@ -24,7 +24,7 @@ namespace WaveSystem
 
         private List<GameObject> _currentLiveEnemies = new List<GameObject>();
         private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
-        private int _currentSpawnAreaIndex;
+        private int _spawnAreaCycleIndex;
         
         private int _currentEnemyLimit;
 
@@ -39,22 +39,22 @@ namespace WaveSystem
         private EnemyPlayAreaManager _enemyPlayAreaManager;
         private CustomWave[] _customWaves;
         private int _currentEnemyPlayAreaIndex;
+        private Renderer _currentSpawnAreaRend;
 
         public Vector4 GetCurrentPlayArea {
             get
             {
-
-                if (_customWaves.Length != 0 && _customWaves[_currentWave - 1]._playArea != null)
-
-                if (_customWaves.Length != null && _customWaves[_currentWave - 1]._playArea == null)
-
+                if (_customWaves.Length != 0 &&
+                    _customWaves.Length >= _currentWave &&
+                    _customWaves[_currentWave - 1]?._playArea != null
+                    )
                 {
                     return _enemyPlayAreaManager.GetBoundsIfPlayArea(_customWaves[_currentWave - 1]?._playArea);
                 }
                 return _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
             }
         }
-        bool GameRunning = false;
+        //bool GameRunning = false;
         void Awake()
         {
             Instance = this;
@@ -65,7 +65,7 @@ namespace WaveSystem
         {
             _wavesEditor = GetComponent<WavesEditor>();
             _spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
-            _currentSpawnAreaIndex = 0;
+            _spawnAreaCycleIndex = 0;
             _allowSpawning = true;
             _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
             _customWaves = _wavesEditor._customWaves;
@@ -76,11 +76,10 @@ namespace WaveSystem
 
             GetEnemyLimit(_currentWave);
         }
-        
-        public void GameStarter(bool doStart) => GameRunning = doStart;
+
         private void Update()
         {   
-            if (!GameRunning) return;
+            //if(GameRunning)
             if (_enemiesDeployedThisWave >= _currentEnemyLimit) // have all enemies been deployed?
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?
@@ -91,26 +90,43 @@ namespace WaveSystem
             else if(_allowSpawning)
             {
                 _allowSpawning = false;
-                Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+                
+                if (EnemyHasCustomTimer())
+                {
+                    var enemyWaitInSeconds = _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].y;
+                    Invoke("SpawnEnemy", enemyWaitInSeconds);
+                }
+                else
+                {
+                    Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+                }
             }
+        }
+
+        private bool EnemyHasCustomTimer()
+        {
+            return _customWaves.Length >= _currentWave 
+                   && _customWaves[_currentWave - 1]._enemyAndSpawnTimer.Length >= _enemiesDeployedThisWave + 1;
         }
 
         private void CheckCustomWave(int waveToCheck)
         {
-            if (_customWaves.Length >= waveToCheck + 1)
+            if (_customWaves.Length >= waveToCheck) // is there a custom wave set?
             {
-                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaToSpawnIndex;
+                _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaIndex;
+                _currentSpawnAreaRend = _customWaves[waveToCheck - 1]._spawnArea != null ? _customWaves[waveToCheck - 1]._spawnArea.GetComponent<Renderer>() : _spawnAreaObjects[_spawnAreaCycleIndex].GetComponent<Renderer>();
             }
-            else
+            else // if not, randomize
             {
-                _currentSpawnAreaIndex = Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
+                _currentEnemyPlayAreaIndex = Random.Range(0, _enemyPlayAreaManager.GetPlayAreaObjects.Length - 1);
+                _currentSpawnAreaRend = _spawnAreaObjects[_spawnAreaCycleIndex].GetComponent<Renderer>();
             }
         }
 
         private void SpawnEnemy()
         {
             //spawn at a (maybe randomly) selected spawn area on a random position within it
-            var spawnBounds = _spawnAreaObjects[_currentSpawnAreaIndex].GetComponent<Renderer>().bounds;
+            var spawnBounds = _currentSpawnAreaRend.bounds;
             
             var tenPercentOfXBound = (spawnBounds.size.x * 0.1);
             var tenPercentOfZBound = (spawnBounds.size.z * 0.1);
@@ -185,13 +201,13 @@ namespace WaveSystem
             _enemiesDeployedThisWave = 0;
             GetEnemyLimit(newWave);
             _currentWave = newWave;
-            if (_currentSpawnAreaIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
+            if (_spawnAreaCycleIndex >= (_spawnAreaObjects.Length - 1)) //reset index var if over last index of array
             {
-                _currentSpawnAreaIndex = 0;
+                _spawnAreaCycleIndex = 0;
             }
             else
             {
-                _currentSpawnAreaIndex++;
+                _spawnAreaCycleIndex++;
             }
             CheckCustomWave(newWave);
         }

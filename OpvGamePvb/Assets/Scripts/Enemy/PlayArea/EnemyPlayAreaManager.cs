@@ -16,6 +16,11 @@ public class EnemyPlayAreaManager : MonoBehaviour
     /// <returns>returns a vector 4 of bounds (x MIN, x MAX, z MIN, z MAX)</returns>
     public Vector4 GetBoundsOfArea(int indexToGrab)
     {
+        if (indexToGrab > GetPlayAreaObjects.Length - 1 || indexToGrab < 0)
+        {
+            Debug.LogError("index in GetBoundsOfArea(int indexToGrab) does not exist");
+            return Vector4.zero;
+        }
         var objRenderer = GetPlayAreaObjects[indexToGrab].GetComponent<Renderer>().bounds;
         
         var funk = new Vector4(
