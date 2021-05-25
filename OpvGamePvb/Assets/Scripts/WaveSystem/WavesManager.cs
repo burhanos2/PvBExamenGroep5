@@ -114,7 +114,7 @@ namespace WaveSystem
             if (_customWaves.Length >= waveToCheck) // is there a custom wave set?
             {
                 _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaIndex;
-                _currentSpawnAreaRend = _customWaves[waveToCheck - 1]._spawnArea.GetComponent<Renderer>();
+                _currentSpawnAreaRend = _customWaves[waveToCheck - 1]._spawnArea != null ? _customWaves[waveToCheck - 1]._spawnArea.GetComponent<Renderer>() : _spawnAreaObjects[_spawnAreaCycleIndex].GetComponent<Renderer>();
             }
             else // if not, randomize
             {
