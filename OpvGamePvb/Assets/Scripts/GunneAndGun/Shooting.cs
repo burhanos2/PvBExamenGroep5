@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
     private void Blast()
     {
         StartCoroutine(Shoot());
-        StartCoroutine(_cameraShake.CamShake(0.15f, 0.2f));
+        
     }
 
     private IEnumerator Shoot()
@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
                     _barrelEnd.transform.position.z),
                 Quaternion.Euler(_gunMovement.barrelObject.transform.rotation.x,
                     _gunMovement.gunObject.transform.rotation.y, 0));
-
+            StartCoroutine(_cameraShake.CamShake(0.5f, 0.2f));
             StartCoroutine(inputDelay());
             yield return null;
         }
