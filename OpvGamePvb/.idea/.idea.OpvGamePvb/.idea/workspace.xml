@@ -4,9 +4,6 @@
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +23,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -55,6 +52,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -74,7 +72,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -147,6 +145,8 @@
       <workItem from="1621356911825" duration="1769000" />
       <workItem from="1621359895069" duration="1662000" />
       <workItem from="1621410395037" duration="1578000" />
+      <workItem from="1621974060801" duration="3842000" />
+      <workItem from="1622022254215" duration="1906000" />
     </task>
     <servers />
   </component>
