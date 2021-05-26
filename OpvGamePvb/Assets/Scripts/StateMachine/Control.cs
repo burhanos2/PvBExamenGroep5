@@ -32,7 +32,9 @@ public class Control : MonoBehaviour
 
     #region Key_Delay_Variables
     private bool _switchKeyInDelay;
+    private bool _shootable = true;
     [SerializeField, Range(0.51f, 2f)] private float _switchKeyDelayInSeconds = 0.55f;
+    [SerializeField, Range(1, 5)] private float _waitingtime = 2;
     #endregion Key_Delay_Variables
 
     public void GameStarter(bool doStart) => _playerHasControl = doStart;
@@ -54,7 +56,11 @@ public class Control : MonoBehaviour
         //attack button
         if (Input.GetKeyDown(_attackKey) || Input.GetKeyDown(_attackKeyAlt))
         {
+            Debug.Log(_shootable);
+            if(!_shootable) return;
             OnAttackKeys?.Invoke();
+            StartCoroutine(inputDelay());
+
         }
         //Horizontal keys, false is left
         if (Input.GetKey(_moveLeftKey) || Input.GetKey(_moveLeftKeyAlt))
@@ -80,5 +86,16 @@ public class Control : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(_switchKeyDelayInSeconds);
         _switchKeyInDelay = false;
+    }
+    
+    private IEnumerator inputDelay()
+    {
+        _shootable = false;
+
+        yield return new WaitForSeconds(_waitingtime);
+
+        _shootable = true;
+        
+        yield return null;
     }
 }
