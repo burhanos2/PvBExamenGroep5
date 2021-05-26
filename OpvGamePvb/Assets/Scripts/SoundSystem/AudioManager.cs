@@ -5,13 +5,12 @@ namespace SoundSystem
 {
    public enum SfxTypes 
    {
-      CannonShoot = 0,
-      Birds = 1,
+      CannonShot = 0,
    }
 
    public enum AmbienceTypes
    {
-      
+      Wind = 0,
    }
 
    public class AudioManager : MonoBehaviour
@@ -38,6 +37,7 @@ namespace SoundSystem
       {
          [SerializeField] private string _name; //I WISH I KNEW THIS WAS POSSIBLE WHEN I DID THE CUSTOM WAVE SYSTEM... set name of cluster here
          public AudioClip[] _sounds; //set clips here
+         [Range(0, 1)]
          public float[] _volumes; // set different levels of volume for variation here
       }
 
