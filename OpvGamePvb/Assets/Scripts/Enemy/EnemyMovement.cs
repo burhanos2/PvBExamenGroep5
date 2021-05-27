@@ -1,5 +1,5 @@
-﻿  using UnityEngine;
-
+﻿using UnityEngine;
+using WaveSystem;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -10,26 +10,46 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 0;
     private Vector3 newPosition;
     [SerializeField]
-    private int minimalDivergentX = 0;
+    private float minimalDivergentX = 0;
     [SerializeField]
-    private int maximumDivergentX = 0;
+    private float minimalDivergentZ;
     [SerializeField]
-    private int minimalDivergentZ;
+    private float maximumDivergentX = 0;
     [SerializeField]
-    private int maximumDivergentZ;
+    private float maximumDivergentZ;
     [SerializeField]
     private GameObject Player;
+
+    private MeshRenderer playerMesh;
+    [SerializeField]
+    private float _DistanceHeldToPlayer = 0;
 
     private bool ismoving = false;
     private float waitingTimer = 0;
     [SerializeField]
     private float WaitingTime = 0;
 
+    [SerializeField] private float _angle = 20;
+    private Transform _posHelper;
+
+    private Vector4 myPlayBounds;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        
+        myPlayBounds = WavesManager.Instance.GetCurrentPlayArea;
+
+        minimalDivergentX = myPlayBounds.x;
+        maximumDivergentX = myPlayBounds.y;
+        minimalDivergentX = myPlayBounds.z;
+        maximumDivergentZ = myPlayBounds.w;
+        //minimalDivergentX = 
         Player = GameObject.Find("BoatModol");
+       playerMesh =  Player.GetComponent<MeshRenderer>();
+        
+       _posHelper = new GameObject().transform;
+       
         position = transform.position;
         CalculateNewPosition();
     }
@@ -37,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (transform.position != newPosition &&  ismoving == true)
         {   
 
@@ -65,16 +85,18 @@ public class EnemyMovement : MonoBehaviour
 
     public void CalculateNewPosition()
     {   
-        position = transform.position;
         newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
+        float distance = Vector3.Distance(newPosition,playerMesh.bounds.center);
+        position = transform.position;
         
-        
-        if((newPosition.x <= Player.GetComponent<MeshRenderer>().bounds.size.x /2f )&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f) && ((newPosition.z <= Player.GetComponent<MeshRenderer>().bounds.size.z / 2f)&&(newPosition.x >= Player.GetComponent<MeshRenderer>().bounds.size.x *2f)))
+        if(distance <= _DistanceHeldToPlayer)
         {
-            CalculateNewPosition();
+            _posHelper.position = transform.position;
+            _posHelper.RotateAround(Player.transform.position, Vector3.up, _angle);
+            newPosition = _posHelper.position;
         }
         else
-        {   
+        {
             
             ismoving = true;
         }

@@ -36,7 +36,7 @@ public class Radar : MonoBehaviour
 
     public void DeleteEnemy(Transform boat)
     {
-        print(_boats.Count);
+        //print(_boats.Count);
         for (int i = 0; i < _boats.Count; i++)
         {
             if (boat == _boats[i])
@@ -45,7 +45,7 @@ public class Radar : MonoBehaviour
                 Destroy(_dots[i].gameObject);
                 _dots.RemoveAt(i);
                 
-                print(_boats.Count);
+                //print(_boats.Count);
                 return;
             }
         }
