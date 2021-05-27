@@ -41,6 +41,9 @@ namespace WaveSystem
         private int _currentEnemyPlayAreaIndex;
         private Renderer _currentSpawnAreaRend;
 
+        private bool _gameRunning;
+        public void GameStarter(bool doStart) => _gameRunning = doStart;
+
         public Vector4 GetCurrentPlayArea {
             get
             {
@@ -54,7 +57,7 @@ namespace WaveSystem
                 return _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
             }
         }
-        //bool GameRunning = false;
+        
         void Awake()
         {
             Instance = this;
@@ -70,7 +73,7 @@ namespace WaveSystem
             _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
             _customWaves = _wavesEditor._customWaves;
             CheckCustomWave(_currentWave);
-            
+
             OnNextWave += DoOnNextWave;
             OnEnemyDeath += DoOnEnemyDeath;
 
@@ -78,8 +81,8 @@ namespace WaveSystem
         }
 
         private void Update()
-        {   
-            //if(GameRunning)
+        {
+            if (!_gameRunning) return;
             if (_enemiesDeployedThisWave >= _currentEnemyLimit) // have all enemies been deployed?
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?
@@ -215,6 +218,7 @@ namespace WaveSystem
         private void CallGameOver()
         {
             // the game has ended because the waves are done, handle this
+            _gameRunning = false;
             _gameOverManager.OnGameOver?.Invoke(_gameOverManager._scoreKeeping._currentScore);
         }
 
