@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using WaveSystem.Waves;
 
 namespace WaveSystem
 {
@@ -14,6 +15,9 @@ namespace WaveSystem
         
         public int GetEnemiesForWave(int waveNumber) => _enemiesPerWave[(waveNumber - 1)]; // get enemy amount for specified wave
         public List<Transform> _enemySpawners = new List<Transform>();
+        [Tooltip("Drag any waves you want to have specific enemies or timings here")]
+        public CustomWave[] _customWaves;
+        
         
         #if (UNITY_EDITOR)
             private void Update()

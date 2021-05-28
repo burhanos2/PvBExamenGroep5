@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GunMovement : MonoBehaviour
@@ -9,42 +11,72 @@ public class GunMovement : MonoBehaviour
     public GameObject gunObject;
     [SerializeField]
     public GameObject barrelObject; // anchorpoint!!!
+    [SerializeField]
+    private GameObject powerObject;
+
+    private float powerMax = -53;
+    private float powerMin = 26;
+
+    //0.712 is ong 90 graden
+    private float _maxHorizontal = 0.9f;
+    private float _minHorizontal = -0.9f;
+    
+    private float _maxVertical = 0.05f;
+    private float _minVertical = -0.193f;
+    
+    [SerializeField]
+    private float _waitingtime = 2;
+    private bool _shootable = true;
+    
 
     public Action Shoot;
     
-    private void Update()
+    private void Start()
     {
-        TurnHorizontal();
-        
-        TurnVertical();
-        
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Mouse2))
-        {
+        Control.OnAttackKeys += InvokeShoot;
+        Control.OnHorizontalMoveKeys += TurnHorizontal;
+        Control.OnVerticalMoveKeys += TurnVertical;
+    }
+
+    private void InvokeShoot()
+    {
             Shoot?.Invoke();
-        }
     }
 
-    private void TurnHorizontal()
+    private void TurnHorizontal(bool isRight)
     {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse1))
-        {
-            gunObject.transform.Rotate(0 ,yAngle: + _gunRotateSpeed*Time.deltaTime ,0);
-        } 
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Mouse0))
-        {
-            gunObject.transform.Rotate(0 ,yAngle: - _gunRotateSpeed*Time.deltaTime ,0);
+        if(this.enabled == true){
+            if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
+            {
+                gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
+            {
+                gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+            }
+            
         }
+        
     }
 
-    private void TurnVertical()
+    private void TurnVertical(bool isUp)
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (this.enabled == true)
         {
-            barrelObject.transform.Rotate(+ _gunRotateSpeed*Time.deltaTime ,yAngle:0  ,0);
-        } 
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            barrelObject.transform.Rotate( - _gunRotateSpeed*Time.deltaTime  ,yAngle:0,0);
+            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
+
+            if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
+            {
+                barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+            else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
+            {
+                barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+            }
+        
+            powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
         }
+        
     }
+
 }
