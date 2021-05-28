@@ -56,7 +56,6 @@ public class Control : MonoBehaviour
         //attack button
         if (Input.GetKeyDown(_attackKey) || Input.GetKeyDown(_attackKeyAlt))
         {
-            Debug.Log(_shootable);
             if(!_shootable) return;
             OnAttackKeys?.Invoke();
             StartCoroutine(inputDelay());

@@ -19,6 +19,9 @@ public class Shooting : MonoBehaviour
     private float _waitingtime = 2;
     private bool _shootable = true;
 
+    [SerializeField]
+    private CharacterState _ja;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,7 +36,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        if (_shootable)
+        if (_shootable && _ja._active)
         {
             Instantiate(_bulletObject,
                 new Vector3(_barrelEnd.transform.position.x, _barrelEnd.transform.position.y,

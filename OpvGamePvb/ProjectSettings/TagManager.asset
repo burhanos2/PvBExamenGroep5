@@ -14,6 +14,8 @@ TagManager:
   - Bullet
   - InflatableProp
   - EnemyPlayArea
+  - GBarrelEnd
+  - GBarrelBegin
   layers:
   - Default
   - TransparentFX
