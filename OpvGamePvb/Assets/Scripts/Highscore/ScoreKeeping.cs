@@ -11,7 +11,7 @@ using UnityEngine.UI;
     public bool _HighscoreBreached = false;
 
     private int _HighScore = 0;
-    // Start is called before the first frame update
+
     void Start()
     {   
         
