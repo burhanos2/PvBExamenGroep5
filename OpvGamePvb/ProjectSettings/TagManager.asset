@@ -10,6 +10,10 @@ TagManager:
   - PlayArea
   - Bottom
   - Wataa
+  - SpawnArea
+  - Bullet
+  - InflatableProp
+  - EnemyPlayArea
   layers:
   - Default
   - TransparentFX
