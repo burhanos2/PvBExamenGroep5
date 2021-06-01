@@ -23,6 +23,7 @@ public class SimpleExitGame : MonoBehaviour
 
       if (_timer < 0)
       {
+         print("ded");
          Application.Quit();
       }
    }
