@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+
+    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\gebruiker\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_OpvGamePvb.406434441.00" t="ExcludeRecursive" />
+    <e p="D:\ma\bewijzenmap\periode 4.3\exam\examenmapje\PvBExamenGroep5\OpvGamePvb" t="IncludeRecursive">
+
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="BlinkingAnimation" t="Include">
+            <e p="AnimatorValueSetter.cs" t="Include" />
+          </e>
+          <e p="Characters" t="Include">
+            <e p="Cannoneer.cs" t="Include" />
+            <e p="Captain.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
+            <e p="BulletBehaviour.cs" t="Include" />
+            <e p="EnemyCombatScript.cs" t="Include" />
+            <e p="EnemyDeath.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
+            <e p="PlayArea" t="Include">
+              <e p="EnemyPlayAreaManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GameOver" t="Include">
+            <e p="GameOverManager.cs" t="Include" />
+          </e>
+          <e p="GunneAndGun" t="Include">
+            <e p="CameraShake.cs" t="Include" />
+            <e p="GunMovement.cs" t="Include" />
+            <e p="PlayerBullet.cs" t="Include" />
+            <e p="Shooting.cs" t="Include" />
+          </e>
+          <e p="Highscore" t="Include">
+            <e p="PointInput.cs" t="Include" />
+            <e p="ScoreKeeping.cs" t="Include" />
+          </e>
+          <e p="KeepScale.cs" t="Include" />
+          <e p="LifeHacks" t="Include">
+            <e p="DestroyAfterSeconds.cs" t="Include" />
+          </e>
+          <e p="OnParticleEnd.cs" t="Include" />
+          <e p="Radar" t="Include">
+            <e p="Radar.cs" t="Include" />
+          </e>
+          <e p="SoundSystem" t="Include">
+            <e p="AmbienceManager.cs" t="Include" />
+            <e p="AudioManager.cs" t="Include" />
+          </e>
+          <e p="StateMachine" t="Include">
+            <e p="CharacterState.cs" t="Include" />
+            <e p="Control.cs" t="Include" />
+            <e p="PlayerStateMachine.cs" t="Include" />
+          </e>
+          <e p="TestScripts" t="Include">
+            <e p="SimpleAnimationTrigger.cs" t="Include" />
+          </e>
+          <e p="TransformToProp" t="Include">
+            <e p="EnemyTransformer.cs" t="Include" />
+            <e p="InflatablePropBehaviour.cs" t="Include" />
+          </e>
+          <e p="WaveSystem" t="Include">
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="Waves" t="Include">
+              <e p="CustomWave.cs" t="Include" />
+              <e p="ExampleWave.cs" t="Include" />
+              <e p="Wave1.cs" t="Include" />
+              <e p="Wave2.cs" t="Include" />
+              <e p="Wave3.cs" t="Include" />
+              <e p="Wave4.cs" t="Include" />
+              <e p="Wave5.cs" t="Include" />
+              <e p="Wave6.cs" t="Include" />
+              <e p="Wave7.cs" t="Include" />
+              <e p="Wave8.cs" t="Include" />
+            </e>
+            <e p="WavesEditor.cs" t="Include" />
+            <e p="WavesManager.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="OpvGamePvb.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -9,6 +9,7 @@
 /[Oo]pvGamePvb/[Bb]uilds/
 /[Oo]pvGamePvb/[Ll]ogs/
 /[Oo]pvGamePvb/[Mm]emoryCaptures/
+/[Oo]pvGamePvb/.idea/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Oo]pvGamePvb/[Aa]ssets/**/*.meta
@@ -57,4 +58,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-

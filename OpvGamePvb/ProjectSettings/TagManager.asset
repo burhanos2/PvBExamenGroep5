@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BarrelEnd
+  - BarrelBegin
+  - EnemyShip
+  - PlayArea
+  - Bottom
+  - Wataa
+  - SpawnArea
+  - Bullet
+  - InflatableProp
+  - EnemyPlayArea
   layers:
   - Default
   - TransparentFX
