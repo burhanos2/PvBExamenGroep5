@@ -21,6 +21,12 @@ public class GameOverManager : MonoBehaviour
     private string _displayName;
     private string _displayString;
     
+    public static GameOverManager _instance;
+    void Awake()
+    {
+        _instance = this;
+    }
+    
     private void Start()
     {
         _nameInputUI.SetActive(false);

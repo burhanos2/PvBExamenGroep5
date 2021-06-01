@@ -212,7 +212,7 @@ namespace WaveSystem
             CheckCustomWave(newWave);
         }
         
-        private void CallGameOver()
+        public void CallGameOver()
         {
             // the game has ended because the waves are done, handle this
             _gameOverManager.OnGameOver?.Invoke(_gameOverManager._scoreKeeping._currentScore);

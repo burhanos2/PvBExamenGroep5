@@ -7,7 +7,9 @@ public class Radar : MonoBehaviour
     private List<Transform> _boats = new List<Transform>();
     private List<Transform> _dots = new List<Transform>();
 
-    [SerializeField] private const float MaxDistance = 100, Scale = 2;
+    [SerializeField] private float _maxDistance = 100;
+    private const float Scale = 2;
+    
 
     public static Radar Instance;
 
@@ -21,7 +23,9 @@ public class Radar : MonoBehaviour
         for (int i = 0; i < _boats.Count; i++)
         {
             Vector3 pos = _boats[i].position.normalized;
-            _dots[i].localPosition = ((pos / MaxDistance) * Vector3.Distance(transform.position, _boats[i].position)) / Scale;
+            float dis = Vector3.Distance(transform.position, _boats[i].position);
+            dis = dis > _maxDistance ? _maxDistance : dis;
+            _dots[i].localPosition = ((pos / _maxDistance) * dis) / Scale;
         }
     }
 
@@ -30,7 +34,7 @@ public class Radar : MonoBehaviour
         _boats.Add(boat);
         GameObject dot = Instantiate(_enemyDots, transform);
         Vector3 pos = boat.position.normalized;
-        dot.transform.localPosition = ((pos / MaxDistance) * Vector3.Distance(transform.position, boat.position)) / Scale;
+        dot.transform.localPosition = ((pos / _maxDistance) * Vector3.Distance(transform.position, boat.position)) / Scale;
         _dots.Add(dot.transform);
     }
 
