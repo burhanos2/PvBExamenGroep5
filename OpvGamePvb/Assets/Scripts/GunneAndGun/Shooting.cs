@@ -19,6 +19,9 @@ public class Shooting : MonoBehaviour
     private float _waitingtime = 2;
     private bool _shootable = true;
 
+    [SerializeField]
+    private CharacterState _ja;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -28,20 +31,19 @@ public class Shooting : MonoBehaviour
     private void Blast()
     {
         StartCoroutine(Shoot());
-        StartCoroutine(_cameraShake.CamShake(0.15f, 0.2f));
+        
     }
 
     private IEnumerator Shoot()
     {
-        if (_shootable)
+        if (_shootable && _ja._active)
         {
             Instantiate(_bulletObject,
                 new Vector3(_barrelEnd.transform.position.x, _barrelEnd.transform.position.y,
                     _barrelEnd.transform.position.z),
                 Quaternion.Euler(_gunMovement.barrelObject.transform.rotation.x,
                     _gunMovement.gunObject.transform.rotation.y, 0));
-
-            StartCoroutine(inputDelay());
+            StartCoroutine(_cameraShake.CamShake(0.5f, 0.2f));
             yield return null;
         }
     }

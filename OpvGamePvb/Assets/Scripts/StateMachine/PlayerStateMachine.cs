@@ -9,7 +9,8 @@ namespace StateMachine
 	{
 		NullStateId = 0,
 		Captain = 1,
-		Cannoneer = 2
+		Cannoneer = 2,
+		Artillery = 3,
 	}
 
 	public class PlayerStateMachine : MonoBehaviour {
@@ -65,6 +66,7 @@ namespace StateMachine
 		private void AddStates() {
 			statesDict.Add( CharactersEnum.Captain,  FindObjectOfType<Captain>());
 			statesDict.Add( CharactersEnum.Cannoneer, FindObjectOfType<Cannoneer>());
+			statesDict.Add( CharactersEnum.Artillery, FindObjectOfType<Grenade>());
 		}
 	
 		private void SetState(CharactersEnum stateId) {

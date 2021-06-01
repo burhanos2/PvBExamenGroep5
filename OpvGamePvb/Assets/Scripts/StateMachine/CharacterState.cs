@@ -4,6 +4,7 @@ public abstract class CharacterState : MonoBehaviour
 {
 	[SerializeField] protected GameObject[] _objectsToEnable;
 	[SerializeField] protected GameObject[] _objectsToDisable;
+	public bool _active;
 
 	protected void SetArrayOfGO(GameObject[] array, bool makeEnabled)
 	{
