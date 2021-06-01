@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectsToEnable: []
   _objectsToDisable: []
+  _active: 0
   camera: {fileID: 2049279102}
   valSetter: {fileID: 395241869}
 --- !u!1 &60370553
@@ -838,6 +839,7 @@ MonoBehaviour:
   _objectsToDisable:
   - {fileID: 973966017}
   - {fileID: 530165179}
+  _active: 0
   _gunMovement: {fileID: 208857765}
   camera: {fileID: 2049279102}
   valSetter: {fileID: 395241869}
@@ -3876,6 +3878,7 @@ MonoBehaviour:
   _scrollOffsetDown: 0
   _scrollOffsetUp: 0
   _switchKeyDelayInSeconds: 0.55
+  _waitingtime: 2
 --- !u!1 &1716306701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,6 +5191,7 @@ MonoBehaviour:
     type: 3}
   _barrelEnd: {fileID: 1315668661}
   _waitingtime: 2
+  _ja: {fileID: 208857764}
 --- !u!1 &2128630689
 GameObject:
   m_ObjectHideFlags: 0
