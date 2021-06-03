@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Control : MonoBehaviour
 {
-    public static bool _playerHasControl = true;
+    public static bool _playerHasControl;
 
     #region Key_Delegates
     public static Action OnSwitchKey;
@@ -38,6 +38,12 @@ public class Control : MonoBehaviour
     #endregion Key_Delay_Variables
 
     public void GameStarter(bool doStart) => _playerHasControl = doStart;
+
+    private void Awake()
+    {
+        _playerHasControl = false;
+    }
+
     private void Update()
     {
         if (!_playerHasControl) return;

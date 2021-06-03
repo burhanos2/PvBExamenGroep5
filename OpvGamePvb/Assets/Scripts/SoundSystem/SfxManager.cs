@@ -11,8 +11,7 @@ namespace SoundSystem
             Control.OnAttackKeys += PlayShootSound;
             Control.OnSwitchKey += PlaySwitchSound;
             _wavesManager.OnEnemyDeath += PlayShipDestructSound;
-        }
-
+        } 
         private void PlayShootSound()
         {
             AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.CannonShot);

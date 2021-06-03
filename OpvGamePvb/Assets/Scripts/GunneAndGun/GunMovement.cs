@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using SoundSystem;
 using UnityEngine;
 
 public class GunMovement : MonoBehaviour
@@ -31,11 +31,25 @@ public class GunMovement : MonoBehaviour
 
     public Action Shoot;
     
+    //added for sound 
+    private bool _isMoving;
+    private float _soundWait;
+    private const float SoundWaitDefault = 0.1f;
+    
     private void Start()
     {
         Control.OnAttackKeys += InvokeShoot;
         Control.OnHorizontalMoveKeys += TurnHorizontal;
         Control.OnVerticalMoveKeys += TurnVertical;
+        _soundWait = 0;
+    }
+
+    private void Update()
+    {
+        if (_soundWait < -0.5f) return;
+        _soundWait -= Time.deltaTime;
+        if(_soundWait < 0 )
+        {SetMoveBool(false);}
     }
 
     private void InvokeShoot()
@@ -45,38 +59,83 @@ public class GunMovement : MonoBehaviour
 
     private void TurnHorizontal(bool isRight)
     {
-        if(this.enabled == true){
+        if(enabled){
             if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
             {
                 gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;
             }
             else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
             {
                 gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;
             }
-            
         }
         
     }
 
     private void TurnVertical(bool isUp)
     {
-        if (this.enabled == true)
+        if (enabled)
         {
             var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
 
             if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
             {
                 barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;
             }
             else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
             {
                 barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;
             }
-        
+
             powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
         }
         
     }
+    
+    
+    //added to script for sounds
+    private void SetMoveBool(bool newVal)
+    {
+        if (newVal == _isMoving) return;
+        if (newVal)
+        {
+            _isMoving = true;
+            PlayMoveSounds();
+        }
+        else
+        {
+            _isMoving = false;
+            StopPlayingLoop();
+        }
+    }
+    private void StopPlayingLoop()
+    {
+        AudioManager.Instance.StopSfxLoop();
+    }
+    private void PlayMoveSounds()
+    {
+        AudioManager.Instance.PlaySfxLoopStart(SfxTypes.CannonMoveBegin);
+        StartCoroutine(PlayAfterDelay(1f));
+    }
 
+    private IEnumerator PlayAfterDelay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (_isMoving)
+        {
+            AudioManager.Instance.PlaySfxLooped(SfxTypes.CannonMoveLoop);
+        }
+        else
+        {
+            StopPlayingLoop();
+        }
+    }
 }
