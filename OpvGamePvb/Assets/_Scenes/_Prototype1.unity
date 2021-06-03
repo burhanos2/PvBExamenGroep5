@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverManager: {fileID: 1084396066}
-  _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 32ab8f12bbc5eb24ea553289c9219caf,
+  _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 9fb349c0442ae1a4fb4c4ccf362178ca,
     type: 3}
   _defaultWaitTimeInSeconds: 1
 --- !u!114 &450666896
