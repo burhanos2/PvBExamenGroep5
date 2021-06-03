@@ -8,8 +8,8 @@ Onze (Artists) zijn te bedanken voor alles wat je ziet: Julian Elzes, Sara Meest
 Beterschap, Remco! Get well soon, Remco!
 
 HOE START JE HET SPEL OP? // HOW TO START THE GAME?
-Klik op de EXE file, en klik dan op Play bij het configuratie scherm!
-Click the Executable EXE file, and then click on Play in the configuration screen!
+Klik op het OpvGamePvb.exe bestand, en klik dan op Play bij het configuratie scherm!
+Click the OpvGamePvb.exe file, and then click on Play in the configuration screen!
 
 WAT MOET IK DOEN OM TE SPELEN? // HOW TO PLAY THE GAME?
 Wanneer het spel start klik je op de start knop in het midden van het scherm om te beginnen met spelen.
@@ -24,3 +24,6 @@ W A S D // Scroll Wheel
 
 --Fire cannon! // kanon afvuren
 Left click / Linker muisknop
+
+--Quit game // Spel afsluiten
+Hold escape for a second / Houd escape ingedrukt voor een seconde
