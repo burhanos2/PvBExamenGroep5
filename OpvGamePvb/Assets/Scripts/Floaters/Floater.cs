@@ -8,7 +8,7 @@ namespace Floaters
         private Rigidbody _rb;
         [SerializeField] private float _objectHeight = 1f;
         [SerializeField] private float _displacementAmount = 3f;
-        [SerializeField] private float _setDrag = 0.8f;
+        [SerializeField] private float _setDrag = 1f;
         private void Start()
         {
             _rb = gameObject.GetComponent<Rigidbody>();

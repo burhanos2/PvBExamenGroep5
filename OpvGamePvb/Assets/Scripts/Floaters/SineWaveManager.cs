@@ -11,7 +11,7 @@ namespace Floaters
          Instance = this;
       }
 
-      [SerializeField] private float _amplitude = 0.5f;
+      [SerializeField] private float _amplitude = 0.28f;
       [SerializeField] private float _length = 1f;
       [SerializeField] private float _speed = 3f;
       private float _offset;

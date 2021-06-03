@@ -7,9 +7,9 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField]
-    private float _randomMin = -1;
+    private float _randomMin = -0.4f;
     [SerializeField]
-    private float _randomMax = 1;
+    private float _randomMax = 0.4f;
     
     public IEnumerator CamShake (float duration, float magnitude)
     {
