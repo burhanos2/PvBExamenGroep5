@@ -1225,8 +1225,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296596784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.5, y: 1, z: 138.3}
-  m_LocalScale: {x: 40, y: 0.28735, z: 40}
+  m_LocalPosition: {x: -94.1, y: 1, z: 119.5}
+  m_LocalScale: {x: 68.2, y: 0.28735, z: 40}
   m_Children: []
   m_Father: {fileID: 752688327}
   m_RootOrder: 6
@@ -2741,7 +2741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728657134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 138.5}
+  m_LocalPosition: {x: 24.1, y: 1, z: 121.6}
   m_LocalScale: {x: 57.69, y: 0.28735, z: 28.04}
   m_Children: []
   m_Father: {fileID: 752688327}
@@ -4099,6 +4099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c984f7e7c8b4bd3468c3ea06d0562c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wavesManager: {fileID: 450666895}
 --- !u!1 &1475419546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4257,13 +4258,30 @@ MonoBehaviour:
     - 0.823
     - 0.856
     - 0.89
+  - _name: Switch Sound
+    _sounds:
+    - {fileID: 8300000, guid: c941d5cc548d4954db212f5f3cb39349, type: 3}
+    - {fileID: 8300000, guid: f615447c85c926e4191b0fefd481cc2a, type: 3}
+    _volumes:
+    - 0.582
+    - 0.515
+    - 0.546
+  - _name: ShipDestruct
+    _sounds:
+    - {fileID: 8300000, guid: d5490f5508c3642498e0097dbd50a211, type: 3}
+    - {fileID: 8300000, guid: c74e7bd1033fe1b4caf80f15313661d0, type: 3}
+    _volumes:
+    - 0.3
+    - 0.38
+    - 0.25
+    - 0.32
   _ambienceVariantGroups:
   - _name: Wind
     _sounds:
     - {fileID: 8300000, guid: 84536797063091144a8b66e6d7531160, type: 3}
     _volumes:
+    - 0.6
     - 0.8
-    - 1
 --- !u!1001 &1556645887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4472,7 +4490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594031463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.3, y: 1, z: 124}
+  m_LocalPosition: {x: 8.3, y: 1, z: 121.2}
   m_LocalScale: {x: 201.8, y: 0.28735, z: 36.7}
   m_Children: []
   m_Father: {fileID: 752688327}

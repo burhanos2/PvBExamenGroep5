@@ -6,6 +6,8 @@ namespace SoundSystem
    public enum SfxTypes 
    {
       CannonShot = 0,
+      SwitchSound = 1,
+      ShipDestruct = 2,
    }
 
    public enum AmbienceTypes

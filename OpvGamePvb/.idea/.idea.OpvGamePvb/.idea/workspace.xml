@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Floaters/Floater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Floaters/Floater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Floaters/SineWaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Floaters/SineWaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +50,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Floaters/Floater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Floaters/SineWaveManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -156,7 +152,8 @@
       <workItem from="1621974060801" duration="3842000" />
       <workItem from="1622022254215" duration="1906000" />
       <workItem from="1622706667732" duration="161000" />
-      <workItem from="1622706926215" duration="1609000" />
+      <workItem from="1622706926215" duration="2746000" />
+      <workItem from="1622711391447" duration="1074000" />
     </task>
     <servers />
   </component>
