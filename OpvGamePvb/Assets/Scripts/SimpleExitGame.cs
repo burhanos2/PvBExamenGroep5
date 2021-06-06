@@ -14,7 +14,7 @@ public class SimpleExitGame : MonoBehaviour
    {
       if (Input.GetKey(ButtonToQuit))
       {
-         _timer -= Time.deltaTime;
+         _timer -= Time.unscaledDeltaTime;
       }
       if (Input.GetKeyUp(ButtonToQuit))
       {
