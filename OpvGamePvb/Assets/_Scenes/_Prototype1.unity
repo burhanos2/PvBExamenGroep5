@@ -5956,6 +5956,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1084396066}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587249775368962225, guid: 3d00c569e79098e4ca7f25bb4e63e659,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4587249775676389895, guid: 3d00c569e79098e4ca7f25bb4e63e659,
         type: 3}
       propertyPath: m_Text
