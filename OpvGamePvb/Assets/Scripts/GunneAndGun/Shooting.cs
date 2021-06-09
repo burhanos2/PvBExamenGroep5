@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using SoundSystem;
 
 public class Shooting : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Shooting : MonoBehaviour
                     _barrelEnd.transform.position.z),
                 Quaternion.Euler(_gunMovement.barrelObject.transform.rotation.x,
                     _gunMovement.gunObject.transform.rotation.y, 0));
+            AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.CannonShot);
             StartCoroutine(_cameraShake.CamShake(0.5f, 0.2f));
             yield return null;
         }
