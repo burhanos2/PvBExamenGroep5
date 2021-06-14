@@ -8,7 +8,7 @@ namespace SoundSystem
         [SerializeField] private WavesManager _wavesManager; //.Instance is null? temporary
         private void Start()
         {
-            Control.OnSwitchKey += PlaySwitchSound;
+            Control.Instance.OnSwitchKey += PlaySwitchSound;
             _wavesManager.OnEnemyDeath += PlayShipDestructSound;
         }
         

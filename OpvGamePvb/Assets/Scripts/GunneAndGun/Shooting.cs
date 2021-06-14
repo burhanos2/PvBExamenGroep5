@@ -15,10 +15,6 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] 
     private GameObject _barrelEnd;
-    
-    [SerializeField]
-    private float _waitingtime = 2;
-    private bool _shootable = true;
 
     [SerializeField]
     private CharacterState _ja;
@@ -37,7 +33,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        if (_shootable && _ja._active)
+        if (_ja._active)
         {
             Instantiate(_bulletObject,
                 new Vector3(_barrelEnd.transform.position.x, _barrelEnd.transform.position.y,
@@ -48,17 +44,6 @@ public class Shooting : MonoBehaviour
             StartCoroutine(_cameraShake.CamShake(0.5f, 0.2f));
             yield return null;
         }
-    }
-    
-    private IEnumerator inputDelay()
-    {
-        _shootable = false;
-
-        yield return new WaitForSeconds(_waitingtime);
-
-        _shootable = true;
-        
-        yield return null;
     }
 }
 

@@ -19,6 +19,7 @@ public class Grenade : CharacterState
         
         _gunMovement.enabled = true;
         _active = true;
+        Control.Instance._shootWaitingtime = 0.7f;
     }
 
     public override void Leave()

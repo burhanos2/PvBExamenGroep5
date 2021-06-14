@@ -12,7 +12,7 @@ namespace TestScripts
         {
             _cameraEyelidBlink = GameObject.Find("Camera_Eyelids").GetComponent<Animator>();
         
-            Control.OnSwitchKey += DoBlinkingAnim;
+            Control.Instance.OnSwitchKey += DoBlinkingAnim;
         }
 
         private void DoBlinkingAnim()

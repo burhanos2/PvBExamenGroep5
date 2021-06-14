@@ -11,6 +11,7 @@ namespace SoundSystem
       CannonMoveBegin = 3,
       CannonMoveLoop = 4,
       Splash = 5,
+      PlayerDamaged = 6,
    }
 
    public enum AmbienceTypes

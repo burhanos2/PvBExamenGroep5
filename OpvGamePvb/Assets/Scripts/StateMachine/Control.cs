@@ -2,15 +2,16 @@
 using System;
 using System.Collections;
 
+//singleton
 public class Control : MonoBehaviour
 {
-    public static bool _playerHasControl;
+    public bool _playerHasControl;
 
     #region Key_Delegates
-    public static Action OnSwitchKey;
-    public static Action OnAttackKeys;
-    public static Action<bool> OnHorizontalMoveKeys; //bool false when left
-    public static Action<bool> OnVerticalMoveKeys; //bool false when down
+    public Action OnSwitchKey;
+    public Action OnAttackKeys;
+    public Action<bool> OnHorizontalMoveKeys; //bool false when left
+    public Action<bool> OnVerticalMoveKeys; //bool false when down
     #endregion Key_Delegates
 
     #region Key_Variables
@@ -26,21 +27,27 @@ public class Control : MonoBehaviour
     [SerializeField] private KeyCode _attackKeyAlt;
     [SerializeField] private KeyCode _moveLeftKeyAlt;
     [SerializeField] private KeyCode _moveRightKeyAlt;
-    [SerializeField, Range(0f, -2f)] private float _scrollOffsetDown = 0f;
-    [SerializeField, Range(0f, 2f)] private float _scrollOffsetUp = 0f;
+    [SerializeField, Range(0f, -2f)] private float _scrollOffsetDown;
+    [SerializeField, Range(0f, 2f)] private float _scrollOffsetUp;
     #endregion Key_Variables_alt
 
     #region Key_Delay_Variables
     private bool _switchKeyInDelay;
     private bool _shootable = true;
     [SerializeField, Range(0.51f, 2f)] private float _switchKeyDelayInSeconds = 0.55f;
-    [SerializeField, Range(1, 5)] private float _waitingtime = 2;
+    [Range(1, 5)] public float _shootWaitingtime = 2;
     #endregion Key_Delay_Variables
 
     public void GameStarter(bool doStart) => _playerHasControl = doStart;
-
+    public static Control Instance; //singleton
+    
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
         _playerHasControl = false;
     }
 
@@ -64,7 +71,7 @@ public class Control : MonoBehaviour
         {
             if(!_shootable) return;
             OnAttackKeys?.Invoke();
-            StartCoroutine(inputDelay());
+            StartCoroutine(InputDelay());
 
         }
         //Horizontal keys, false is left
@@ -93,11 +100,11 @@ public class Control : MonoBehaviour
         _switchKeyInDelay = false;
     }
     
-    private IEnumerator inputDelay()
+    private IEnumerator InputDelay()
     {
         _shootable = false;
 
-        yield return new WaitForSeconds(_waitingtime);
+        yield return new WaitForSeconds(_shootWaitingtime);
 
         _shootable = true;
         

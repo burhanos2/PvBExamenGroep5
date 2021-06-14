@@ -13,6 +13,7 @@ public class Cannoneer : CharacterState
         _valSetter.OnBlind -= ChangeFoV;
         _gunMovement.enabled = true;
         _active = true;
+        Control.Instance._shootWaitingtime = 1.9f;
     }
 
     private void Start()

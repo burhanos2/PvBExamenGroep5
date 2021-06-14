@@ -32,12 +32,14 @@ public class PlayerBullet : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "EnemyShip": DeleteBullet();
-                //Destroy(other.gameObject);
+            case "EnemyShip": 
+                DeleteBullet();
+                //Destroy ship
                 PointInput.Instance.AddMultiplier(1);
                 WavesManager.Instance.OnEnemyDeath.Invoke(1,other.gameObject);
                 break;
-            case "Wataa": DeleteBullet();
+            case "Wataa": 
+                DeleteBullet();
                 PointInput.Instance.ResetMultiplier();
                 break;
         }
@@ -48,6 +50,7 @@ public class PlayerBullet : MonoBehaviour
         if (other.CompareTag("PlayArea"))
         {
             DeleteBullet();
+            PointInput.Instance.ResetMultiplier();
         }
     }
 

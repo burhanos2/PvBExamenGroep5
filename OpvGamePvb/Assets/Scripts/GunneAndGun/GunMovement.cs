@@ -23,11 +23,7 @@ public class GunMovement : MonoBehaviour
     
     private readonly float _maxVertical = 0.05f;
     private readonly float _minVertical = -0.193f;
-    
-    [SerializeField]
-    private float _waitingtime = 2;
-    private bool _shootable = true;
-    
+
     public Action Shoot;
     
     //added for sound 
@@ -37,9 +33,9 @@ public class GunMovement : MonoBehaviour
     
     private void Start()
     {
-        Control.OnAttackKeys += InvokeShoot;
-        Control.OnHorizontalMoveKeys += TurnHorizontal;
-        Control.OnVerticalMoveKeys += TurnVertical;
+        Control.Instance.OnAttackKeys += InvokeShoot;
+        Control.Instance.OnHorizontalMoveKeys += TurnHorizontal;
+        Control.Instance.OnVerticalMoveKeys += TurnVertical;
         _soundWait = 0;
     }
 

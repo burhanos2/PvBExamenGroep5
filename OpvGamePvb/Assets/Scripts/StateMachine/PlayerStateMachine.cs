@@ -10,7 +10,7 @@ namespace StateMachine
 		NullStateId = 0,
 		Captain = 1,
 		Cannoneer = 2,
-		//Artillery = 3,
+		Artillery = 3,
 	}
 
 	public class PlayerStateMachine : MonoBehaviour {
@@ -32,7 +32,7 @@ namespace StateMachine
 			_blinkAnimator = _eyelidObject.GetComponent<Animator>();
  
 			_eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
-			Control.OnSwitchKey += SelectState;
+			Control.Instance.OnSwitchKey += SelectState;
 			
 			AddStates();
 			
@@ -66,7 +66,7 @@ namespace StateMachine
 		private void AddStates() {
 			statesDict.Add( CharactersEnum.Captain,  FindObjectOfType<Captain>());
 			statesDict.Add( CharactersEnum.Cannoneer, FindObjectOfType<Cannoneer>());
-		//	statesDict.Add( CharactersEnum.Artillery, FindObjectOfType<Grenade>());
+		    statesDict.Add( CharactersEnum.Artillery, FindObjectOfType<Grenade>());
 		}
 	
 		private void SetState(CharactersEnum stateId) {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SoundSystem;
 using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
@@ -24,8 +25,10 @@ public class BulletBehaviour : MonoBehaviour
          float step = _speed * Time.deltaTime; 
          transform.position = Vector3.MoveTowards(transform.position, _objectToMoveTo, step);
         if (transform.position == _objectToMoveTo)
-        {   PointInput.Instance.ResetMultiplier();
-
+        {   
+            PointInput.Instance.ResetMultiplier();
+            AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.PlayerDamaged);
+            
             _isActive = false;
             
             this.gameObject.SetActive(false);
