@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using WaveSystem;
+using UnityEngine.UI;
 
 public class PointInput : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PointInput : MonoBehaviour
     private ScoreKeeping _scoreKeeper;
     [SerializeField]
     private WavesManager _wavesManager;
+
+    [SerializeField] 
+    private Text _multiplier;
 
     public static PointInput Instance;
 
@@ -20,6 +24,7 @@ public class PointInput : MonoBehaviour
     private void Start()
     {
         _wavesManager.OnEnemyDeath += ObtainPoints;
+        UpdateMultiplier();
         // playerBullet.OnShotHit += AddMultiplier;
         // playerBullet.OnShotMiss += ResetMultiplier;
     }
@@ -34,7 +39,7 @@ public class PointInput : MonoBehaviour
         if (_pointMultiplier < 20)
         {
             _pointMultiplier += newMultiplier;
-        
+            UpdateMultiplier();
         }
             
         
@@ -45,6 +50,11 @@ public class PointInput : MonoBehaviour
     {
         if (_pointMultiplier != 1)
             _pointMultiplier--;
-        
+        UpdateMultiplier();
+    }
+
+    private void UpdateMultiplier()
+    {
+        _multiplier.text = "Punten vermenigvuldigd X" + _pointMultiplier;
     }
 }

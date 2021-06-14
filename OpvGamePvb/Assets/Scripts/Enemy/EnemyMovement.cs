@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
         _minimalDivergentX = _myPlayBounds.x;
         _maximumDivergentX = _myPlayBounds.y;
-        _minimalDivergentX = _myPlayBounds.z;
+        _minimalDivergentZ = _myPlayBounds.z;
         _maximumDivergentZ = _myPlayBounds.w;
         //minimalDivergentX = 
         _player = GameObject.Find("BoatModol");
@@ -58,15 +58,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         
-        if (transform.position != _newPosition &&  _ismoving == true)
+        if (!ComparePositionXZ(transform.position, _newPosition) &&  _ismoving == true)
         {   
-
+            
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, _newPosition, step);
             
         }
         else
-        {   
+        {
             
             _waitingTimer += Time.deltaTime;
             
@@ -96,19 +96,21 @@ public class EnemyMovement : MonoBehaviour
             _newPosition = _posHelper.position;
         }
         else
-        {
-            
+        { 
             _ismoving = true;
         }
-
-
-
-    }
-
+    } 
+    
     public bool getMovementStatus()
     {
         return _ismoving;
     }
 
-    
+    private bool ComparePositionXZ(Vector3 pos1, Vector3 pos2)
+    {
+        var pos1XZ = new Vector2(pos1.x, pos1.z);
+        var pos2XZ = new Vector2(pos2.x, pos2.z);
+        
+        return pos1XZ == pos2XZ;
+    }
 }

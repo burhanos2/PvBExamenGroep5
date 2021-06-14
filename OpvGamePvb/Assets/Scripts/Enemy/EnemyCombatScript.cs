@@ -19,8 +19,8 @@ public class EnemyCombatScript : MonoBehaviour
 
     [SerializeField] 
     private float _minimalDistanceToEnemy;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {   
         _player = GameObject.Find("BoatModol");
         _renderer = _player.GetComponent<MeshRenderer>();
@@ -29,20 +29,24 @@ public class EnemyCombatScript : MonoBehaviour
         _bBehaviour.SetObjectToMoveTo(_player.transform.position);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+
+    private void Update()
+    {   
+        //Debug.Log("hit1");
         if (_movement.getMovementStatus() == false && Vector3.Distance(transform.position,_renderer.bounds.center) < _minimalDistanceToEnemy)
         {
-           
+            
             _timeBetweenFire += Time.deltaTime;
             
             if (_timeBetweenFire >= _fireRate)
+     
             {   if(_bBehaviour.GetActive() != true){
+                    _bullet.transform.position = transform.position;
+  
                     _bullet.SetActive(true);
                     _bullet.GetComponent<BulletBehaviour>().SetActive(true);
-                
-                    _bullet.transform.position = transform.position;
+                    
+                    
                     _timeBetweenFire = 0;
                 }
                 

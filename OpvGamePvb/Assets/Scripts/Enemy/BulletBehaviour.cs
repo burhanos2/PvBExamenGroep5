@@ -9,7 +9,7 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField]private float _speed;
     
     
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -17,17 +17,15 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if (_isActive)
-        {
-            float step = _speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, _objectToMoveTo, step);
-        }
-
+        if (!_isActive)return;
+         float step = _speed * Time.deltaTime; 
+         transform.position = Vector3.MoveTowards(transform.position, _objectToMoveTo, step);
         if (transform.position == _objectToMoveTo)
         {   PointInput.Instance.ResetMultiplier();
+
             _isActive = false;
             
             this.gameObject.SetActive(false);
@@ -45,8 +43,9 @@ public class BulletBehaviour : MonoBehaviour
         return _isActive;
     }
 
-    public void SetObjectToMoveTo(Vector3 position)
-    {
-        _objectToMoveTo = position;
+    public void SetObjectToMoveTo(Vector3 enemyPosition)
+    {   
+        
+        _objectToMoveTo = enemyPosition;
     }
 }
