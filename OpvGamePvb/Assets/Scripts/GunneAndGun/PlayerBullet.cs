@@ -7,22 +7,21 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField, Range(2, 100)] private float _bulletSpeed = 2;
     [SerializeField] private Rigidbody _bulletRb;
     [SerializeField] private int _hitBonus;
-
     
     private GameObject _barrelEnd;
     private GameObject _barrelBegin;
     private GameObject _landingPlace;
     [SerializeField]
     private GameObject _particle;
-    
-    
-    
+
+    [SerializeField] private string _barrelEndString;
+    [SerializeField] private string _barrelBeginString;
     
     private void Start()
     {
         _landingPlace = GameObject.Find("LandingPlace");
-        _barrelEnd = GameObject.FindWithTag("BarrelEnd");
-        _barrelBegin = GameObject.FindWithTag("BarrelBegin");
+        _barrelEnd = GameObject.FindWithTag(_barrelEndString);
+        _barrelBegin = GameObject.FindWithTag(_barrelBeginString);
         Instantiate(_particle,_barrelEnd.transform.position,Quaternion.identity);
         Vector3 direction = (_barrelEnd.transform.position - _barrelBegin.transform.position).normalized;
         _bulletRb.velocity = (direction * _bulletSpeed);
