@@ -7,6 +7,7 @@ using UnityEngine.UI;
     private Text _currentScoreText;
     [SerializeField]
     private Text _HighScoreText;
+    
     public int _currentScore = 0;
     public bool _HighscoreBreached = false;
 
