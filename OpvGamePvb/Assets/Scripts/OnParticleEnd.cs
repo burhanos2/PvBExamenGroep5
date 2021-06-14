@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class OnParticleEnd : MonoBehaviour
+{
+    // Start is called before the first frame update
+    [SerializeField]
+    private ParticleSystem _particleSystem;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_particleSystem.isStopped)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+}
