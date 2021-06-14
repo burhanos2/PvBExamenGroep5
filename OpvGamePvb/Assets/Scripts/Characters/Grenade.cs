@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
 using BlinkingAnimation;
+using Vector3 = UnityEngine.Vector3;
+
 public class Grenade : CharacterState
 {
     [SerializeField] private GunMovement _gunMovement;
@@ -20,6 +23,7 @@ public class Grenade : CharacterState
         _gunMovement.enabled = true;
         _active = true;
         Control.Instance._shootWaitingtime = 0.7f;
+        _gunMovement._verticalRotateAxis = Vector3.forward; // (0, 0, 1)
     }
 
     public override void Leave()

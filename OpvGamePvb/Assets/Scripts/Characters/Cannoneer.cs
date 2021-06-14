@@ -14,6 +14,7 @@ public class Cannoneer : CharacterState
         _gunMovement.enabled = true;
         _active = true;
         Control.Instance._shootWaitingtime = 1.9f;
+        _gunMovement._verticalRotateAxis = Vector3.right; // (1, 0, 0)
     }
 
     private void Start()

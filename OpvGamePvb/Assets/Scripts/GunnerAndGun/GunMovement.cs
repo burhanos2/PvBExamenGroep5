@@ -17,12 +17,12 @@ public class GunMovement : MonoBehaviour
     private readonly float _powerMax = -53;
     private readonly float _powerMin = 26;
 
-    //0.712 is ong 90 graden
-    private readonly float _maxHorizontal = 0.9f;
-    private readonly float _minHorizontal = -0.9f;
+    //0.712 is ong 90 degrees
+    [SerializeField] private float _maxHorizontalTurn = 0.9f;
+    [SerializeField] private float _minHorizontalTurn = -0.9f;
     
-    private readonly float _maxVertical = 0.05f;
-    private readonly float _minVertical = -0.193f;
+    [SerializeField] private float _maxVerticalTurn = 0.05f;
+    [SerializeField] private float _minVerticalTurn = -0.193f;
 
     public Action Shoot;
     
@@ -30,6 +30,8 @@ public class GunMovement : MonoBehaviour
     private bool _isMoving;
     private float _soundWait;
     private const float SoundWaitDefault = 0.1f;
+
+    [NonSerialized] public Vector3 _verticalRotateAxis = Vector3.zero;
     
     private void Start()
     {
@@ -55,13 +57,13 @@ public class GunMovement : MonoBehaviour
     private void TurnHorizontal(bool isRight)
     {
         if(enabled){
-            if(isRight && _gunObject.transform.rotation.y <= _maxHorizontal) //right
+            if(isRight && _gunObject.transform.rotation.y <= _maxHorizontalTurn) //right
             {
                 _gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
                 SetMoveBool(true);
                 _soundWait = SoundWaitDefault;
             }
-            else if (!isRight && _gunObject.transform.rotation.y >= _minHorizontal) //left
+            else if (!isRight && _gunObject.transform.rotation.y >= _minHorizontalTurn) //left
             {
                 _gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
                 SetMoveBool(true);
@@ -73,26 +75,40 @@ public class GunMovement : MonoBehaviour
 
     private void TurnVertical(bool isUp)
     {
-        if (enabled)
-        {
-            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, _barrelObject.transform.rotation.x);
-
-            if(isUp && _barrelObject.transform.rotation.x <= _maxVertical) //up
-            {
-                _barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
-                SetMoveBool(true);
-                _soundWait = SoundWaitDefault;
-            }
-            else if(!isUp && _barrelObject.transform.rotation.x >= _minVertical) //down
-            {
-                _barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
-                SetMoveBool(true);
-                _soundWait = SoundWaitDefault;
-            }
-
-            _powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(_powerMin, _powerMax, meterPercentage), 0);
-        }
+        if (!enabled) return;
         
+        var localRotation = _barrelObject.transform.localRotation;
+        var meterPercentage = Mathf.InverseLerp(_minVerticalTurn, _maxVerticalTurn, (int)_verticalRotateAxis.x == 1 ? localRotation.x : localRotation.z);
+
+        if(isUp) //up
+        {
+            if (_barrelObject.transform.localRotation.x <= _maxVerticalTurn && _barrelObject.transform.localRotation.z <= _maxVerticalTurn)
+            {
+                _barrelObject.transform.Rotate(
+                    _verticalRotateAxis.x * +_gunRotateSpeed * Time.deltaTime,
+                    yAngle: 0,
+                    _verticalRotateAxis.z * +_gunRotateSpeed * Time.deltaTime,
+                    Space.Self);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;   
+            }
+        }
+        else
+        {
+            if (_barrelObject.transform.localRotation.x >= _minVerticalTurn && _barrelObject.transform.localRotation.z >= _minVerticalTurn)
+            {
+                _barrelObject.transform.Rotate(
+                    _verticalRotateAxis.x * -_gunRotateSpeed * Time.deltaTime,
+                    yAngle: 0, 
+                    _verticalRotateAxis.z * -_gunRotateSpeed * Time.deltaTime, 
+                    Space.Self);
+                SetMoveBool(true);
+                _soundWait = SoundWaitDefault;
+            }
+        }
+
+        _powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(_powerMin, _powerMax, meterPercentage), 0);
+
     }
     
     
