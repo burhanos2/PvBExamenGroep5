@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using SoundSystem;
 using WaveSystem.Waves;
 using Random = UnityEngine.Random;
 
@@ -8,7 +9,8 @@ namespace WaveSystem
 {
     public class WavesManager : MonoBehaviour
     {
-        [SerializeField]private GameOverManager _gameOverManager;
+        [SerializeField] private float _enemySpawnHeight; 
+        [SerializeField] private GameOverManager _gameOverManager;
         private WavesEditor _wavesEditor;
         private int _currentWave = 1; //waves start at 1 and not 0!!
         public int CurrentWave
@@ -154,10 +156,11 @@ namespace WaveSystem
                 rollXPos = Random.Range(spawnBounds.min.x,spawnBounds.max.x);
             }
 
-            var pos = new Vector3(rollXPos,0,rollZPos); //random position within spawn area on y = 0
+            var pos = new Vector3(rollXPos,_enemySpawnHeight,rollZPos); //random position within spawn area on enemySpawnHeight
             var rot = Quaternion.LookRotation((pos - Vector3.zero), Vector3.up); //default rotation
             
             _currentLiveEnemies.Add(Instantiate(_enemyObjectToSpawn, pos, rot ));
+            AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.Splash);
             _enemiesDeployedThisWave++;
             
             //TODO tf is this UwU

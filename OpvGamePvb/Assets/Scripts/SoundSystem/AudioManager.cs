@@ -10,6 +10,7 @@ namespace SoundSystem
       ShipDestruct = 2,
       CannonMoveBegin = 3,
       CannonMoveLoop = 4,
+      Splash = 5,
    }
 
    public enum AmbienceTypes
