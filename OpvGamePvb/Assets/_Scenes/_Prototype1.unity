@@ -836,7 +836,7 @@ MonoBehaviour:
   _spawnArea: {fileID: 728657134}
   _enemyAndSpawnTimer:
   - {x: 0, y: 2}
-  - {x: 0, y: 10}
+  - {x: 1, y: 10}
   - {x: 0, y: 10}
 --- !u!1001 &204095010
 PrefabInstance:
@@ -1866,8 +1866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemySpawnHeight: -11
   _gameOverManager: {fileID: 1084396066}
-  _enemyObjectToSpawn: {fileID: 3139633040857393876, guid: 9fb349c0442ae1a4fb4c4ccf362178ca,
-    type: 3}
+  _enemyObjectsToSpawn:
+  - {fileID: 3139633040857393876, guid: 9fb349c0442ae1a4fb4c4ccf362178ca, type: 3}
+  - {fileID: 3516435673377259748, guid: d3bf2e2557379c940837553b1c93efdb, type: 3}
   _defaultWaitTimeInSeconds: 1
 --- !u!114 &450666896
 MonoBehaviour:
@@ -2817,7 +2818,7 @@ MonoBehaviour:
   _bulletObject: {fileID: 1538301513001066081, guid: e8118356401238845b491df6ff8264a8,
     type: 3}
   _barrelEnd: {fileID: 502907492}
-  _ja: {fileID: 2024071709}
+  _characterState: {fileID: 2024071709}
 --- !u!1 &640385428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2816707619940125902, guid: ab05e11eab12d0a4099ae913d7f902a7,
@@ -5302,7 +5303,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7051,13 +7052,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980360718}
-  m_LocalRotation: {x: 0.1430476, y: -0.6890034, z: 0.14155743, w: 0.6962566}
-  m_LocalPosition: {x: 1.54, y: 2.07, z: 0}
+  m_LocalRotation: {x: 0.07164179, y: -0.70346814, z: 0.07164179, w: 0.70346814}
+  m_LocalPosition: {x: 2.15, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2024071708}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 23.22, y: -89.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.63, y: -90, z: 0}
 --- !u!1001 &2020820158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7703,7 +7704,7 @@ MonoBehaviour:
   _bulletObject: {fileID: 7927206600677261923, guid: da53fe4dcd1066d448df2aa557fd1e76,
     type: 3}
   _barrelEnd: {fileID: 1315668661}
-  _ja: {fileID: 208857764}
+  _characterState: {fileID: 208857764}
 --- !u!1 &2118692762
 GameObject:
   m_ObjectHideFlags: 0

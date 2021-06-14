@@ -74,7 +74,6 @@
             <e p="InflatablePropBehaviour.cs" t="Include" />
           </e>
           <e p="WaveSystem" t="Include">
-            <e p="EnemySpawner.cs" t="Include" />
             <e p="Waves" t="Include">
               <e p="CustomWave.cs" t="Include" />
               <e p="ExampleWave.cs" t="Include" />

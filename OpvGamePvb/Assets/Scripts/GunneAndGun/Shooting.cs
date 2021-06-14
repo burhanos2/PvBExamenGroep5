@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     private GameObject _barrelEnd;
 
     [SerializeField]
-    private CharacterState _ja;
+    private CharacterState _characterState;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        if (_ja._active)
+        if (_characterState._active)
         {
             Instantiate(_bulletObject,
                 new Vector3(_barrelEnd.transform.position.x, _barrelEnd.transform.position.y,

@@ -34,6 +34,6 @@ public class Grenade : CharacterState
     private void ChangeFoV()
     {
         
-        _camera.fieldOfView = 30;
+        _camera.fieldOfView = 60; //to captain
     }
 }

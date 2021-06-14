@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1797164388889333236}
   - component: {fileID: 1731138302913324062}
   m_Layer: 0
-  m_Name: exampleEnemy
+  m_Name: OLDexampleEnemy
   m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

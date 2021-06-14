@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gun/granada.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gun/granada.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Grenade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Grenade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameOver/GameOverManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GrenadeBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GrenadeBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Highscore/PointInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeepScale.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeepScale.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestScripts/SimpleAnimationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestScripts/SimpleAnimationTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/EnemySpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/EnemySpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +73,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Highscore/ScoreKeeping.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
@@ -91,11 +86,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScripts/SimpleAnimationTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Grenade.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GrenadeBullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Grenade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Cannoneer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Captain.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -208,7 +206,7 @@
       <workItem from="1623676245156" duration="965000" />
       <workItem from="1623688034675" duration="1571000" />
       <workItem from="1623691281357" duration="4139000" />
-      <workItem from="1623695704655" duration="594000" />
+      <workItem from="1623695704655" duration="4862000" />
     </task>
     <servers />
   </component>

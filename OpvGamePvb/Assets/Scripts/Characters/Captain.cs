@@ -7,7 +7,7 @@ public class Captain : CharacterState
     public override void Enter()
     {
         _valSetter.OnBlind -= ChangeFoV;
-        
+        _active = true;
         // update controls here and start processes
         SetArrayOfGO(_objectsToEnable, true);
         
@@ -15,6 +15,7 @@ public class Captain : CharacterState
 
     public override void Leave()
     {
+        _active = false;
         _valSetter.OnBlind += ChangeFoV;
         //halt controls here and halt processes
         SetArrayOfGO(_objectsToDisable, false);
@@ -24,6 +25,6 @@ public class Captain : CharacterState
     private void ChangeFoV()
     {
         
-        _camera.fieldOfView = 30;
+        _camera.fieldOfView = 30; // to cannoneer
     }
 }
