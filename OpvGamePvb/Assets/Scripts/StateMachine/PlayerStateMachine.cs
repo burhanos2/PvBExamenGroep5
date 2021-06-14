@@ -15,30 +15,30 @@ namespace StateMachine
 
 	public class PlayerStateMachine : MonoBehaviour {
 		private CharacterState _currentState;
-		private int stateIndex = 1;
+		private int _stateIndex = 1;
 		private Dictionary<CharactersEnum, CharacterState> statesDict = new Dictionary<CharactersEnum, CharacterState> ();
-		private Camera mainCamera;
-		private Animator blinkAnimator;
-		private Transform camSpot;
-		private GameObject eyelidObject;
+		private Camera _mainCamera;
+		private Animator _blinkAnimator;
+		private Transform _camSpot;
+		private GameObject _eyelidObject;
 		
-		private readonly int PlayBlink = Animator.StringToHash("PlayBlink");
-		private readonly int IsBlind = Animator.StringToHash("isBlind");
+		private readonly int _playBlink = Animator.StringToHash("PlayBlink");
+		private readonly int _isBlind = Animator.StringToHash("isBlind");
 
 		private void Start ()
 		{
-			mainCamera = Camera.main;
-			eyelidObject = GameObject.Find("Camera_Eyelids");
-			blinkAnimator = eyelidObject.GetComponent<Animator>();
+			_mainCamera = Camera.main;
+			_eyelidObject = GameObject.Find("Camera_Eyelids");
+			_blinkAnimator = _eyelidObject.GetComponent<Animator>();
  
-			eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
+			_eyelidObject.GetComponent<AnimatorValueSetter>().OnBlind += ActionOnBlind;
 			Control.OnSwitchKey += SelectState;
 			
 			AddStates();
 			
 			LeaveAllStates(); //executing leave on every state first
 			
-			SetState((CharactersEnum)stateIndex); //sets default state
+			SetState((CharactersEnum)_stateIndex); //sets default state
 		}
 
 		private void LeaveAllStates()
@@ -51,16 +51,16 @@ namespace StateMachine
 
 		private void SelectState()
 		{
-			stateIndex++;
-			if (stateIndex > statesDict.Count)
+			_stateIndex++;
+			if (_stateIndex > statesDict.Count)
 			{
-				stateIndex = 1;
+				_stateIndex = 1;
 			}
-			else if(stateIndex <= 0)
+			else if(_stateIndex <= 0)
 			{
-				stateIndex = statesDict.Count;
+				_stateIndex = statesDict.Count;
 			}
-			SetState((CharactersEnum)stateIndex);
+			SetState((CharactersEnum)_stateIndex);
 		}
 	
 		private void AddStates() {
@@ -75,12 +75,12 @@ namespace StateMachine
 			{
 				return;
 			}
-			camSpot = selectedState.transform.Find("CameraPos").transform; //making this reference before the quick return is a bad idea
+			_camSpot = selectedState.transform.Find("CameraPos").transform; //making this reference before the quick return is a bad idea
 
 			if (_currentState)
 			{
 				_currentState.Leave();
-				blinkAnimator.SetTrigger(PlayBlink);
+				_blinkAnimator.SetTrigger(_playBlink);
 			}
 		
 			_currentState = selectedState;
@@ -89,8 +89,8 @@ namespace StateMachine
 
 		private void ActionOnBlind()
 		{
-			mainCamera.transform.SetPositionAndRotation(camSpot.position, camSpot.rotation);
-			mainCamera.transform.SetParent(camSpot);
+			_mainCamera.transform.SetPositionAndRotation(_camSpot.position, _camSpot.rotation);
+			_mainCamera.transform.SetParent(_camSpot);
 		}
 	}
 }

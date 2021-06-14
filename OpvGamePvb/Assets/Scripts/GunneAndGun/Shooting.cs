@@ -42,8 +42,8 @@ public class Shooting : MonoBehaviour
             Instantiate(_bulletObject,
                 new Vector3(_barrelEnd.transform.position.x, _barrelEnd.transform.position.y,
                     _barrelEnd.transform.position.z),
-                Quaternion.Euler(_gunMovement.barrelObject.transform.rotation.x,
-                    _gunMovement.gunObject.transform.rotation.y, 0));
+                Quaternion.Euler(_gunMovement._barrelObject.transform.rotation.x,
+                    _gunMovement._gunObject.transform.rotation.y, 0));
             AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.CannonShot);
             StartCoroutine(_cameraShake.CamShake(0.5f, 0.2f));
             yield return null;

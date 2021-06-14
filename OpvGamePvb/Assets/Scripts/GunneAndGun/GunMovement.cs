@@ -8,27 +8,26 @@ public class GunMovement : MonoBehaviour
     [SerializeField] [Range(1, 20)]
     private int _gunRotateSpeed = 4;
     [SerializeField]
-    public GameObject gunObject;
+    public GameObject _gunObject;
     [SerializeField]
-    public GameObject barrelObject; // anchorpoint!!!
+    public GameObject _barrelObject; // anchorpoint!!!
     [SerializeField]
-    private GameObject powerObject;
+    private GameObject _powerObject;
 
-    private float powerMax = -53;
-    private float powerMin = 26;
+    private readonly float _powerMax = -53;
+    private readonly float _powerMin = 26;
 
     //0.712 is ong 90 graden
-    private float _maxHorizontal = 0.9f;
-    private float _minHorizontal = -0.9f;
+    private readonly float _maxHorizontal = 0.9f;
+    private readonly float _minHorizontal = -0.9f;
     
-    private float _maxVertical = 0.05f;
-    private float _minVertical = -0.193f;
+    private readonly float _maxVertical = 0.05f;
+    private readonly float _minVertical = -0.193f;
     
     [SerializeField]
     private float _waitingtime = 2;
     private bool _shootable = true;
     
-
     public Action Shoot;
     
     //added for sound 
@@ -60,15 +59,15 @@ public class GunMovement : MonoBehaviour
     private void TurnHorizontal(bool isRight)
     {
         if(enabled){
-            if(isRight && gunObject.transform.rotation.y <= _maxHorizontal) //right
+            if(isRight && _gunObject.transform.rotation.y <= _maxHorizontal) //right
             {
-                gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+                _gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
                 SetMoveBool(true);
                 _soundWait = SoundWaitDefault;
             }
-            else if (!isRight && gunObject.transform.rotation.y >= _minHorizontal) //left
+            else if (!isRight && _gunObject.transform.rotation.y >= _minHorizontal) //left
             {
-                gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+                _gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
                 SetMoveBool(true);
                 _soundWait = SoundWaitDefault;
             }
@@ -80,22 +79,22 @@ public class GunMovement : MonoBehaviour
     {
         if (enabled)
         {
-            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, barrelObject.transform.rotation.x);
+            var meterPercentage = Mathf.InverseLerp(_minVertical, _maxVertical, _barrelObject.transform.rotation.x);
 
-            if(isUp && barrelObject.transform.rotation.x <= _maxVertical) //up
+            if(isUp && _barrelObject.transform.rotation.x <= _maxVertical) //up
             {
-                barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+                _barrelObject.transform.Rotate(+_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
                 SetMoveBool(true);
                 _soundWait = SoundWaitDefault;
             }
-            else if(!isUp && barrelObject.transform.rotation.x >= _minVertical) //down
+            else if(!isUp && _barrelObject.transform.rotation.x >= _minVertical) //down
             {
-                barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
+                _barrelObject.transform.Rotate(-_gunRotateSpeed * Time.deltaTime, yAngle: 0, 0);
                 SetMoveBool(true);
                 _soundWait = SoundWaitDefault;
             }
 
-            powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(powerMin, powerMax, meterPercentage), 0);
+            _powerObject.transform.localPosition = new Vector3(-209f,  Mathf.Lerp(_powerMin, _powerMax, meterPercentage), 0);
         }
         
     }

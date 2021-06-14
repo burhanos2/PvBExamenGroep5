@@ -3,8 +3,8 @@ using BlinkingAnimation;
 public class Grenade : CharacterState
 {
     [SerializeField] private GunMovement _gunMovement;
-    [SerializeField] private Camera camera;
-    [SerializeField] private AnimatorValueSetter valSetter;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private AnimatorValueSetter _valSetter;
 
 
     private void Start()
@@ -15,7 +15,7 @@ public class Grenade : CharacterState
     public override void Enter()
     {
         SetArrayOfGO(_objectsToEnable, true);
-        valSetter.OnBlind -= ChangeFoV;
+        _valSetter.OnBlind -= ChangeFoV;
         
         _gunMovement.enabled = true;
         _active = true;
@@ -23,7 +23,7 @@ public class Grenade : CharacterState
 
     public override void Leave()
     {
-        valSetter.OnBlind += ChangeFoV;
+        _valSetter.OnBlind += ChangeFoV;
         //halt controls here and halt processes
         SetArrayOfGO(_objectsToDisable, false);
         _gunMovement.enabled = false;
@@ -33,6 +33,6 @@ public class Grenade : CharacterState
     private void ChangeFoV()
     {
         
-        camera.fieldOfView = 30;
+        _camera.fieldOfView = 30;
     }
 }

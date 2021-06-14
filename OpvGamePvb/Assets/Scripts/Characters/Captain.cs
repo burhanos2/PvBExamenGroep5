@@ -2,11 +2,11 @@
 using BlinkingAnimation;
 public class Captain : CharacterState
 {
-    [SerializeField] private Camera camera;
-    [SerializeField] private AnimatorValueSetter valSetter;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private AnimatorValueSetter _valSetter;
     public override void Enter()
     {
-        valSetter.OnBlind -= ChangeFoV;
+        _valSetter.OnBlind -= ChangeFoV;
         
         // update controls here and start processes
         SetArrayOfGO(_objectsToEnable, true);
@@ -15,7 +15,7 @@ public class Captain : CharacterState
 
     public override void Leave()
     {
-        valSetter.OnBlind += ChangeFoV;
+        _valSetter.OnBlind += ChangeFoV;
         //halt controls here and halt processes
         SetArrayOfGO(_objectsToDisable, false);
         
@@ -24,6 +24,6 @@ public class Captain : CharacterState
     private void ChangeFoV()
     {
         
-        camera.fieldOfView = 30;
+        _camera.fieldOfView = 30;
     }
 }
