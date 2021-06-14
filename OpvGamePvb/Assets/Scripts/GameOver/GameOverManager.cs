@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
@@ -37,6 +38,7 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOverAction(int score)
     {
+        Control._playerHasControl = false;
         StartCoroutine(Finish());
     }
 
@@ -73,5 +75,10 @@ public class GameOverManager : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }

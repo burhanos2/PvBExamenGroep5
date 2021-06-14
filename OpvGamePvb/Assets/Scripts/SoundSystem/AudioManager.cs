@@ -6,6 +6,10 @@ namespace SoundSystem
    public enum SfxTypes 
    {
       CannonShot = 0,
+      SwitchSound = 1,
+      ShipDestruct = 2,
+      CannonMoveBegin = 3,
+      CannonMoveLoop = 4,
    }
 
    public enum AmbienceTypes
@@ -23,6 +27,7 @@ namespace SoundSystem
       
       [SerializeField] private AudioSource _ambience;
       [SerializeField] private AudioSource _sfx;
+      [SerializeField] private AudioSource _sfxLoop;
       
       // it is very important that these arrays align with the enumerators
       [SerializeField] private SoundClipVariantGroup[] _sfxVariantGroups; 
@@ -59,6 +64,27 @@ namespace SoundSystem
             shortcutSounds[Random.Range(0, shortcutSounds.Length - 1)],
             Random.Range(shortcutVolume[0], shortcutVolume[shortcutVolume.Length - 1])
          );
+      }
+      
+      public void PlaySfxLoopStart(SfxTypes indexOfStart)
+      {
+         var shortcutSoundStart = _sfxVariantGroups[(int) indexOfStart]._sounds[0];
+         var shortcutVolumeStart = _sfxVariantGroups[(int)indexOfStart]._volumes[0];
+         _sfxLoop.PlayOneShot(shortcutSoundStart, shortcutVolumeStart); //play start clip on down
+      }
+      public void PlaySfxLooped(SfxTypes indexOfLoop) //for sounds that only have one sound and volume and a loop, made for gun rotation
+      {
+         var shortcutSoundLoop = _sfxVariantGroups[(int) indexOfLoop]._sounds[0];
+         var shortcutVolumeLoop = _sfxVariantGroups[(int)indexOfLoop]._volumes[0];
+         
+         _sfxLoop.clip = shortcutSoundLoop;
+         _sfxLoop.volume = shortcutVolumeLoop;
+         _sfxLoop.Play(); // then play the Loop clip on loop after it is done
+      }
+      
+      public void StopSfxLoop()
+      {
+         _sfxLoop.Stop();
       }
    }
 }

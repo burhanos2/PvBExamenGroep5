@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5350c427-21ae-45f0-b0cc-60791c383d52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/contentModel.xml" afterDir="false" />
-
-
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/controle room af.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/controle room af.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/crocodile inflatable.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/crocodile inflatable.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/eiland_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/eiland_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/rotsen_mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/rotsen_mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/rubber boat.mat" beforeDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpvGamePvb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Crocodile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Crocodile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/Ball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/CrocodileInflatable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/CrocodileInflatable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/Flamingo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inflatables/Flamingo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemyNewModel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WaveSystem/exampleEnemyNewModel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_Prototype1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +32,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunneAndGun/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Radar/Radar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
-
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TransformToProp/EnemyTransformer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyCombatScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BulletBehaviour.cs" />
@@ -53,7 +46,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/PlayArea/EnemyPlayAreaManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/CustomWave.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave2.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave3.cs" />
@@ -64,9 +56,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/Waves/Wave8.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveSystem/WavesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/Shooting.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Floaters/Floater.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Floaters/SineWaveManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/CameraShake.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/SfxManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SoundSystem/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GunneAndGun/GunMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/Control.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQZfDyg2BrMB8WT69E1For9FjM" />
@@ -82,8 +79,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
@@ -159,10 +159,16 @@
       <workItem from="1621356911825" duration="1769000" />
       <workItem from="1621359895069" duration="1662000" />
       <workItem from="1621410395037" duration="1578000" />
-
       <workItem from="1621974060801" duration="3842000" />
       <workItem from="1622022254215" duration="1906000" />
-
+      <workItem from="1622706667732" duration="161000" />
+      <workItem from="1622706926215" duration="2746000" />
+      <workItem from="1622711391447" duration="1074000" />
+      <workItem from="1622715639304" duration="581000" />
+      <workItem from="1622716979628" duration="2233000" />
+      <workItem from="1622719290251" duration="1471000" />
+      <workItem from="1622720882454" duration="437000" />
+      <workItem from="1622721412136" duration="934000" />
     </task>
     <servers />
   </component>

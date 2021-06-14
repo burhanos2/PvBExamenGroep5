@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Control : MonoBehaviour
 {
-    public static bool _playerHasControl = true;
+    public static bool _playerHasControl;
 
     #region Key_Delegates
     public static Action OnSwitchKey;
@@ -15,17 +15,17 @@ public class Control : MonoBehaviour
 
     #region Key_Variables
     [SerializeField] private KeyCode _switchingKey = KeyCode.Space;
-    [SerializeField] private KeyCode _attackKey = KeyCode.Tab;
-    [SerializeField] private KeyCode _moveLeftKey = KeyCode.LeftArrow;
-    [SerializeField] private KeyCode _moveRightKey = KeyCode.RightArrow;
-    [SerializeField] private KeyCode _moveUpKey = KeyCode.UpArrow;
-    [SerializeField] private KeyCode _moveDownKey = KeyCode.DownArrow;
+    [SerializeField] private KeyCode _attackKey = KeyCode.Mouse0;
+    [SerializeField] private KeyCode _moveLeftKey = KeyCode.A;
+    [SerializeField] private KeyCode _moveRightKey = KeyCode.D;
+    [SerializeField] private KeyCode _moveUpKey = KeyCode.W;
+    [SerializeField] private KeyCode _moveDownKey = KeyCode.S;
     #endregion Key_Variables
 
     #region Key_Variables_alt 
-    [SerializeField] private KeyCode _attackKeyAlt = KeyCode.Mouse2;
-    [SerializeField] private KeyCode _moveLeftKeyAlt = KeyCode.Mouse0;
-    [SerializeField] private KeyCode _moveRightKeyAlt = KeyCode.Mouse1;
+    [SerializeField] private KeyCode _attackKeyAlt;
+    [SerializeField] private KeyCode _moveLeftKeyAlt;
+    [SerializeField] private KeyCode _moveRightKeyAlt;
     [SerializeField, Range(0f, -2f)] private float _scrollOffsetDown = 0f;
     [SerializeField, Range(0f, 2f)] private float _scrollOffsetUp = 0f;
     #endregion Key_Variables_alt
@@ -38,6 +38,12 @@ public class Control : MonoBehaviour
     #endregion Key_Delay_Variables
 
     public void GameStarter(bool doStart) => _playerHasControl = doStart;
+
+    private void Awake()
+    {
+        _playerHasControl = false;
+    }
+
     private void Update()
     {
         if (!_playerHasControl) return;
