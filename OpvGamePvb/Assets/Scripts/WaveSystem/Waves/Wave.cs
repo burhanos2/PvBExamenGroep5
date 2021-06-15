@@ -1,5 +1,5 @@
 ﻿using WaveSystem.Waves;
 
-public class Wave2 : CustomWave
+public class Wave : CustomWave
 {
 }

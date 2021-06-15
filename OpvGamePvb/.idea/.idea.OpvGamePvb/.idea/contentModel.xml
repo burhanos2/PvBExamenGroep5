@@ -78,14 +78,7 @@
             <e p="Waves" t="Include">
               <e p="CustomWave.cs" t="Include" />
               <e p="ExampleWave.cs" t="Include" />
-              <e p="Wave1.cs" t="Include" />
-              <e p="Wave2.cs" t="Include" />
-              <e p="Wave3.cs" t="Include" />
-              <e p="Wave4.cs" t="Include" />
-              <e p="Wave5.cs" t="Include" />
-              <e p="Wave6.cs" t="Include" />
-              <e p="Wave7.cs" t="Include" />
-              <e p="Wave8.cs" t="Include" />
+              <e p="Wave.cs" t="Include" />
             </e>
             <e p="WavesEditor.cs" t="Include" />
             <e p="WavesManager.cs" t="Include" />
