@@ -14,8 +14,8 @@ public class GunMovement : MonoBehaviour
     [SerializeField]
     private GameObject _powerObject;
 
-    private readonly float _powerMax = -53;
-    private readonly float _powerMin = 26;
+    private readonly float _powerMax = -69.69f; //:)
+    private readonly float _powerMin = 45f;
 
     //0.712 is ong 90 degrees
     [SerializeField] private float _maxHorizontalTurn = 0.9f;

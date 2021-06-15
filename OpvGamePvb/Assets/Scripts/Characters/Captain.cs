@@ -10,7 +10,6 @@ public class Captain : CharacterState
         _active = true;
         // update controls here and start processes
         SetArrayOfGO(_objectsToEnable, true);
-        
     }
 
     public override void Leave()
@@ -24,7 +23,7 @@ public class Captain : CharacterState
 
     private void ChangeFoV()
     {
-        
+        CharacterCornerSprite.Instance.SetSprite(2); 
         _camera.fieldOfView = 30; // to cannoneer
     }
 }

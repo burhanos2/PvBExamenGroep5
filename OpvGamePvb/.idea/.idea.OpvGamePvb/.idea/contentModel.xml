@@ -13,6 +13,7 @@
           <e p="BlinkingAnimation" t="Include">
             <e p="AnimatorValueSetter.cs" t="Include" />
           </e>
+          <e p="CharacterCornerSprite.cs" t="Include" />
           <e p="Characters" t="Include">
             <e p="Cannoneer.cs" t="Include" />
             <e p="Captain.cs" t="Include" />

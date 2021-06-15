@@ -33,6 +33,7 @@ public class Cannoneer : CharacterState
     }
     private void ChangeFoV()
     {
+        CharacterCornerSprite.Instance.SetSprite(0);
         _camera.fieldOfView = 30; // to grenade
     }
 }

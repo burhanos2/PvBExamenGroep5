@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
 using BlinkingAnimation;
 using Vector3 = UnityEngine.Vector3;
 
@@ -37,7 +36,7 @@ public class Grenade : CharacterState
 
     private void ChangeFoV()
     {
-        
+        CharacterCornerSprite.Instance.SetSprite(1);
         _camera.fieldOfView = 60; //to captain
     }
 }
