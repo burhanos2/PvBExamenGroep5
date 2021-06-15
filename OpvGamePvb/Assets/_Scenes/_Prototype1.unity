@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1498,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 79.1
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
@@ -1836,8 +1836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9dc65547994cdd49ae98c581a13a697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveAmount: 8
-  _enemiesPerWave: 0400000005000000060000000700000007000000080000000800000009000000
+  _waveAmount: 9
+  _enemiesPerWave: 030000000500000004000000060000000700000008000000080000000a0000000b000000
   _enemySpawners: []
   _customWaves:
   - {fileID: 188550515}
@@ -5667,7 +5667,7 @@ PrefabInstance:
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 79.1
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
@@ -7255,7 +7255,7 @@ PrefabInstance:
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 78.5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 641367950388768856, guid: d4740aa559706c64c87e63aec5582825,
         type: 3}
