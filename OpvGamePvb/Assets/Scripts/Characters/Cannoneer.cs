@@ -4,15 +4,17 @@ using BlinkingAnimation;
 public class Cannoneer : CharacterState
 {
     [SerializeField] private GunMovement _gunMovement;
-    [SerializeField] private Camera camera;
-    [SerializeField] private AnimatorValueSetter valSetter;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private AnimatorValueSetter _valSetter;
     public override void Enter()
     {
         // update controls here and start processes
         SetArrayOfGO(_objectsToEnable, true);
-        valSetter.OnBlind -= ChangeFoV;
+        _valSetter.OnBlind -= ChangeFoV;
         _gunMovement.enabled = true;
         _active = true;
+        Control.Instance._shootWaitingtime = 1.9f;
+        _gunMovement._verticalRotateAxis = Vector3.right; // (1, 0, 0)
     }
 
     private void Start()
@@ -26,11 +28,12 @@ public class Cannoneer : CharacterState
         SetArrayOfGO(_objectsToDisable, false);
         _gunMovement.enabled = false;
         
-        valSetter.OnBlind += ChangeFoV;
+        _valSetter.OnBlind += ChangeFoV;
         _active = false;
     }
     private void ChangeFoV()
     {
-        camera.fieldOfView = 60;
+        CharacterCornerSprite.Instance.SetSprite(0);
+        _camera.fieldOfView = 30; // to grenade
     }
 }

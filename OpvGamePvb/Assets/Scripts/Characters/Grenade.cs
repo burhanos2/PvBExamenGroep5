@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using BlinkingAnimation;
+using Vector3 = UnityEngine.Vector3;
+
 public class Grenade : CharacterState
 {
     [SerializeField] private GunMovement _gunMovement;
-    [SerializeField] private Camera camera;
-    [SerializeField] private AnimatorValueSetter valSetter;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private AnimatorValueSetter _valSetter;
 
 
     private void Start()
@@ -15,15 +17,17 @@ public class Grenade : CharacterState
     public override void Enter()
     {
         SetArrayOfGO(_objectsToEnable, true);
-        valSetter.OnBlind -= ChangeFoV;
+        _valSetter.OnBlind -= ChangeFoV;
         
         _gunMovement.enabled = true;
         _active = true;
+        Control.Instance._shootWaitingtime = 0.7f;
+        _gunMovement._verticalRotateAxis = Vector3.forward; // (0, 0, 1)
     }
 
     public override void Leave()
     {
-        valSetter.OnBlind += ChangeFoV;
+        _valSetter.OnBlind += ChangeFoV;
         //halt controls here and halt processes
         SetArrayOfGO(_objectsToDisable, false);
         _gunMovement.enabled = false;
@@ -32,7 +36,7 @@ public class Grenade : CharacterState
 
     private void ChangeFoV()
     {
-        
-        camera.fieldOfView = 30;
+        CharacterCornerSprite.Instance.SetSprite(1);
+        _camera.fieldOfView = 60; //to captain
     }
 }

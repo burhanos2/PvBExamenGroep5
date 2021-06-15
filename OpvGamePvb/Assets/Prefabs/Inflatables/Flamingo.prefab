@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bda7c36d8ae60489a283f7434f8c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToDestruction: 5
+  _secondsToDestruction: 7
   _target: {fileID: 6683177619314536455}
 --- !u!114 &-8129366509895770276
 MonoBehaviour:
@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectHeight: 1
-  _displacementAmount: 3
-  _setDrag: 1
+  _displacementAmount: 5
+  _setDrag: 0.5

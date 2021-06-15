@@ -38,7 +38,7 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOverAction(int score)
     {
-        Control._playerHasControl = false;
+        Control.Instance._playerHasControl = false;
         StartCoroutine(Finish());
     }
 

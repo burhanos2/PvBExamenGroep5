@@ -13,6 +13,7 @@
           <e p="BlinkingAnimation" t="Include">
             <e p="AnimatorValueSetter.cs" t="Include" />
           </e>
+          <e p="CharacterCornerSprite.cs" t="Include" />
           <e p="Characters" t="Include">
             <e p="Cannoneer.cs" t="Include" />
             <e p="Captain.cs" t="Include" />
@@ -35,20 +36,21 @@
             <e p="GameOverManager.cs" t="Include" />
             <e p="GameTimer.cs" t="Include" />
           </e>
-          <e p="GunneAndGun" t="Include">
+          <e p="GunnerAndGun" t="Include">
             <e p="CameraShake.cs" t="Include" />
-            <e p="GrenadeBullet.cs" t="Include" />
             <e p="GunMovement.cs" t="Include" />
             <e p="PlayerBullet.cs" t="Include" />
             <e p="Shooting.cs" t="Include" />
+            <e p="SwapBarrels.cs" t="Include" />
           </e>
           <e p="Highscore" t="Include">
             <e p="PointInput.cs" t="Include" />
             <e p="ScoreKeeping.cs" t="Include" />
           </e>
-          <e p="KeepScale.cs" t="Include" />
           <e p="LifeHacks" t="Include">
             <e p="DestroyAfterSeconds.cs" t="Include" />
+            <e p="KeepScale.cs" t="Include" />
+            <e p="LookAtVelocity.cs" t="Include" />
           </e>
           <e p="OnParticleEnd.cs" t="Include" />
           <e p="Radar" t="Include">
@@ -73,18 +75,10 @@
             <e p="InflatablePropBehaviour.cs" t="Include" />
           </e>
           <e p="WaveSystem" t="Include">
-            <e p="EnemySpawner.cs" t="Include" />
             <e p="Waves" t="Include">
               <e p="CustomWave.cs" t="Include" />
               <e p="ExampleWave.cs" t="Include" />
-              <e p="Wave1.cs" t="Include" />
-              <e p="Wave2.cs" t="Include" />
-              <e p="Wave3.cs" t="Include" />
-              <e p="Wave4.cs" t="Include" />
-              <e p="Wave5.cs" t="Include" />
-              <e p="Wave6.cs" t="Include" />
-              <e p="Wave7.cs" t="Include" />
-              <e p="Wave8.cs" t="Include" />
+              <e p="Wave.cs" t="Include" />
             </e>
             <e p="WavesEditor.cs" t="Include" />
             <e p="WavesManager.cs" t="Include" />

@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using SoundSystem;
 using WaveSystem.Waves;
 using Random = UnityEngine.Random;
 
 namespace WaveSystem
 {
+    public enum EnemyTypes
+    {
+        Regular = 0,
+        SpeedBoat = 1,
+    }
+    
     public class WavesManager : MonoBehaviour
     {
-        [SerializeField]private GameOverManager _gameOverManager;
+        [SerializeField] private float _enemySpawnHeight; 
+        [SerializeField] private GameOverManager _gameOverManager;
         private WavesEditor _wavesEditor;
         private int _currentWave = 1; //waves start at 1 and not 0!!
         public int CurrentWave
@@ -29,7 +37,7 @@ namespace WaveSystem
         private int _currentEnemyLimit;
 
         private bool _allowSpawning;
-        public GameObject _enemyObjectToSpawn;
+        public GameObject[] _enemyObjectsToSpawn;
 
         [SerializeField] private float _defaultWaitTimeInSeconds = 1f;
         public static WavesManager Instance;
@@ -40,6 +48,9 @@ namespace WaveSystem
         private CustomWave[] _customWaves;
         private int _currentEnemyPlayAreaIndex;
         private Renderer _currentSpawnAreaRend;
+
+        private EnemyTypes _currentEnemyType;
+        private const EnemyTypes DefaultEnemyType = EnemyTypes.Regular;
 
         public Vector4 GetCurrentPlayArea {
             get
@@ -63,12 +74,13 @@ namespace WaveSystem
 
         private void Start()
         {
+            _currentEnemyType = DefaultEnemyType; // make sure its regular on default just in case
             _wavesEditor = GetComponent<WavesEditor>();
             _spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
             _spawnAreaCycleIndex = 0;
             _allowSpawning = true;
             _enemyPlayAreaManager = gameObject.transform.parent.GetComponentInChildren<EnemyPlayAreaManager>();
-            _customWaves = _wavesEditor._customWaves;
+            _customWaves = _wavesEditor._customWaves; // copy over custom waves
             CheckCustomWave(_currentWave);
             
             OnNextWave += DoOnNextWave;
@@ -91,19 +103,21 @@ namespace WaveSystem
             {
                 _allowSpawning = false;
                 
-                if (EnemyHasCustomTimer())
+                if (EnemyHasCustomValues())
                 {
                     var enemyWaitInSeconds = _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].y;
+                    _currentEnemyType = (EnemyTypes) _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].x;
                     Invoke("SpawnEnemy", enemyWaitInSeconds);
                 }
                 else
                 {
+                    _currentEnemyType = DefaultEnemyType;
                     Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
                 }
             }
         }
 
-        private bool EnemyHasCustomTimer()
+        private bool EnemyHasCustomValues()
         {
             return _customWaves.Length >= _currentWave 
                    && _customWaves[_currentWave - 1]._enemyAndSpawnTimer.Length >= _enemiesDeployedThisWave + 1;
@@ -154,10 +168,11 @@ namespace WaveSystem
                 rollXPos = Random.Range(spawnBounds.min.x,spawnBounds.max.x);
             }
 
-            var pos = new Vector3(rollXPos,0,rollZPos); //random position within spawn area on y = 0
+            var pos = new Vector3(rollXPos,_enemySpawnHeight,rollZPos); //random position within spawn area on enemySpawnHeight
             var rot = Quaternion.LookRotation((pos - Vector3.zero), Vector3.up); //default rotation
             
-            _currentLiveEnemies.Add(Instantiate(_enemyObjectToSpawn, pos, rot ));
+            _currentLiveEnemies.Add(Instantiate(_enemyObjectsToSpawn[(int)_currentEnemyType], pos, rot ));
+            AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.Splash);
             _enemiesDeployedThisWave++;
             
             //TODO tf is this UwU

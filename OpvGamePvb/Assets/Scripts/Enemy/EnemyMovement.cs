@@ -5,52 +5,52 @@ using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Vector3 position;
+    private Vector3 _position;
     [SerializeField]
     private float speed = 0;
-    private Vector3 newPosition;
+    private Vector3 _newPosition;
     [SerializeField]
-    private float minimalDivergentX = 0;
+    private float _minimalDivergentX = 0;
     [SerializeField]
-    private float minimalDivergentZ;
+    private float _minimalDivergentZ;
     [SerializeField]
-    private float maximumDivergentX = 0;
+    private float _maximumDivergentX = 0;
     [SerializeField]
-    private float maximumDivergentZ;
+    private float _maximumDivergentZ;
     [SerializeField]
-    private GameObject Player;
+    private GameObject _player;
 
-    private MeshRenderer playerMesh;
+    private MeshRenderer _playerMesh;
     [SerializeField]
-    private float _DistanceHeldToPlayer = 0;
+    private float _distanceHeldToPlayer = 0;
 
-    private bool ismoving = false;
-    private float waitingTimer = 0;
+    private bool _ismoving = false;
+    private float _waitingTimer = 0;
     [SerializeField]
-    private float WaitingTime = 0;
+    private float _waitingTime = 0;
 
     [SerializeField] private float _angle = 20;
     private Transform _posHelper;
 
-    private Vector4 myPlayBounds;
+    private Vector4 _myPlayBounds;
     
     // Start is called before the first frame update
     void Awake()
     {
         
-        myPlayBounds = WavesManager.Instance.GetCurrentPlayArea;
+        _myPlayBounds = WavesManager.Instance.GetCurrentPlayArea;
 
-        minimalDivergentX = myPlayBounds.x;
-        maximumDivergentX = myPlayBounds.y;
-        minimalDivergentX = myPlayBounds.z;
-        maximumDivergentZ = myPlayBounds.w;
+        _minimalDivergentX = _myPlayBounds.x;
+        _maximumDivergentX = _myPlayBounds.y;
+        _minimalDivergentZ = _myPlayBounds.z;
+        _maximumDivergentZ = _myPlayBounds.w;
         //minimalDivergentX = 
-        Player = GameObject.Find("BoatModol");
-       playerMesh =  Player.GetComponent<MeshRenderer>();
+        _player = GameObject.Find("BoatModol");
+       _playerMesh =  _player.GetComponent<MeshRenderer>();
         
        _posHelper = new GameObject().transform;
        
-        position = transform.position;
+        _position = transform.position;
         CalculateNewPosition();
     }
 
@@ -58,25 +58,25 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         
-        if (transform.position != newPosition &&  ismoving == true)
+        if (!ComparePositionXZ(transform.position, _newPosition) &&  _ismoving == true)
         {   
-
+            
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
+            transform.position = Vector3.MoveTowards(transform.position, _newPosition, step);
             
         }
         else
-        {   
-            
-            waitingTimer += Time.deltaTime;
-            
-            ismoving = false;
-        }
-
-        if (waitingTimer >= WaitingTime)
         {
             
-            waitingTimer = 0;
+            _waitingTimer += Time.deltaTime;
+            
+            _ismoving = false;
+        }
+
+        if (_waitingTimer >= _waitingTime)
+        {
+            
+            _waitingTimer = 0;
             CalculateNewPosition();
         }
         
@@ -85,30 +85,32 @@ public class EnemyMovement : MonoBehaviour
 
     public void CalculateNewPosition()
     {   
-        newPosition = new Vector3(Random.Range(minimalDivergentX, maximumDivergentX),0,Random.Range(minimalDivergentZ, maximumDivergentZ));
-        float distance = Vector3.Distance(newPosition,playerMesh.bounds.center);
-        position = transform.position;
+        _newPosition = new Vector3(Random.Range(_minimalDivergentX, _maximumDivergentX),0,Random.Range(_minimalDivergentZ, _maximumDivergentZ));
+        float distance = Vector3.Distance(_newPosition,_playerMesh.bounds.center);
+        _position = transform.position;
         
-        if(distance <= _DistanceHeldToPlayer)
+        if(distance <= _distanceHeldToPlayer)
         {
             _posHelper.position = transform.position;
-            _posHelper.RotateAround(Player.transform.position, Vector3.up, _angle);
-            newPosition = _posHelper.position;
+            _posHelper.RotateAround(_player.transform.position, Vector3.up, _angle);
+            _newPosition = _posHelper.position;
         }
         else
-        {
-            
-            ismoving = true;
+        { 
+            _ismoving = true;
         }
-
-
-
-    }
-
+    } 
+    
     public bool getMovementStatus()
     {
-        return ismoving;
+        return _ismoving;
     }
 
-    
+    private bool ComparePositionXZ(Vector3 pos1, Vector3 pos2)
+    {
+        var pos1XZ = new Vector2(pos1.x, pos1.z);
+        var pos2XZ = new Vector2(pos2.x, pos2.z);
+        
+        return pos1XZ == pos2XZ;
+    }
 }

@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SoundSystem;
 using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    private bool isActive = false;
-    private Vector3 objectToMoveTo;
-    [SerializeField]private float speed;
+    private bool _isActive = false;
+    private Vector3 _objectToMoveTo;
+    [SerializeField]private float _speed;
     
     
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -17,18 +18,18 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if (isActive)
-        {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, objectToMoveTo, step);
-        }
-
-        if (transform.position == objectToMoveTo)
-        {   PointInput.Instance.ResetMultiplier();
-            isActive = false;
+        if (!_isActive)return;
+         float step = _speed * Time.deltaTime; 
+         transform.position = Vector3.MoveTowards(transform.position, _objectToMoveTo, step);
+        if (transform.position == _objectToMoveTo)
+        {   
+            PointInput.Instance.ResetMultiplier();
+            AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.PlayerDamaged);
+            
+            _isActive = false;
             
             this.gameObject.SetActive(false);
         }
@@ -37,16 +38,17 @@ public class BulletBehaviour : MonoBehaviour
     public void SetActive(bool active)
     {   
         
-        isActive = active;
+        _isActive = active;
     }
 
     public bool GetActive()
     {
-        return isActive;
+        return _isActive;
     }
 
-    public void SetObjectToMoveTo(Vector3 position)
-    {
-        objectToMoveTo = position;
+    public void SetObjectToMoveTo(Vector3 enemyPosition)
+    {   
+        
+        _objectToMoveTo = enemyPosition;
     }
 }

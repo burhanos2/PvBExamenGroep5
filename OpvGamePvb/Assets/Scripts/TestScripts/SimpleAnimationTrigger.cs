@@ -5,19 +5,19 @@ namespace TestScripts
 {
     public class SimpleAnimationTrigger : MonoBehaviour
     {
-        private Animator cameraEyelidBlink;
+        private Animator _cameraEyelidBlink;
         private static readonly int PlayBlink = Animator.StringToHash("PlayBlink");
 
         private void Start()
         {
-            cameraEyelidBlink = GameObject.Find("Camera_Eyelids").GetComponent<Animator>();
+            _cameraEyelidBlink = GameObject.Find("Camera_Eyelids").GetComponent<Animator>();
         
-            Control.OnSwitchKey += DoBlinkingAnim;
+            Control.Instance.OnSwitchKey += DoBlinkingAnim;
         }
 
         private void DoBlinkingAnim()
         {
-            cameraEyelidBlink.SetTrigger(PlayBlink);
+            _cameraEyelidBlink.SetTrigger(PlayBlink);
         }
     }
 }

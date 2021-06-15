@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 public class EnemyDeath : MonoBehaviour
 {   
     [SerializeField]
-    private string enemyObjectTag;
+    private string _enemyObjectTag;
     [SerializeField]
-    private List<GameObject> inflatables;
+    private List<GameObject> _inflatables;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +25,10 @@ public class EnemyDeath : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("hit");
-        if (other.transform.tag == enemyObjectTag)
+        if (other.transform.tag == _enemyObjectTag)
         {
-            int randomNumber = Random.Range(0, inflatables.Count);
-            Instantiate(inflatables[randomNumber],transform.position,transform.rotation);
+            int randomNumber = Random.Range(0, _inflatables.Count);
+            Instantiate(_inflatables[randomNumber],transform.position,transform.rotation);
             Debug.Log("hit");
             Destroy(this.gameObject);
         }

@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564083870876993927}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4006259545593378547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d6b9230bdac7a8d4299e024972cc2937, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564083870876993927}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ecc899000fcf248b3bf2b2a3753273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  _speed: 30
 --- !u!1 &3139633040857393876
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,14 +218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a65872d9fdf07d42bb6fb34e0d0ffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  minimalDivergentX: 50
-  minimalDivergentZ: 20
-  maximumDivergentX: -50
-  maximumDivergentZ: 20
-  Player: {fileID: 0}
-  _DistanceHeldToPlayer: 30
-  WaitingTime: 20
+  speed: 2.5
+  _minimalDivergentX: 0
+  _minimalDivergentZ: 0
+  _maximumDivergentX: 0
+  _maximumDivergentZ: 0
+  _player: {fileID: 0}
+  _distanceHeldToPlayer: 0
+  _waitingTime: 20
   _angle: 20
 --- !u!114 &-3439216482228350874
 MonoBehaviour:
@@ -239,10 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c27adce1717764b97a76c48e3d8232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  bullet: {fileID: 1564083870876993927}
-  FireRate: 5
-  _minimalDistanceToEnemy: 50
+  _player: {fileID: 0}
+  _bullet: {fileID: 1564083870876993927}
+  _fireRate: 3
+  _minimalDistanceToEnemy: 100
 --- !u!54 &1797164388889333236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectHeight: 1
   _displacementAmount: 3
-  _setDrag: 1
+  _setDrag: 1.3
 --- !u!64 &3448990646560674886
 MeshCollider:
   m_ObjectHideFlags: 0
