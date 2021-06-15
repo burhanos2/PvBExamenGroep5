@@ -933,6 +933,7 @@ MonoBehaviour:
   - {x: 0, y: 2}
   - {x: 0, y: 10}
   - {x: 0, y: 10}
+  _radarMax: 150
 --- !u!1001 &204095010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1475,6 +1476,7 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 0, y: 1}
   - {x: 0, y: 1}
+  _radarMax: 150
 --- !u!4 &325044284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 58c4dd65b675eab4fa24fcf27a21b004,
@@ -2005,6 +2007,7 @@ MonoBehaviour:
   - {x: 1, y: 1}
   - {x: 1, y: 1}
   - {x: 1, y: 1}
+  _radarMax: 180
 --- !u!1001 &475862859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2932,6 +2935,7 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 0, y: 1}
   - {x: 0, y: 1}
+  _radarMax: 150
 --- !u!1 &621605842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,6 +3043,7 @@ MonoBehaviour:
   _playAreaIndex: 0
   _spawnArea: {fileID: 0}
   _enemyAndSpawnTimer: []
+  _radarMax: 0
 --- !u!1001 &657316955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3553,6 +3558,7 @@ MonoBehaviour:
   - {x: 0, y: 6}
   - {x: 0, y: 4}
   - {x: 0, y: 2}
+  _radarMax: 150
 --- !u!1 &745426405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4587,6 +4593,7 @@ MonoBehaviour:
   - {x: 1, y: 0.1}
   - {x: 1, y: 0}
   - {x: 1, y: 0}
+  _radarMax: 180
 --- !u!1001 &1075396193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4931,6 +4938,7 @@ MonoBehaviour:
   - {x: 0, y: 0.5}
   - {x: 0, y: 0.5}
   - {x: 0, y: 0.5}
+  _radarMax: 150
 --- !u!1 &1156891080
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5290,7 @@ MonoBehaviour:
   - {x: 1, y: 10}
   - {x: 1, y: 8}
   - {x: 1, y: 5}
+  _radarMax: 180
 --- !u!1001 &1238047127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8786,6 +8795,7 @@ MonoBehaviour:
   - {x: 1, y: 2}
   - {x: 1, y: 1}
   - {x: 1, y: 1}
+  _radarMax: 180
 --- !u!1 &2118692762
 GameObject:
   m_ObjectHideFlags: 0

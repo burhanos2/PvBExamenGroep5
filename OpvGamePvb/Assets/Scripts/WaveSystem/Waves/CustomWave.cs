@@ -12,5 +12,6 @@ namespace WaveSystem.Waves
         /// <summary>X is enemy type, Y is seconds to wait before spawning</summary>
         [Tooltip("X is enemy type, Y is seconds to wait before spawning")]
         public Vector2[] _enemyAndSpawnTimer;
+        public float _radarMax = 150f;
     }
 }

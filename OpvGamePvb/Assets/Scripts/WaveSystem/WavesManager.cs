@@ -129,6 +129,7 @@ namespace WaveSystem
             {
                 _currentEnemyPlayAreaIndex = _customWaves[waveToCheck - 1]._playAreaIndex;
                 _currentSpawnAreaRend = _customWaves[waveToCheck - 1]._spawnArea != null ? _customWaves[waveToCheck - 1]._spawnArea.GetComponent<Renderer>() : _spawnAreaObjects[_spawnAreaCycleIndex].GetComponent<Renderer>();
+                Radar.Instance._maxDistance = _customWaves[waveToCheck - 1]._radarMax;
             }
             else // if not, randomize
             {
