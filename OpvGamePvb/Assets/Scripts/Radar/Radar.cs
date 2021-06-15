@@ -7,7 +7,7 @@ public class Radar : MonoBehaviour
     private List<Transform> _boats = new List<Transform>();
     private List<Transform> _dots = new List<Transform>();
 
-    [SerializeField] private float _maxDistance = 100;
+    public float _maxDistance = 150f;
     private const float Scale = 2;
     
 
