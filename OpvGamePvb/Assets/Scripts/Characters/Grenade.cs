@@ -38,5 +38,6 @@ public class Grenade : CharacterState
     {
         CharacterCornerSprite.Instance.SetSprite(1);
         _camera.fieldOfView = 60; //to captain
+        ConeActiveHandler.Instance.ChangeActivity(0);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using BlinkingAnimation;
+
 public class Captain : CharacterState
 {
     [SerializeField] private Camera _camera;
@@ -25,5 +26,6 @@ public class Captain : CharacterState
     {
         CharacterCornerSprite.Instance.SetSprite(2); 
         _camera.fieldOfView = 30; // to cannoneer
+        ConeActiveHandler.Instance.ChangeActivity(1);
     }
 }

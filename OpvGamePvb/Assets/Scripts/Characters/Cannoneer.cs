@@ -35,5 +35,6 @@ public class Cannoneer : CharacterState
     {
         CharacterCornerSprite.Instance.SetSprite(0);
         _camera.fieldOfView = 30; // to grenade
+        ConeActiveHandler.Instance.ChangeActivity(2);
     }
 }
