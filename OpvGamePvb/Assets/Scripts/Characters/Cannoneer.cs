@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using BlinkingAnimation;
+using SoundSystem;
 
 public class Cannoneer : CharacterState
 {
@@ -30,6 +31,7 @@ public class Cannoneer : CharacterState
         
         _valSetter.OnBlind += ChangeFoV;
         _active = false;
+        AudioManager.Instance.StopSfxLoop();
     }
     private void ChangeFoV()
     {

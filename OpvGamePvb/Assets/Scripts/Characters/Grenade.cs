@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using BlinkingAnimation;
 using Vector3 = UnityEngine.Vector3;
+using SoundSystem;
 
 public class Grenade : CharacterState
 {
@@ -32,6 +33,7 @@ public class Grenade : CharacterState
         SetArrayOfGO(_objectsToDisable, false);
         _gunMovement.enabled = false;
         _active = false;
+        AudioManager.Instance.StopSfxLoop();
     }
 
     private void ChangeFoV()

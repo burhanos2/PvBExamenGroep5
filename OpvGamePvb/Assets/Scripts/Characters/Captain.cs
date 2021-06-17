@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using BlinkingAnimation;
+using SoundSystem;
 
 public class Captain : CharacterState
 {
@@ -7,6 +8,8 @@ public class Captain : CharacterState
     [SerializeField] private AnimatorValueSetter _valSetter;
     public override void Enter()
     {
+        StopSoundLoop();
+        Invoke(nameof(StopSoundLoop), 1f);
         _valSetter.OnBlind -= ChangeFoV;
         _active = true;
         // update controls here and start processes
@@ -27,5 +30,10 @@ public class Captain : CharacterState
         CharacterCornerSprite.Instance.SetSprite(2); 
         _camera.fieldOfView = 30; // to cannoneer
         ConeActiveHandler.Instance.ChangeActivity(1);
+    }
+
+    private void StopSoundLoop()
+    {
+        AudioManager.Instance.StopSfxLoop();
     }
 }

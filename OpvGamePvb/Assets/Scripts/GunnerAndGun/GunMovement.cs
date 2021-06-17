@@ -131,6 +131,7 @@ public class GunMovement : MonoBehaviour
     {
         AudioManager.Instance.StopSfxLoop();
     }
+    
     private void PlayMoveSounds()
     {
         AudioManager.Instance.PlaySfxLoopStart(SfxTypes.CannonMoveBegin);

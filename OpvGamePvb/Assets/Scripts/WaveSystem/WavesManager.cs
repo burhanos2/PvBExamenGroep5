@@ -30,7 +30,7 @@ namespace WaveSystem
         private int _enemiesDeployedThisWave;
         public int GetEnemiesDeployedThisWave => _enemiesDeployedThisWave;
 
-        private List<GameObject> _currentLiveEnemies = new List<GameObject>();
+        public List<GameObject> _currentLiveEnemies = new List<GameObject>();
         private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
         private int _spawnAreaCycleIndex;
         
@@ -66,7 +66,7 @@ namespace WaveSystem
             }
         }
         //bool GameRunning = false;
-        void Awake()
+        private void Awake()
         {
             Instance = this;
             _gameoverCalled = false;
