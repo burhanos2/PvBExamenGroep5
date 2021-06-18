@@ -13,11 +13,14 @@
           <e p="BlinkingAnimation" t="Include">
             <e p="AnimatorValueSetter.cs" t="Include" />
           </e>
-          <e p="CharacterCornerSprite.cs" t="Include" />
           <e p="Characters" t="Include">
             <e p="Cannoneer.cs" t="Include" />
             <e p="Captain.cs" t="Include" />
             <e p="Grenade.cs" t="Include" />
+          </e>
+          <e p="Compass" t="Include">
+            <e p="ConeActiveHandler.cs" t="Include" />
+            <e p="PositionConeDisplay.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="BulletBehaviour.cs" t="Include" />
@@ -51,12 +54,12 @@
             <e p="DestroyAfterSeconds.cs" t="Include" />
             <e p="KeepScale.cs" t="Include" />
             <e p="LookAtVelocity.cs" t="Include" />
+            <e p="SimpleExitGame.cs" t="Include" />
           </e>
           <e p="OnParticleEnd.cs" t="Include" />
           <e p="Radar" t="Include">
             <e p="Radar.cs" t="Include" />
           </e>
-          <e p="SimpleExitGame.cs" t="Include" />
           <e p="SoundSystem" t="Include">
             <e p="AmbienceManager.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
@@ -73,6 +76,10 @@
           <e p="TransformToProp" t="Include">
             <e p="EnemyTransformer.cs" t="Include" />
             <e p="InflatablePropBehaviour.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="CharacterCornerSprite.cs" t="Include" />
+            <e p="DisplayLiveEnemyAmount.cs" t="Include" />
           </e>
           <e p="WaveSystem" t="Include">
             <e p="Waves" t="Include">

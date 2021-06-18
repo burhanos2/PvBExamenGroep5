@@ -71,7 +71,7 @@ public class Control : MonoBehaviour
         {
             if(!_shootable) return;
             OnAttackKeys?.Invoke();
-            StartCoroutine(InputDelay());
+            StartCoroutine(ShootingDelay());
 
         }
         //Horizontal keys, false is left
@@ -100,7 +100,7 @@ public class Control : MonoBehaviour
         _switchKeyInDelay = false;
     }
     
-    private IEnumerator InputDelay()
+    private IEnumerator ShootingDelay()
     {
         _shootable = false;
 

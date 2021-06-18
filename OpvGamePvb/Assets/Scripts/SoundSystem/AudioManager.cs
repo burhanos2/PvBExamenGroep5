@@ -8,10 +8,9 @@ namespace SoundSystem
       CannonShot = 0,
       SwitchSound = 1,
       ShipDestruct = 2,
-      CannonMoveBegin = 3,
-      CannonMoveLoop = 4,
-      Splash = 5,
-      PlayerDamaged = 6,
+      CannonMoveLoop = 3,
+      Splash = 4,
+      PlayerDamaged = 5,
    }
 
    public enum AmbienceTypes

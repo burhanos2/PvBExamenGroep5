@@ -242,7 +242,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _bullet: {fileID: 1564083870876993927}
   _fireRate: 0
-  _minimalDistanceToEnemy: 50
+  _minimalDistanceToEnemy: 100
 --- !u!54 &1797164388889333236
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using SoundSystem;
 using UnityEngine;
 
@@ -43,10 +42,14 @@ public class GunMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_soundWait < -0.5f) return;
+        if (!enabled) return;
+        
         _soundWait -= Time.deltaTime;
-        if(_soundWait < 0 )
-        {SetMoveBool(false);}
+        
+        if (_soundWait < 0)
+        {
+            SetMoveBool(false);
+        }
     }
 
     private void InvokeShoot()
@@ -56,21 +59,21 @@ public class GunMovement : MonoBehaviour
 
     private void TurnHorizontal(bool isRight)
     {
-        if(enabled){
-            if(isRight && _gunObject.transform.rotation.y <= _maxHorizontalTurn) //right
-            {
-                _gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
-                SetMoveBool(true);
-                _soundWait = SoundWaitDefault;
-            }
-            else if (!isRight && _gunObject.transform.rotation.y >= _minHorizontalTurn) //left
-            {
-                _gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
-                SetMoveBool(true);
-                _soundWait = SoundWaitDefault;
-            }
+        if (!enabled) return;
+        if (isRight)
+        {
+            if (!(_gunObject.transform.rotation.y <= _maxHorizontalTurn)) return; //right
+            _gunObject.transform.Rotate(0, yAngle: +_gunRotateSpeed * Time.deltaTime, 0);
+            SetMoveBool(true);
+            _soundWait = SoundWaitDefault;
         }
-        
+        else
+        {
+            if (!(_gunObject.transform.rotation.y >= _minHorizontalTurn)) return; //left
+            _gunObject.transform.Rotate(0, yAngle: -_gunRotateSpeed * Time.deltaTime, 0);
+            SetMoveBool(true);
+            _soundWait = SoundWaitDefault;
+        }
     }
 
     private void TurnVertical(bool isUp)
@@ -113,13 +116,13 @@ public class GunMovement : MonoBehaviour
     
     
     //added to script for sounds
-    private void SetMoveBool(bool newVal)
+    public void SetMoveBool(bool newVal)
     {
         if (newVal == _isMoving) return;
         if (newVal)
         {
             _isMoving = true;
-            PlayMoveSounds();
+            PlayLoop();
         }
         else
         {
@@ -127,19 +130,13 @@ public class GunMovement : MonoBehaviour
             StopPlayingLoop();
         }
     }
-    private void StopPlayingLoop()
+    private static void StopPlayingLoop()
     {
         AudioManager.Instance.StopSfxLoop();
     }
-    private void PlayMoveSounds()
-    {
-        AudioManager.Instance.PlaySfxLoopStart(SfxTypes.CannonMoveBegin);
-        StartCoroutine(PlayAfterDelay(1f));
-    }
 
-    private IEnumerator PlayAfterDelay(float waitTime)
+    private void PlayLoop()
     {
-        yield return new WaitForSeconds(waitTime);
         if (_isMoving)
         {
             AudioManager.Instance.PlaySfxLooped(SfxTypes.CannonMoveLoop);
