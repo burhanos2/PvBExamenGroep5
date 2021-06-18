@@ -8,7 +8,7 @@ public class Radar : MonoBehaviour
     private List<Transform> _dots = new List<Transform>();
 
     public float _maxDistance = 150f;
-    private const float Scale = 2;
+    private const float Scale = 2.1f;
     
 
     public static Radar Instance;

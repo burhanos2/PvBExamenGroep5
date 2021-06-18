@@ -51,7 +51,6 @@
             <e p="ScoreKeeping.cs" t="Include" />
           </e>
           <e p="LifeHacks" t="Include">
-            <e p="CharacterCornerSprite.cs" t="Include" />
             <e p="DestroyAfterSeconds.cs" t="Include" />
             <e p="KeepScale.cs" t="Include" />
             <e p="LookAtVelocity.cs" t="Include" />
@@ -77,6 +76,10 @@
           <e p="TransformToProp" t="Include">
             <e p="EnemyTransformer.cs" t="Include" />
             <e p="InflatablePropBehaviour.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="CharacterCornerSprite.cs" t="Include" />
+            <e p="DisplayLiveEnemyAmount.cs" t="Include" />
           </e>
           <e p="WaveSystem" t="Include">
             <e p="Waves" t="Include">

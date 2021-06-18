@@ -4,12 +4,12 @@ using WaveSystem;
 namespace SoundSystem
 {
     public class SfxManager : MonoBehaviour
-    {
-        [SerializeField] private WavesManager _wavesManager; //.Instance is null? temporary
+    { 
+        
         private void Start()
         {
             Control.Instance.OnSwitchKey += PlaySwitchSound;
-            _wavesManager.OnEnemyDeath += PlayShipDestructSound;
+            WavesManager.Instance.OnEnemyDeath += PlayShipDestructSound;
         }
         
         private void PlaySwitchSound()

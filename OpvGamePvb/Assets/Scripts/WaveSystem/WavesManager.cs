@@ -42,7 +42,7 @@ namespace WaveSystem
         [SerializeField] private float _defaultWaitTimeInSeconds = 1f;
         public static WavesManager Instance;
 
-        private bool _gameoverCalled;
+        private bool _gameOverCalled;
 
         private EnemyPlayAreaManager _enemyPlayAreaManager;
         private CustomWave[] _customWaves;
@@ -65,15 +65,18 @@ namespace WaveSystem
                 return _enemyPlayAreaManager.GetBoundsOfArea(_currentEnemyPlayAreaIndex);
             }
         }
-        //bool GameRunning = false;
+        
+        private bool _gameRunning;
+        public void GameStarter(bool doStart) => _gameRunning = doStart;
+        
         private void Awake()
         {
             Instance = this;
-            _gameoverCalled = false;
         }
 
         private void Start()
         {
+            _gameOverCalled = false;
             _currentEnemyType = DefaultEnemyType; // make sure its regular on default just in case
             _wavesEditor = GetComponent<WavesEditor>();
             _spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
@@ -91,7 +94,7 @@ namespace WaveSystem
 
         private void Update()
         {   
-            //if(GameRunning)
+            if (!_gameRunning) return;
             if (_enemiesDeployedThisWave >= _currentEnemyLimit) // have all enemies been deployed?
             {
                 if (_currentLiveEnemies.Count == 0) // are there no enemies left?
@@ -107,12 +110,12 @@ namespace WaveSystem
                 {
                     var enemyWaitInSeconds = _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].y;
                     _currentEnemyType = (EnemyTypes) _customWaves[_currentWave - 1]._enemyAndSpawnTimer[_enemiesDeployedThisWave].x;
-                    Invoke("SpawnEnemy", enemyWaitInSeconds);
+                    Invoke(nameof(SpawnEnemy), enemyWaitInSeconds);
                 }
                 else
                 {
                     _currentEnemyType = DefaultEnemyType;
-                    Invoke("SpawnEnemy", _defaultWaitTimeInSeconds);
+                    Invoke(nameof(SpawnEnemy), _defaultWaitTimeInSeconds);
                 }
             }
         }
@@ -193,13 +196,13 @@ namespace WaveSystem
             {
                 Debug.LogError("Current wave does not exist.");
             }
-            if (_gameoverCalled) return;
+            if (_gameOverCalled) return;
             
             if (input > _wavesEditor._waveAmount)
             {
                 Debug.Log("Entering a wave above amount, calling game over");
                 CallGameOver();
-                _gameoverCalled = true;
+                _gameOverCalled = true;
             }
             else
             {
@@ -231,6 +234,7 @@ namespace WaveSystem
         public void CallGameOver()
         {
             // the game has ended because the waves are done, handle this
+            _gameRunning = false;
             _gameOverManager.OnGameOver?.Invoke(_gameOverManager._scoreKeeping._currentScore);
         }
 

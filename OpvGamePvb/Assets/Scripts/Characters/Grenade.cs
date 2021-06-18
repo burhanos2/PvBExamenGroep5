@@ -8,8 +8,7 @@ public class Grenade : CharacterState
     [SerializeField] private GunMovement _gunMovement;
     [SerializeField] private Camera _camera;
     [SerializeField] private AnimatorValueSetter _valSetter;
-
-
+    
     private void Start()
     {
         _gunMovement = GetComponent<GunMovement>();
@@ -17,29 +16,35 @@ public class Grenade : CharacterState
     
     public override void Enter()
     {
-        SetArrayOfGO(_objectsToEnable, true);
+        // update controls here and start processes
         _valSetter.OnBlind -= ChangeFoV;
         
-        _gunMovement.enabled = true;
         _active = true;
+        
+        SetArrayOfGO(_objectsToEnable, true);
+        _gunMovement.enabled = true;
         Control.Instance._shootWaitingtime = 0.7f;
         _gunMovement._verticalRotateAxis = Vector3.forward; // (0, 0, 1)
     }
-
+    
     public override void Leave()
     {
-        _valSetter.OnBlind += ChangeFoV;
         //halt controls here and halt processes
-        SetArrayOfGO(_objectsToDisable, false);
-        _gunMovement.enabled = false;
-        _active = false;
+        _valSetter.OnBlind += ChangeFoV;
+        
         AudioManager.Instance.StopSfxLoop();
+        SetArrayOfGO(_objectsToDisable, false);
+        _gunMovement.SetMoveBool(false);
+        _gunMovement.enabled = false;
+        
+        _active = false;
     }
 
     private void ChangeFoV()
     {
+        // to captain
+        _camera.fieldOfView = 60; 
         CharacterCornerSprite.Instance.SetSprite(1);
-        _camera.fieldOfView = 60; //to captain
         ConeActiveHandler.Instance.ChangeActivity(0);
     }
 }
