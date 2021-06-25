@@ -1,5 +1,6 @@
 # PvBExamenGroep5
-Scrum board: https://trello.com/b/GFLFfvIn/trello-groep-5-examen
+### Scrum board: https://trello.com/b/GFLFfvIn/trello-groep-5-examen
+### Final Release: https://github.com/burhanos2/PvBExamenGroep5/releases/tag/V3.3
 
 Spel gemaakt door Groep 5 PvB 2021 Mediacollege Amsterdam
 (Audio) geregeld door ArtEZ studenten: Emiel ten Have, Paul Daniels
