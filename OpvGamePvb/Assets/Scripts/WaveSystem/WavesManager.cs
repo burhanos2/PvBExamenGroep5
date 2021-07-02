@@ -31,7 +31,7 @@ namespace WaveSystem
         public int GetEnemiesDeployedThisWave => _enemiesDeployedThisWave;
 
         public List<GameObject> _currentLiveEnemies = new List<GameObject>();
-        private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor\
+        private GameObject[] _spawnAreaObjects; //not list because spawning areas do not vary, they are set in-editor
         private int _spawnAreaCycleIndex;
         
         private int _currentEnemyLimit;
@@ -143,7 +143,6 @@ namespace WaveSystem
 
         private void SpawnEnemy()
         {
-            //spawn at a (maybe randomly) selected spawn area on a random position within it
             var spawnBounds = _currentSpawnAreaRend.bounds;
             
             var tenPercentOfXBound = (spawnBounds.size.x * 0.1);
@@ -241,9 +240,7 @@ namespace WaveSystem
         private void DoOnEnemyDeath(int pointValue, GameObject enemy)
         {
             _currentLiveEnemies.Remove(enemy);
-            //TODO WTF UwU
             Radar.Instance.DeleteEnemy(enemy.transform);
-            //Destroy(enemy); //maybe not remove here? line may need to be removed later
         }
 
         private void ClearEnemies()
