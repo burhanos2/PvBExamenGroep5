@@ -41,7 +41,7 @@ namespace SoundSystem
       [System.Serializable]
       private class SoundClipVariantGroup
       {
-         [SerializeField] private string _name; //I WISH I KNEW THIS WAS POSSIBLE WHEN I DID THE CUSTOM WAVE SYSTEM... set name of cluster here
+         [SerializeField] private string _name; //set name of cluster here
          public AudioClip[] _sounds; //set clips here
          [Range(0, 1)]
          public float[] _volumes; // set different levels of volume for variation here
