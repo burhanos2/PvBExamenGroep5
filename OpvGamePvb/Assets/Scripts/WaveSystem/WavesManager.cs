@@ -178,7 +178,6 @@ namespace WaveSystem
             AudioManager.Instance.PlayRandomSfxVariant(SfxTypes.Splash);
             _enemiesDeployedThisWave++;
             
-            //TODO tf is this UwU
             Radar.Instance.AddEnemy(_currentLiveEnemies[_currentLiveEnemies.Count-1].transform);
             
             //end routine
